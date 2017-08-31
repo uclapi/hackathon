@@ -1,0 +1,22 @@
+
+
+/* FAQ */
+.faq .questions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.faq .questions .card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 20vw;
+  text-align: center;
+  min-height: 20vw;
+}
+
+.faq .card .card-content .card-title {
+  line-height: normal;
+}
