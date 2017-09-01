@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './Header.jsx';
+import Description from './Description.jsx';
 import Venue from './Venue.jsx';
 import Schedule from './Schedule.jsx';
 import FAQ from './FAQ.jsx';
@@ -12,6 +13,7 @@ export default class HomePage extends React.Component {
       return (
         <div>
           <Header />
+          <Description />
           <Venue />
           <Schedule />
           <FAQ />

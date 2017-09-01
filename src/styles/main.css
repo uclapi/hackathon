@@ -32,20 +32,26 @@ p {
   text-align: center;
   padding-top: 30vh;
   padding-bottom: 30vh;
+  color: white;
 }
 
 .header img {
   height: 100px;
   width: 100px;
   margin: 0 auto;
+  opacity: .6;
 }
 
 .header h1 {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 30px;
-  color: white;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
+  color: white;
+}
+
+.header h2 {
+  opacity: .8;
 }
 
 
