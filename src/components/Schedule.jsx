@@ -60,12 +60,11 @@ let schedule = {
 const tableRow = (e, key) => (
     <tr key={key}>
       <td>
-        <h4>{e.title}</h4>
-        <p>{e.description}</p>
+        <h5>{e.title}</h5>
       </td>
       <td>
-        <p>{e.time}</p>
-        <p>{e.location}</p>
+        <p className="time">{e.time}</p>
+        <p><i className="material-icons">location_on</i> {e.location}</p>
       </td>
     </tr>
 )
@@ -75,20 +74,23 @@ export default class Schedule extends React.Component {
 
     render () {
       return (
-        <div className="schedule container">
-          <h3>Saturday</h3>
-          <table>
-            <tbody>
-              {schedule.saturday.map((e, i) => tableRow(e, i))}
-            </tbody>
-          </table>
+        <div className="container">
+          <h1>Schedule</h1>
+          <div className="schedule">
+            <h3>Saturday</h3>
+            <table>
+              <tbody>
+                {schedule.saturday.map((e, i) => tableRow(e, i))}
+              </tbody>
+            </table>
 
-          <h3>Sunday</h3>
-          <table>
-            <tbody>
-              {schedule.sunday.map((e, i) => tableRow(e, i))}
-            </tbody>
-          </table>
+            <h3>Sunday</h3>
+            <table>
+              <tbody>
+                {schedule.sunday.map((e, i) => tableRow(e, i))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )
     }

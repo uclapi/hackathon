@@ -42,26 +42,26 @@ let questions = [
 
 
 const Question = (q, key) => (
-    <div className="card" key={key}>
-      <div className="card-content">
-        <span className="card-title">{q.question}</span>
+    <li key={key}>
+      <div className="collapsible-header">{q.question}</div>
+      <div className="collapsible-body">
         <p>{q.answer}</p>
       </div>
-    </div>
+    </li>
 )
 
 
 export default class FAQ extends React.Component {
 
-    render () {
-      return (
-        <div className="faq container">
-          <h1>Frequently Asked Questions</h1>
-          <div className="questions">
-            {questions.map((p, i) => Question(p, i))}
-          </div>
-        </div>
-      )
-    }
+  render () {
+    return (
+      <div className="faq container">
+        <h1>Frequently Asked Questions</h1>
+        <ul className="collapsible" data-collapsible="accordion">
+          {questions.map((q, i) => Question(q, i))}
+        </ul>
+      </div>
+    )
+  }
 
 }

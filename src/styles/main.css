@@ -1,9 +1,19 @@
 body {
   font-family: 'Passion One', cursive;
+  background: #ECEEF3;
+}
+
+h1 {
+  text-align: center;
+  color: #26a69a;
 }
 
 p {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  padding-top: 60px;
 }
 
 
@@ -32,24 +42,14 @@ p {
 
 
 /* FAQ */
-.faq .questions {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+.faq .collapsible-header {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
 }
 
-.faq .questions .card {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  width: 20vw;
-  text-align: center;
-  min-height: 20vw;
-}
-
-.faq .card .card-content .card-title {
-  line-height: normal;
+.faq .collapsible-body {
+  background: white;
 }
 
 
@@ -68,4 +68,34 @@ p {
   width: 20vw;
   text-align: center;
   min-height: 20vw;
+}
+
+
+/* Schedule */
+.schedule {
+  color: #13de5a;
+}
+
+.schedule h3 {
+  padding: 1em;
+  text-align: center;
+  border-bottom: 2px solid #0000ff;
+  color: #0000ff;
+  font-size: 24px;
+}
+
+.schedule tr {
+  border-bottom: 2px dotted #13de5a;
+}
+
+.schedule .time {
+  font-weight: bolder;
+}
+
+.schedule td p {
+  margin: 0px;
+}
+
+.schedule i, .schedule p {
+  font-size: 16px;
 }
