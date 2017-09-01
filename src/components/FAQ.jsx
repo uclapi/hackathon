@@ -55,11 +55,13 @@ export default class FAQ extends React.Component {
 
   render () {
     return (
-      <div className="faq container">
-        <h1>Frequently Asked Questions</h1>
-        <ul className="collapsible" data-collapsible="accordion">
-          {questions.map((q, i) => Question(q, i))}
-        </ul>
+      <div className="faq">
+        <div className="container">
+          <h1>Frequently Asked Questions</h1>
+          <ul className="collapsible" data-collapsible="accordion">
+            {questions.map((q, i) => Question(q, i))}
+          </ul>
+        </div>
       </div>
     )
   }

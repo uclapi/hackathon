@@ -9,10 +9,18 @@ h1 {
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  /*font-family: 'Roboto', sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 .container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.topPad {
   padding-top: 60px;
 }
 
@@ -41,15 +49,37 @@ p {
 }
 
 
+/* Venue */
+.venue {
+  color: white;
+  background: #232323;
+}
+
+.venue h1 {
+  color: #35E2DF;
+}
+
+
 /* FAQ */
+.faq {
+  background: #263D42;
+}
+
+.faq h1 {
+  color: #35E2DF;
+}
+
 .faq .collapsible-header {
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 20px;
+  background: #ECEEF3;
+  color: #263D42;
 }
 
 .faq .collapsible-body {
-  background: white;
+  color: #263D42;
+  background: #ECEEF3;
 }
 
 
@@ -62,7 +92,7 @@ p {
 }
 
 .sponsors img {
-  margin: 40px;
+  margin: 30px;
   display: flex;
   flex-direction: column;
   height: 15vw;
