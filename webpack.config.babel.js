@@ -1,12 +1,16 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
   filename: 'index.html',
   inject: 'body'
 })
+
+const CopyWebpackPluginConfig = new CopyWebpackPlugin([
+  { from: 'CNAME' }
+])
 
 export default () => ({
   entry: './src/index.js',
@@ -31,5 +35,5 @@ export default () => ({
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig, CopyWebpackPluginConfig]
 })
