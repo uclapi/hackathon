@@ -11,7 +11,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 export default () => ({
   entry: './src/index.js',
   output: {
-    path: path.resolve('./'),
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js'
   },
   module: {
