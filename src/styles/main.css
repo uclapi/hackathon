@@ -20,3 +20,21 @@
 .faq .card .card-content .card-title {
   line-height: normal;
 }
+
+
+/* Sponsors */
+.sponsors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sponsors .card-panel {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 20vw;
+  text-align: center;
+  min-height: 20vw;
+}
