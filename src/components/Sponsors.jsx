@@ -1,22 +1,26 @@
 import React from 'react';
 
+import ISD from './../img/isd.png';
+import Github from './../img/github.png';
+import Google from './../img/google.png';
+import Facebook from './../img/facebook.png';
 
 let sponsors = [
   {
     "title": "UCL ISD",
-    "imageLink": "https://pbs.twimg.com/profile_images/3375409673/54825068b089a0dd74570723e8c054aa.png"
+    "imageLink": ISD
   },
   {
     "title": "Github",
-    "imageLink": "https://www.pmg.com/content/uploads/2016/12/github-logo.png"
+    "imageLink": Github
   },
   {
     "title": "Google",
-    "imageLink": "http://diylogodesigns.com/blog/wp-content/uploads/2016/04/new-google-logo-png.png"
+    "imageLink": Google
   },
   {
     "title": "Facebook",
-    "imageLink": "http://www.freeiconspng.com/uploads/facebook-announces-clickable-hashtags--resolution-media-17.png"
+    "imageLink": Facebook
   },
 ]
 
