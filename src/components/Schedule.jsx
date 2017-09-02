@@ -74,9 +74,9 @@ export default class Schedule extends React.Component {
 
     render () {
       return (
-        <div className="container">
-          <h1>Schedule</h1>
-          <div className="schedule">
+        <div className="schedule">
+          <div className="container">
+            <h1>Schedule</h1>
             <h3>Saturday</h3>
             <table>
               <tbody>

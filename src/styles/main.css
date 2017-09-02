@@ -1,18 +1,16 @@
 body {
   font-family: 'Passion One', cursive;
-  background: #ECEEF3;
 }
 
 h1 {
   text-align: center;
-  color: #26a69a;
+  color: #0B3954;
 }
 
 p {
-  font-size: 16px;
-  /*font-family: 'Roboto', sans-serif;*/
+  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .container {
@@ -27,52 +25,51 @@ p {
 
 /* Header */
 .header {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../img/portico.jpg');
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./../img/portico.jpg');
   background-size: cover;
   text-align: center;
-  padding-top: 30vh;
-  padding-bottom: 30vh;
+  padding-top: 20vh;
+  padding-bottom: 15vh;
   color: white;
 }
 
 .header img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   margin: 0 auto;
-  opacity: .6;
+  opacity: .9;
 }
 
 .header h1 {
   margin-top: 20px;
   margin-bottom: 30px;
-  font-family: 'Roboto', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   color: white;
-}
-
-.header h2 {
-  opacity: .8;
 }
 
 
 /* Venue */
 .venue {
   color: white;
-  background: #232323;
+  /*background: #232323;*/
+  background: #0B3954;
 }
 
 .venue h1 {
-  color: #35E2DF;
+  color: white;
 }
 
 
 /* FAQ */
 .faq {
-  background: #263D42;
+  /*background: #263D42;*/
+  background: #0B3954;
 }
 
 .faq h1 {
-  color: #35E2DF;
+  color: white;
 }
 
 .faq .collapsible-header {
@@ -108,19 +105,26 @@ p {
 
 /* Schedule */
 .schedule {
-  color: #13de5a;
+  color: #263D42;
+  background: #CCDBDC;
 }
 
 .schedule h3 {
   padding: 1em;
   text-align: center;
-  border-bottom: 2px solid #0000ff;
-  color: #0000ff;
+  border-bottom: 2px solid #333;
+  color: #333;
   font-size: 24px;
+  margin-bottom: 0px;
+}
+
+.schedule td {
+  background: #F2F2F2;
+  padding-left: 20px;
 }
 
 .schedule tr {
-  border-bottom: 2px dotted #13de5a;
+  border-bottom: 2px solid #CCDBDC;
 }
 
 .schedule .time {
