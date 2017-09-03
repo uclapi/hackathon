@@ -1,5 +1,6 @@
 body {
   font-family: 'Passion One', cursive;
+  background: #CCDBDC;
 }
 
 h1 {
@@ -53,7 +54,6 @@ p {
 /* Venue */
 .venue {
   color: white;
-  /*background: #232323;*/
   background: #0B3954;
 }
 
@@ -98,7 +98,7 @@ p {
   margin: 30px;
   display: flex;
   flex-direction: column;
-  height: 15vw;
+  height: 10vw;
   width: auto;
 }
 
@@ -106,7 +106,6 @@ p {
 /* Schedule */
 .schedule {
   color: #263D42;
-  background: #CCDBDC;
 }
 
 .schedule h3 {

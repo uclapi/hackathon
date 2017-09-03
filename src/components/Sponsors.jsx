@@ -4,6 +4,8 @@ import ISD from './../img/isd.png';
 import Github from './../img/github.png';
 import Google from './../img/google.png';
 import Facebook from './../img/facebook.png';
+import Postman from './../img/postman.png';
+
 
 let sponsors = [
   {
@@ -21,6 +23,10 @@ let sponsors = [
   {
     "title": "Facebook",
     "imageLink": Facebook
+  },
+  {
+    "title": "Postman",
+    "imageLink": Postman
   },
 ]
 
