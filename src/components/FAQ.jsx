@@ -12,7 +12,7 @@ let questions = [
   },
   {
     question: "Are under-18s allowed?",
-    answer: "Sadly we're unable to allow under-18s, but keep following TechSoc on our social media pages, because we'll be running an event for young people in early 2017."
+    answer: <p>Sadly we're unable to allow under-18s, but keep following <a href='https://www.facebook.com/UCLTechSoc/' target='_blank'>TechSoc on our social media pages</a>, because we'll be running an event for young people in early 2017.</p>
   },
   {
     question: "How large should my group be?",
@@ -45,7 +45,11 @@ const Question = (q, key) => (
     <li key={key}>
       <div className="collapsible-header">{q.question}</div>
       <div className="collapsible-body">
-        <p>{q.answer}</p>
+      {
+        (typeof(q.answer) === 'string'
+        ? <p>{q.answer + "string"}</p>
+        : q.answer)
+      }
       </div>
     </li>
 )
