@@ -11,7 +11,7 @@ export default class Venue extends React.Component {
           <div className="container">
             <h1>The Venue</h1>
             <p>
-              The event will be held at University College London, in the gorgeous Wilkins Building. It's the big one with the columns and dome (the 'Portico', where this event gets its name from!). Our location is: <br />
+              The event will be held at University College London, in the gorgeous Wilkins Building. It's the big one with the columns and dome. Our location is: <br />
               <br />
               University College London <br />
               Gower Street <br />

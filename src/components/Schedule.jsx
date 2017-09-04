@@ -4,8 +4,8 @@ import React from 'react';
 let schedule = {
   'saturday': [
     {
-      'time': "07:00 - 09:00",
-      'title': "Registration",
+      'time': "09:00 - 10:00",
+      'title': "Registration + Breakfast",
       'description': "",
       'location': "Wilkins Marquee",
     },
@@ -16,7 +16,7 @@ let schedule = {
       'location': "Wilkins Marquee",
     },
     {
-      'time': "11:00 - 11:30",
+      'time': "11:00 - 01:00",
       'title': "Hacking begins + team formation",
       'description': "Form your teams",
       'location': "Wilkins Marquee",

@@ -6,6 +6,8 @@ import Venue from './Venue.jsx';
 import Schedule from './Schedule.jsx';
 import FAQ from './FAQ.jsx';
 import Sponsors from './Sponsors.jsx';
+import Apply from './Apply.jsx';
+
 
 export default class HomePage extends React.Component {
 
@@ -18,6 +20,7 @@ export default class HomePage extends React.Component {
           <Schedule />
           <FAQ />
           <Sponsors />
+          <Apply />
         </div>
       )
     }

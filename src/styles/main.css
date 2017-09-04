@@ -16,21 +16,17 @@ p {
 
 .container {
   padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.topPad {
-  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 
 /* Header */
 .header {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./../img/portico.jpg');
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./../img/portico.jpg');
   background-size: cover;
   text-align: center;
   padding-top: 20vh;
-  padding-bottom: 15vh;
+  padding-bottom: 10vh;
   color: white;
 }
 
@@ -38,16 +34,23 @@ p {
   height: 200px;
   width: 200px;
   margin: 0 auto;
-  opacity: .9;
+  opacity: .7;
 }
 
 .header h1 {
   margin-top: 20px;
   margin-bottom: 30px;
-  /*font-family: 'Roboto', sans-serif;*/
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   color: white;
+}
+
+.header h2 {
+  opacity: .8;
+}
+
+.header h5 {
+  color: #F57F17;
 }
 
 
@@ -136,4 +139,19 @@ p {
 
 .schedule i, .schedule p {
   font-size: 16px;
+}
+
+
+/* Apply */
+.apply {
+  background: #0B3954;
+}
+
+.apply h1 {
+  color: white;
+}
+
+.apply .btn {
+  display: block;
+  margin: 0 auto;
 }

@@ -12,7 +12,7 @@ let questions = [
   },
   {
     question: "Are under-18s allowed?",
-    answer: "Sadly we're unable to allow under-18s to attend Porticode, but keep following TechSoc on our social media pages, because we'll be running an event for young people in early 2017."
+    answer: "Sadly we're unable to allow under-18s, but keep following TechSoc on our social media pages, because we'll be running an event for young people in early 2017."
   },
   {
     question: "How large should my group be?",
@@ -32,11 +32,11 @@ let questions = [
   },
   {
     question: "Will I receive reimbursement for my travel?",
-    answer: "Unfortunately, we are unable to provide travel reimbursement for Porticode."
+    answer: "Unfortunately, we are unable to provide travel reimbursements."
   },
   {
     question: "Is there a code of conduct?",
-    answer: "For the safety and well-being of all attendees, sponsors, volunteers and staff, everyone present must follow the MLH Code of Conduct."
+    answer: "For the safety and well-being of all attendees, sponsors, volunteers and staff, everyone present must follow the Code of Conduct at https://hackcodeofconduct.org."
   }
 ];
 
