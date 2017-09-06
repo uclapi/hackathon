@@ -12,7 +12,11 @@ import requests
 
 
 def render_home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', {
+        'initial_data': {
+            'applied': "False"
+        }
+    })
 
 
 @csrf_protect
@@ -28,39 +32,23 @@ def process_login(request):
 
 def callback(request):
     try:
-        result = request.GET.get("result")
-    except KeyError:
-        return JsonResponse({
-            "error": "No result parameter passed."
-        })
-
-    if result == "allowed":
-        return allowed(request)
-    elif result == "denied":
-        return denied(request)
-    else:
-        return JsonResponse({
-            "ok": False,
-            "error": "Result was not allowed or denied."
-        })
-
-
-def allowed(request):
-    try:
         code = request.GET.get("code")
         client_id = request.GET.get("client_id")
         state = request.GET.get("state")
     except KeyError:
-        return JsonResponse({
-            "error": "Parameters missing from request."
+        return render(request, 'home.html', {
+            'initial_data': {
+                "error": "Parameters missing from request."
+            }
         })
 
     try:
         session_state = request.session["state"]
     except KeyError:
-        return JsonResponse({
-            "ok": False,
-            "error": "There is no session cookie set containing a state"
+        return render(request, 'home.html', {
+            'initial_data': {
+                "error": "There is no session cookie set containing a state"
+            }
         })
 
     url = os.environ.get("UCLAPI_URL") + "/oauth/token"
@@ -76,29 +64,33 @@ def allowed(request):
         token_data = r.json()
 
         if token_data["ok"] is not True:
-            return JsonResponse({
-                "ok": False,
-                "error": "An error occurred: " + token_data["error"]
+            return render(request, 'home.html', {
+                'initial_data': {
+                    "error": "An error occurred: " + token_data["error"]
+                }
             })
 
         if token_data["state"] != state:
-            return JsonResponse({
-                "ok": False,
-                "error": "The wrong state was returned"
+            return render(request, 'home.html', {
+                'initial_data': {
+                    "error": "The wrong state was returned"
+                }
             })
 
         if token_data["client_id"] != client_id:
-            return JsonResponse({
-                "ok": False,
-                "error": "The wrong client ID was returned"
+            return render(request, 'home.html', {
+                'initial_data': {
+                    "error": "The wrong client ID was returned"
+                }
             })
 
         token_code = token_data["token"]
         scope_data = json.loads(token_data["scope"])
     except KeyError:
-        return JsonResponse({
-            "ok": False,
-            "error": "Proper JSON was not returned by the token endpoint"
+        return render(request, 'home.html', {
+            'initial_data': {
+                "error": "Proper JSON was not returned by the token endpoint"
+            }
         })
 
     url = os.environ.get("UCLAPI_URL") + "/oauth/user/data"
@@ -109,34 +101,13 @@ def allowed(request):
 
     r = requests.get(url, params=params)
 
-    return JsonResponse(r.json())
+    return render(request, 'home.html', {
+        'initial_data': {
+            "user_data": str(r.json()),
+            "applied": "True"
+        }
+    })
 
 
-def denied(request):
-    return render(request, 'denied.html', {
-                  "state": request.GET.get("state", None)})
-
-
-def token_test(request):
-    if not os.environ.get("TOKEN_DEBUG_ENABLED"):
-        return JsonResponse({
-            "ok": False,
-            "error": "Token debugging must be enabled to use this endpoint."
-        })
-
-    try:
-        token = request.GET['token']
-    except KeyError:
-        return JsonResponse({
-            "ok": False,
-            "error": "A token must be provided to use this endpoint."
-        })
-
-    params = {
-        'token': token,
-        'client_secret': os.environ.get("UCLAPI_CLIENT_SECRET")
-    }
-
-    r = requests.get(url, params=params)
-
-    return JsonResponse(r.json())
+def generate_access_code():
+    pass

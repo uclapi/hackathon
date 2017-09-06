@@ -24,15 +24,6 @@ export default () => ({
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.(jpg|png|svg)$/, loader: 'url-loader' },
-      {
-        test: /\.csv$/,
-        loader: 'csv-loader',
-        options: {
-          dynamicTyping: true,
-          header: true,
-          skipEmptyLines: true
-        }
-      }
     ]
   },
   plugins: [HtmlWebpackPluginConfig, CopyWebpackPluginConfig]

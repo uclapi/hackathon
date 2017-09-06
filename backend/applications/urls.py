@@ -5,5 +5,4 @@ urlpatterns = [
     url(r'^$', views.render_home),
     url(r'login/process', views.process_login),
     url(r'callback', views.callback),
-    url(r'token/test', views.token_test)
 ]
