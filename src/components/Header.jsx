@@ -8,7 +8,6 @@ export default class Header extends React.Component {
 
   constructor (props) {
     super(props);
-    console.log(JSON.stringify(window.initialData));
     this.state = window.initialData;
   }
 
@@ -30,10 +29,10 @@ export default class Header extends React.Component {
       application = (
         <div>
           <h5 className="yellow-text">
-            { this.state.user_data.given_name } Thanks for applying, you Eventbrite code is:
+            Thanks { this.state.given_name },
+            now hurry and register <a target="_blank" href={ this.state.event_link }>here</a> using the code below:
           </h5>
-          <p>{ this.state.eventbrite_code }</p>
-          <p>Hurry and register <a target="_blank" href={ this.state.event_link }>here</a>.</p>
+          <p><b>{ this.state.eventbrite_code }</b></p>
         </div>
       )
     }

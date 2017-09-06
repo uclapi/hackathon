@@ -31,6 +31,13 @@ def process_login(request):
 
 
 def callback(request):
+    """
+    Handles the OAuth callback URL.
+    After authenticating user, it calls the generate_access_code method
+    to get an access code for the user.
+    Finally, it renders the homepage again but also passing the user's name
+    and access token
+    """
     try:
         code = request.GET.get("code")
         client_id = request.GET.get("client_id")
@@ -101,12 +108,26 @@ def callback(request):
 
     r = requests.get(url, params=params)
     user_data = r.json()
-    print(user_data)
+
+    if not user_data["ok"]:
+        return render(request, 'home.html', {
+            'initial_data': {
+                "error": "Error generating user data",
+            }
+        })
+
     eventbrite_code = generate_access_code(user_data)
+
+    if not eventbrite_code:
+        return render(request, 'home.html', {
+            'initial_data': {
+                "error": "Error generating code",
+            }
+        })
 
     return render(request, 'home.html', {
         'initial_data': {
-            "user_data": str(r.json()),
+            "given_name": user_data["given_name"],
             "applied": "True",
             "event_link": os.environ.get('EVENT_LINK'),
             "eventbrite_code": eventbrite_code
