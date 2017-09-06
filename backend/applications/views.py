@@ -100,10 +100,15 @@ def callback(request):
     }
 
     r = requests.get(url, params=params)
+    user_data = r.json()
+    print(user_data)
+    eventbrite_code = generate_access_code(user_data)
 
     return render(request, 'home.html', {
         'initial_data': {
             "user_data": str(r.json()),
-            "applied": "True"
+            "applied": "True",
+            "event_link": os.environ.get('EVENT_LINK'),
+            "eventbrite_code": eventbrite_code
         }
     })

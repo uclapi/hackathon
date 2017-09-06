@@ -1,6 +1,8 @@
 from binascii import hexlify
 from eventbrite import Eventbrite
 
+from .models import User
+
 import os
 import datetime
 
@@ -13,7 +15,13 @@ def generate_state():
     return client_secret
 
 
-def generate_access_code():
+def generate_access_code(user_data):
+    try:
+        user = User.objects.get(cn=user_data['cn'])
+        return user.code
+    except User.DoesNotExist:
+        user = User(cn=user_data['cn'])
+
     event_id = os.environ.get('EVENTBRITE_EVENTID')
     ticket_id = os.environ.get('EVENTBRITE_TICKETID')
 
@@ -30,4 +38,11 @@ def generate_access_code():
         'access_code.end_date': end_time
     })
 
-    return req['code'] if code in req else None
+    print(req)
+
+    if 'code' in req:
+        user.code = req['code']
+        user.save()
+        return user.code
+    else:
+        return None

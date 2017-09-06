@@ -33,7 +33,7 @@ export default class Header extends React.Component {
             { this.state.user_data.given_name } Thanks for applying, you Eventbrite code is:
           </h5>
           <p>{ this.state.eventbrite_code }</p>
-          <p>Hurry and register at { this.state.event_link }</p>
+          <p>Hurry and register <a target="_blank" href={ this.state.event_link }>here</a>.</p>
         </div>
       )
     }
