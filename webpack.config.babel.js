@@ -15,7 +15,7 @@ const CopyWebpackPluginConfig = new CopyWebpackPlugin([
 export default () => ({
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, './backend/applications/static/js'),
     filename: 'bundle.js'
   },
   module: {
