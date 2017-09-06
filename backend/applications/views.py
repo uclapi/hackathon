@@ -4,7 +4,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.views.decorators.csrf import csrf_protect
 import requests
 
-from .helpers import generate_state
+from .helpers import generate_state, generate_access_code
 
 import os
 import json
@@ -107,7 +107,3 @@ def callback(request):
             "applied": "True"
         }
     })
-
-
-def generate_access_code():
-    pass
