@@ -36,7 +36,7 @@ let questions = [
   },
   {
     question: "Is there a code of conduct?",
-    answer: "For the safety and well-being of all attendees, sponsors, volunteers and staff, everyone present must follow the Code of Conduct at https://hackcodeofconduct.org."
+    answer: <p>For the safety and well-being of all attendees, sponsors, volunteers and staff, everyone present must follow the Code of Conduct <a href='https://hackcodeofconduct.org' target='_blank'>here</a>.</p>
   }
 ];
 
