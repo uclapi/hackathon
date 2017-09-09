@@ -1,16 +1,14 @@
-from django.shortcuts import render, HttpResponse, redirect
-from django.http import JsonResponse
-from django.core.serializers.json import DjangoJSONEncoder
-from django.views.decorators.csrf import csrf_protect
+from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_protect, ensure_csrf_cookie
 import requests
 
 from .helpers import generate_state, generate_access_code
 
 import os
 import json
-import requests
 
 
+@ensure_csrf_cookie
 def render_home(request):
     return render(request, 'home.html', {
         'initial_data': {
@@ -24,7 +22,7 @@ def process_login(request):
     state = generate_state()
     request.session["state"] = state
     auth_url = os.environ.get("UCLAPI_URL") + "/oauth/authorise"
-    auth_url += "?client_id=" + os.environ.get("UCLAPI_CLIENT_ID")
+    auth_url += "?client_id=" + os.environ["UCLAPI_CLIENT_ID"]
     auth_url += "&state=" + state
 
     return redirect(auth_url)
