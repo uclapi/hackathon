@@ -7,20 +7,18 @@ export default class Description extends React.Component {
       return (
         <div className="description">
           <div className="container">
-            <h1>About The Hackathon</h1>
+            <h1>What is UCL API Hackathon?</h1>
             <p>
-              This is a 24-hour event run at UCL, where you'll be given all the
-              workshops, tools, mentors and snacks you'll need to create new and
-              interesting ideas. We have created an API around UCL's digital
-              services that you can use to create applications which make life
-              better for everyone at UCL. For examples of the type of projects
-              you can create or to find out more about the API, check out <a target="_blank" href="https://uclapi.com">uclapi.com</a>.
+              UCL API Hackathon is a 24-hour event held at UCL, where the aim is for you to build cool, useful tools using the student-developed UCL API.
             </p>
             <p>
-              These kind of events are also known as hackathons, but don't worry! This isn't about hacking into banks or shops, but rather about creating something you think is interesting, life changing, or just plain ridiculous.
+              The API has been built to increase access and usability of UCL services, enabling the development of an ecosystem of student-made tools and applications. Students can now build tools which they themselves will use and maintain!
             </p>
             <p>
-              Once the 24 hours are over, you'll be given the opportunity to show off what you've done in a 'science fair' style setting, and also the chance to demonstrate your creation in front of other attendees. Also, during the weekend, we'll be holding mini-events and games, to give you a break from your projects.
+              If you want to use the open API to build tools which will help yourself and other students, then this event is definitely for you! Or, if you want to learn about APIs, the technologies used, and learn about other new tech, then come along and attend our workshops and mini-events.
+            </p>
+            <p>
+              You can show off what you built or learned by presenting to the rest of the awesome attendees, and our fantastic judges.
             </p>
           </div>
         </div>
