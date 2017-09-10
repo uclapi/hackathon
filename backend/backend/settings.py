@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'applications'
+    'applications',
+    'opbeat.contrib.django',
 ]
 
 MIDDLEWARE = [
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -125,3 +127,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+# Opbeat
+OPBEAT = {
+    'ORGANIZATION_ID': os.environ["OPBEAT_ORGANIZATION_ID"],
+    'APP_ID': os.environ["OPBEAT_APP_ID"],
+    'SECRET_TOKEN': os.environ["OPBEAT_SECRET_TOKEN"],
+}
