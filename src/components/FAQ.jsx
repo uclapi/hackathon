@@ -4,40 +4,40 @@ import React from 'react';
 let questions = [
   {
     question: "What is a hackathon?",
-    answer: "A hackathon is a day-long event where participants work together in teams to create interesting projects, and learn new things in the process."
+    answer: "A hackathon is an event where people who attend work together, or alone, to build cool projects and learn new things!"
   },
   {
     question: "Who can attend?",
-    answer: "Anyone currently studying at a university at undergraduate, postgradurate level, or a recent (less than one year since) graduate are all welcome to join us. You'll need to bring your student ID with you so we can check this."
+    answer: "Anybody who is a current UCL student, and is over 18, is able to attend."
   },
   {
     question: "Are under-18s allowed?",
-    answer: <p>Sadly we're unable to allow under-18s, but keep following <a href='https://www.facebook.com/UCLTechSoc/' target='_blank'>TechSoc on our social media pages</a>, because we'll be running an event for young people in early 2017.</p>
+    answer: "Unfortunately, if you are under 18 then you won’t be able to attend."
   },
   {
     question: "How large should my group be?",
-    answer: "We recommend teams of up to four for the best experience, as we've found from experience that this is a good size for collaborating. Your teams can be of any size though! Keep in mind that to be eligible for awards, your team can only have a maximum of four people."
+    answer: "Teams of up to four are usually recommended at this type of event, but you can have as many, or few, people working on a project as you want!"
   },
   {
     question: "Can I stay the night?",
-    answer: "Definitely! We'll be providing sleeping spaces. You may want to bring some stuff to keep you comfortable though."
+    answer: "Yes! We will have sleeping spaces set up, but you may want to bring some stuff to stay super comfy and warm."
   },
   {
     question: "What should I bring?",
-    answer: "Definitely bring a laptop if you have one, as well as chargers for your gadgets, comfy clothes, toiletries, and a sleeping bag or blanket + pillow, as well as your ticket and student ID."
+    answer: "Bring your laptop, and charging cable, for definite. If you need anything else for your setup, such as a keyboard/mouse then of course bring that too. Any other gadgets, toiletries, sleeping items, should be brought as well. Please also bring your UCL Student ID."
   },
   {
     question: "Can I start my project early?",
-    answer: "Sure! However, to keep things fair, any projects started beforehand won't be valid for any awards or prizes."
+    answer: "Go for it! If you have something you want to work a bit more on, add some features/documentation, or just show it off, then you are welcome to!"
   },
   {
     question: "Will I receive reimbursement for my travel?",
-    answer: "Unfortunately, we are unable to provide travel reimbursements."
+    answer: "Unfortunately, we won’t be able to provide travel reimbursements."
   },
   {
     question: "Is there a code of conduct?",
-    answer: <p>For the safety and well-being of all attendees, sponsors, volunteers and staff, everyone present must follow the Code of Conduct <a href='https://hackcodeofconduct.org' target='_blank'>here</a>.</p>
-  }
+    answer: <p>For the safety and well-being of all attendees, sponsors, volunteers and staff, everyone present must follow the Code of Conduct at <a href='https://hackcodeofconduct.org' target='_blank'>hackcodeofconduct.org</a>.</p>
+  },
 ];
 
 
