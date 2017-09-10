@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ['DJANGO_DEBUG'] == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hackathon.uclapi.com']
 
 
 # Application definition
@@ -37,11 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'applications'
+    'applications',
+    'opbeat.contrib.django',
 ]
 
 MIDDLEWARE = [
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,6 +85,11 @@ DATABASES = {
     }
 }
 
+if not DEBUG:
+    DATABASES['default'] = dj_database_url.parse(
+        os.environ["DATABASE_URL"]
+    )
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -119,3 +128,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
+
+# Opbeat
+OPBEAT = {
+    'ORGANIZATION_ID': os.environ["OPBEAT_ORGANIZATION_ID"],
+    'APP_ID': os.environ["OPBEAT_APP_ID"],
+    'SECRET_TOKEN': os.environ["OPBEAT_SECRET_TOKEN"],
+}
