@@ -11,14 +11,38 @@ export default class Venue extends React.Component {
           <div className="container">
             <h1>The Venue</h1>
             <p>
-              The event will be held at University College London, in the gorgeous Wilkins Building. It's the big one with the columns and dome. Our location is: <br />
+              The event will be held at UCL (University College London), in the Wilkins Building which is the building in every picture ever of UCL.<br />
               <br />
               University College London <br />
               Gower Street <br />
               London <br />
               WC1E 6BT <br />
+            </p>
+            <p>
+              How to get here?
+            </p>
+            <p>
+              Tube:
+              <br/>
+              The closest tube stations are Euston Square (Circle, Hammersmith & City, Metropolitan Lines), Warren Street (Victoria, Northern Lines), Euston (Victoria, Northern Lines, National Rail), and Russell Square (Piccadilly Line).
+            </p>
+            <p>
+              Bus:
               <br />
-              The closest tube stations are Euston Square (Circle, Hammersmith & City, Metropolitan Lines), Warren Street (Victoria, Northern Lines), Euston (Victoria, Northern Lines, National Rail), and Russell Square (Piccadilly Line). There's also a bus stop just outside the entrance served by the 14, 24, 29, 73, 134, and 390 buses.
+              There’s a bus stop just outside the entrance served by the 14, 24, 29, 73, 134, and 390 buses.
+            </p>
+            <p>
+              Car:
+              <br />
+              There is strictly no parking at the venue, so you would have to be dropped off nearby or find your own parking spot.
+            </p>
+            <p>
+              Train:
+              <br />
+              Euston Station is under a 10 minute walk away.
+            </p>
+            <p>
+              We will put signs up around the venue to ensure you get to the right place, and there will be volunteers around campus to help out if you get lost!
             </p>
 
             <div className="video-container halign">
