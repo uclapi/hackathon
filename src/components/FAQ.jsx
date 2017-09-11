@@ -47,7 +47,7 @@ const Question = (q, key) => (
       <div className="collapsible-body">
       {
         (typeof(q.answer) === 'string'
-        ? <p>{q.answer + "string"}</p>
+        ? <p>{q.answer}</p>
         : q.answer)
       }
       </div>
