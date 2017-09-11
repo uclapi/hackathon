@@ -1,4 +1,13 @@
 import path from 'path';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+
+
+const CopyWebpackPluginConfig = new CopyWebpackPlugin([
+  {
+    from: './src/img/favicon.ico',
+    to: './../'
+  },
+])
 
 export default () => ({
   entry: './src/index.js',
@@ -14,4 +23,5 @@ export default () => ({
       { test: /\.(jpg|png|svg)$/, loader: 'url-loader' },
     ],
   },
+  plugins: [CopyWebpackPluginConfig]
 });

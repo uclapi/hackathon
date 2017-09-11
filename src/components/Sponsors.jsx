@@ -40,8 +40,8 @@ let partners = [
 
 
 const Sponsor = (s, key) => (
-  <a href={s.link} target="_blank">
-    <img key={key} src={s.imageLink} />
+  <a href={s.link} target="_blank" key={key}>
+    <img src={s.imageLink} />
   </a>
 )
 
