@@ -3,6 +3,7 @@ chardet==3.0.4
 dj-database-url==0.4.2
 Django==1.11.5
 django-dotenv==1.4.1
+django-webpack-loader==0.5.0
 eventbrite==3.3.3
 gunicorn==19.7.1
 idna==2.6

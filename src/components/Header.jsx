@@ -8,7 +8,22 @@ export default class Header extends React.Component {
 
   constructor (props) {
     super(props);
-    this.state = window.initialData;
+
+    if (sessionStorage.getItem('eventbrite_code')) {
+      this.state = {
+        'applied': "True",
+        'event_link': window.initialData.event_link,
+        'eventbrite_code': sessionStorage.getItem('eventbrite_code'),
+        'given_name': sessionStorage.getItem('given_name'),
+      }
+    }
+    else {
+      if (window.initialData.eventbrite_code) {
+        sessionStorage.setItem('eventbrite_code', window.initialData.eventbrite_code);
+        sessionStorage.setItem('given_name', window.initialData.given_name);
+      }
+      this.state = window.initialData;
+    }
   }
 
   render () {

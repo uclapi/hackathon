@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'applications',
     'opbeat.contrib.django',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -135,4 +136,18 @@ OPBEAT = {
     'ORGANIZATION_ID': os.environ["OPBEAT_ORGANIZATION_ID"],
     'APP_ID': os.environ["OPBEAT_APP_ID"],
     'SECRET_TOKEN': os.environ["OPBEAT_SECRET_TOKEN"],
+}
+
+
+# django-webpack-plugin
+# Using it for cache busting
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': False,
+        'BUNDLE_DIR_NAME': '/js/', # must end with slash
+        'STATS_FILE': os.path.join(BASE_DIR, './../webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': ['.+\.hot-update.js', '.+\.map']
+    }
 }

@@ -29,11 +29,12 @@
     "webpack-dev-server": "^2.4.5"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "file-loader": "^0.11.2",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.8",
-    "copy-webpack-plugin": "^4.0.1"
+    "webpack-bundle-tracker": "^0.2.0"
   },
   "engines": {
     "node": "8.4.x"
