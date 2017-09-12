@@ -50,6 +50,16 @@ p {
 }
 
 
+/* Description */
+.info {
+  text-align: center;
+}
+
+.info p {
+  text-align: left;
+}
+
+
 /* Venue */
 .venue {
   color: white;

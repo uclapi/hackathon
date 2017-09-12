@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-export default class Description extends React.Component {
+export default class Info extends React.Component {
 
     render () {
       return (
-        <div className="description">
+        <div className="info">
           <div className="container">
             <h1>What is UCL API?</h1>
             <p>
@@ -17,6 +17,7 @@ export default class Description extends React.Component {
             <p>
               If you want to help out, or have spotted an error, please make an issue or PR on the GitHub repository at <a href="https://github.com/uclapi" target="_blank">github.com/uclapi</a> !!
             </p>
+            <a className="btn" href="https://uclapi.com/dashboard/">Get Started with UCL API</a>
           </div>
         </div>
       )
