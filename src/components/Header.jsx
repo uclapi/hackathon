@@ -32,10 +32,10 @@ export default class Header extends React.Component {
     if (this.state.error) {
       application = (
         <div>
-          <h5 className="yellow-text">There was an error authenticating you, please apply again!</h5>
+          <h5 className="yellow-text">There was an error authenticating you, please register again!</h5>
           <form action="/applications/login/process" method="post">
             <DjangoCSRFToken />
-            <button className="btn" type="submit">Apply Now</button>
+            <button className="btn" type="submit">Register Now</button>
           </form>
         </div>
       )
@@ -54,10 +54,9 @@ export default class Header extends React.Component {
     else {
       application = (
         <div>
-          <h5 className="yellow-text">Applications Close 15th September!</h5>
           <form action="/applications/login/process" method="post">
             <DjangoCSRFToken />
-            <button className="btn" type="submit">Apply Now</button>
+            <button className="btn" type="submit">Register Now</button>
           </form>
         </div>
       );

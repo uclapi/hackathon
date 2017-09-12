@@ -52,8 +52,8 @@ export default class Venue extends React.Component {
                 style={{border: 0}}
                 allowFullScreen />
             </div>
-            <p>Here's a map for your convenience! If you get lost or don't know where to go, ask a volunteer or a mentor!</p>
-            <img src={uclMap} className="responsive-img" />
+            {/* <p>Here's a map for your convenience! If you get lost or don't know where to go, ask a volunteer or a mentor!</p>
+            <img src={uclMap} className="responsive-img" /> */}
           </div>
         </div>
       )
