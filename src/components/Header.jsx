@@ -58,6 +58,10 @@ export default class Header extends React.Component {
             <DjangoCSRFToken />
             <button className="btn" type="submit">Register Now</button>
           </form>
+          <br />
+          <h6>
+            First year and don't yet have a UCL user id and password? Complete pre enrolment on <a href="https://www.ucl.ac.uk/portico">Portico</a>
+          </h6>
         </div>
       );
     }
