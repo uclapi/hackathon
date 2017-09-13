@@ -15,6 +15,10 @@ let questions = [
     answer: "Teams of up to four are usually recommended at this type of event, but you can have as many, or few, people working on a project as you want!"
   },
   {
+    question: "What if I don't have a team?",
+    answer: "No need to worry! Part of the fun of a hackathon is meeting new people. We will have time at the beginning of the event for everyone to meet and form teams."
+  },
+  {
     question: "Can I stay the night?",
     answer: "Yes! Most people will be staying overnight. We will have sleeping spaces set up, but you may want to bring some stuff to stay super comfy and warm."
   },
@@ -29,6 +33,10 @@ let questions = [
   {
     question: "Is there a code of conduct?",
     answer: <p>For the safety and well-being of all attendees, sponsors, volunteers and staff, everyone present must follow the <a href='https://hackcodeofconduct.org/507-ucl_api_hackathon' target='_blank'>Code of Conduct</a>.</p>
+  },
+  {
+    question: "What if I have another question?",
+    answer: <p>Tweet @ us at <a href="https://twitter.com/uclapi">@uclapi</a> or email us: <a href="mailto:isd.apiteam@ucl.ac.uk">isd.apiteam@ucl.ac.uk</a>.</p>
   },
 ];
 
