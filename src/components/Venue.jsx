@@ -10,15 +10,10 @@ export default class Venue extends React.Component {
         <div className="venue">
           <div className="container">
             <h1>The Venue</h1>
-            <p>
-              The event will be held at UCL (University College London), in the Wilkins Building which is the building in every picture ever of UCL.<br />
-              <br />
-              University College London <br />
-              Gower Street <br />
-              London <br />
-              WC1E 6BT <br />
+            <p className="center">
+              The event will be held at UCL, in the Wilkins Building which is the building in every picture ever of UCL.<br />
             </p>
-            <p>
+            {/* <p>
               How to get here?
             </p>
             <p>
@@ -51,7 +46,7 @@ export default class Venue extends React.Component {
                 frameBorder="0"
                 style={{border: 0}}
                 allowFullScreen />
-            </div>
+            </div> */}
             {/* <p>Here's a map for your convenience! If you get lost or don't know where to go, ask a volunteer or a mentor!</p>
             <img src={uclMap} className="responsive-img" /> */}
           </div>

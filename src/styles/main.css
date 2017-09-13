@@ -49,6 +49,11 @@ p {
   opacity: .8;
 }
 
+.header h6 {
+  font-weight: 200;
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 /* Description */
 .info {
