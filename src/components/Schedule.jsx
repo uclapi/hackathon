@@ -95,6 +95,24 @@ let schedule = {
       'description': "",
       'location': "Wilkins Marquee",
     },
+    {
+      'time': "13:00 - 15:00",
+      'title': "Presentations",
+      'description': "",
+      'location': "Wilkins Gustave Tuck LT",
+    },
+    {
+      'time': "15:30 - 16:00",
+      'title': "Closing words",
+      'description': "",
+      'location': "Wilkins Gustave Tuck LT",
+    },
+    {
+      'time': "16:00",
+      'title': "UCL API Hackathon ends",
+      'description': "",
+      'location': "Wilkins Gustave Tuck LT",
+    },
   ]
 }
 
@@ -106,7 +124,7 @@ const tableRow = (e, key) => (
       </td>
       <td>
         <p className="time">{e.time}</p>
-        <p><i className="material-icons">location_on</i> {e.location}</p>
+        {/* <p><i className="material-icons">location_on</i> {e.location}</p> */}
       </td>
     </tr>
 )
