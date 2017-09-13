@@ -5,6 +5,7 @@ import Github from './../img/github.png';
 import Travis from './../img/travis.png';
 import Postman from './../img/postman.png';
 import Slack from './../img/slack.png';
+import Docker from './../img/docker.png';
 
 
 let sponsors = [
@@ -35,6 +36,11 @@ let partners = [
     "title": "Slack",
     "imageLink": Slack,
     "link": "https://slack.com/"
+  },
+  {
+    "title": "Docker",
+    "imageLink": Docker,
+    "link": "https://docker.io/"
   },
 ]
 
