@@ -6,6 +6,7 @@ import Travis from './../img/travis.png';
 import Postman from './../img/postman.png';
 import Slack from './../img/slack.png';
 import Docker from './../img/docker.png';
+import Glitch from './../img/glitch.png';
 
 
 let sponsors = [
@@ -26,6 +27,11 @@ let partners = [
     "title": "Travis",
     "imageLink": Travis,
     "link": "https://travis-ci.org/"
+  },
+  {
+    "title": "Glitch",
+    "imageLink": Glitch,
+    "link": "https://glitch.com/"
   },
   {
     "title": "Postman",
