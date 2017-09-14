@@ -31,7 +31,6 @@ export default class Header extends React.Component {
           <h5 className="yellow-text">
             Thanks { this.state.given_name }! Complete registration <a target="_blank" href={ this.state.event_link + "?discount=" +  this.state.eventbrite_code}>on Eventbrite</a>
           </h5>
-          <p><b>{ this.state.eventbrite_code }</b></p>
         </div>
       )
     }
