@@ -9,7 +9,7 @@ export default class Description extends React.Component {
           <div className="container">
             <h1>What is UCL API Hackathon?</h1>
             <p>
-              UCL API Hackathon is a 24-hour event held at UCL. It's an opportunity for yout to spend a weekend building on top of the student-developed <a href="https://medium.freecodecamp.org/what-is-an-api-in-english-please-b880a3214a82" target="_blank">API</a> for UCL.
+              UCL API Hackathon is a 24-hour event held at UCL. It's an opportunity for you to spend a weekend building on top of the student-developed <a href="https://medium.freecodecamp.org/what-is-an-api-in-english-please-b880a3214a82" target="_blank">API</a> for UCL.
             </p>
             <p>
               The API has been built to increase access and usability of UCL services, enabling the development of an ecosystem of student-made tools and applications. Students can now build tools which they themselves will use and maintain!
