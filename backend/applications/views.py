@@ -6,7 +6,6 @@ from .helpers import generate_state, generate_access_code
 
 import os
 import json
-import urllib
 
 
 @ensure_csrf_cookie
