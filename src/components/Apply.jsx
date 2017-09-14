@@ -7,15 +7,7 @@ export default class Apply extends React.Component {
 
   constructor (props) {
     super(props);
-
-    if (sessionStorage.getItem('eventbrite_code')) {
-      this.state = {
-        'applied': "True",
-      }
-    }
-    else {
-      this.state = window.initialData;
-    }
+    this.state = window.initialData;
   }
 
   render () {
