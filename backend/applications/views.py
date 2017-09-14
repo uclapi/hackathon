@@ -10,6 +10,16 @@ import json
 
 @ensure_csrf_cookie
 def render_home(request):
+    if request.session.get("eventbrite_code", False):
+        return render(request, "home.html", {
+            "initial_data": {
+                "given_name": request.session.get("given_name"),
+                "applied": "True",
+                "event_link": os.environ["EVENT_LINK"],
+                "eventbrite_code": request.session.get("eventbrite_code")
+            }
+        })
+
     return render(request, "home.html", {
         "initial_data": {
             "applied": "False",
@@ -124,11 +134,6 @@ def callback(request):
             }
         })
 
-    return render(request, "home.html", {
-        "initial_data": {
-            "given_name": user_data["given_name"],
-            "applied": "True",
-            "event_link": os.environ["EVENT_LINK"],
-            "eventbrite_code": eventbrite_code
-        }
-    })
+    request.session["given_name"] = user_data["given_name"]
+    request.session["eventbrite_code"] = eventbrite_code
+    return redirect("/")
