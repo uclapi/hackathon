@@ -8,7 +8,7 @@ let questions = [
   },
   {
     question: "Who can attend?",
-    answer: "If you're a current UCL student, and you're 18, you can attend!"
+    answer: "If you're a current UCL student, and you're over 18, you can attend!"
   },
   {
     question: "How large should my team be?",
