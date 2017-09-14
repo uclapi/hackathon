@@ -18,7 +18,7 @@ export default class Description extends React.Component {
               If you want to use the open API to build tools which will help yourself and other students, then this event is definitely for you! Or, if you want to learn about APIs, the technologies used, and learn about other new tech, then come along and attend our workshops and mini-events.
             </p>
             <p>
-              At the enf of the event, you can show off what you've built and learned by presenting to everyone who attended at the end.
+              At the end of the event, you can show off what you've built and learned by presenting to everyone who attended at the end.
             </p>
           </div>
         </div>
