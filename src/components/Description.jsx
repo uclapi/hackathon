@@ -7,7 +7,7 @@ export default class Description extends React.Component {
       return (
         <div className="description">
           <div className="container">
-            <h1>What is UCL API Hackathon?</h1>
+            <h1>What is <a href="https://uclapi.com">UCL API</a> Hackathon?</h1>
             <p>
               UCL API Hackathon is a 24-hour event held at UCL. It's an opportunity for you to spend a weekend building on top of the student-developed <a href="https://medium.freecodecamp.org/what-is-an-api-in-english-please-b880a3214a82" target="_blank">API</a> for UCL.
             </p>
