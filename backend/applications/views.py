@@ -136,4 +136,7 @@ def callback(request):
 
     request.session["given_name"] = user_data["given_name"]
     request.session["eventbrite_code"] = eventbrite_code
-    return redirect("/")
+    return redirect("{}?discount={}".format(
+        os.environ["EVENT_LINK"],
+        eventbrite_code,
+    ))
