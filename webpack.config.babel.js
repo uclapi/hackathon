@@ -8,6 +8,10 @@ const CopyWebpackPluginConfig = new CopyWebpackPlugin([
     from: './src/img/favicon.ico',
     to: './../'
   },
+  {
+    from: './src/img/social_card.png',
+    to: './../'
+  },
 ])
 
 export default () => ({
