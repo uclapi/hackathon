@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect, ensure_csrf_cookie
 import requests
 
-from .helpers import generate_state, generate_access_code
+from .helpers import generate_state, generate_access_code, count_referrals
 
 import os
 import json
@@ -10,15 +10,18 @@ import json
 
 @ensure_csrf_cookie
 def render_home(request):
-    if request.session.get("eventbrite_code", False):
+    if "eventbrite_code" in request.session:
         return render(request, "home.html", {
             "initial_data": {
-                "given_name": request.session.get("given_name"),
+                "given_name": request.session["given_name"],
                 "applied": "True",
                 "event_link": os.environ["EVENT_LINK"],
-                "eventbrite_code": request.session.get("eventbrite_code")
+                "eventbrite_code": request.session["eventbrite_code"]
             }
         })
+
+    if "ref" in request.GET:
+        request.session["ref"] = request.GET["ref"]
 
     return render(request, "home.html", {
         "initial_data": {
@@ -125,7 +128,7 @@ def callback(request):
             }
         })
 
-    eventbrite_code = generate_access_code(user_data)
+    eventbrite_code = generate_access_code(request, user_data)
 
     if not eventbrite_code:
         return render(request, "home.html", {
@@ -136,6 +139,8 @@ def callback(request):
 
     request.session["given_name"] = user_data["given_name"]
     request.session["eventbrite_code"] = eventbrite_code
+    request.session["cn"] = user_data["cn"]
+
     return redirect("{}?discount={}".format(
         os.environ["EVENT_LINK"],
         eventbrite_code,
@@ -143,4 +148,15 @@ def callback(request):
 
 
 def refer(request):
-    return render(request, "refer.html")
+    # if user's not logged in
+    if "cn" not in request.session:
+        return redirect("/")
+
+    cn = request.session["cn"]
+    referrals = count_referrals(cn)
+
+    return render(request, "refer.html", {
+        "initial_data": {
+            "referrals": referrals
+        }
+    })
