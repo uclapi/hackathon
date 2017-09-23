@@ -15,7 +15,10 @@ const CopyWebpackPluginConfig = new CopyWebpackPlugin([
 ])
 
 export default () => ({
-  entry: './src/index.js',
+  entry: {
+    home: './src/pages/home.jsx',
+    refer: './src/pages/refer.jsx',
+  },
   output: {
     path: path.join(__dirname, './backend/applications/static/js'),
     filename: '[name]-[hash].js',

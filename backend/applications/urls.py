@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.render_home),
+    url(r'ref', views.refer),
     url(r'login/process', views.process_login),
     url(r'callback', views.callback),
 ]

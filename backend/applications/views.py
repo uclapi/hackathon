@@ -140,3 +140,7 @@ def callback(request):
         os.environ["EVENT_LINK"],
         eventbrite_code,
     ))
+
+
+def refer(request):
+    return render(request, "refer.html")
