@@ -101,19 +101,23 @@ p {
 
 
 /* Sponsors */
-.sponsors {
+.sponsors, .partners {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.sponsors img {
+.sponsors img, .partners img {
   margin: 30px;
   display: flex;
   flex-direction: column;
   height: 10vw;
   width: auto;
+}
+
+.sponsors img {
+  height: 15vw;
 }
 
 
