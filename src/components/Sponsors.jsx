@@ -67,7 +67,7 @@ export default class Sponsors extends React.Component {
             {sponsors.map((s, i) => Sponsor(s, i))}
           </div>
           <h1>Partners</h1>
-          <div className="sponsors">
+          <div className="partners">
             {partners.map((s, i) => Sponsor(s, i))}
           </div>
         </div>
