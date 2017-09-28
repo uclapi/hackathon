@@ -4,6 +4,7 @@ import GitHubForkRibbon from 'react-github-fork-ribbon';
 
 import Header from './Header.jsx';
 import Description from './Description.jsx';
+import APIs from './APIs.jsx';
 import Venue from './Venue.jsx';
 import Schedule from './Schedule.jsx';
 import FAQ from './FAQ.jsx';
@@ -26,6 +27,7 @@ export default class HomePage extends React.Component {
           </GitHubForkRibbon>
           <Header />
           <Description />
+          <APIs />
           <Venue />
           <Schedule />
           <FAQ />

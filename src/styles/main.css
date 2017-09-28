@@ -57,7 +57,13 @@ p {
 
 /* Description */
 .info {
+  background: #0B3954;
   text-align: center;
+  color: #CCDBDC;
+}
+
+.info h1 {
+  color: white;
 }
 
 .info p {
@@ -66,37 +72,54 @@ p {
 
 
 /* Venue */
-.venue {
-  color: white;
-  background: #0B3954;
-}
-
-.venue h1 {
-  color: white;
-}
 
 
 /* FAQ */
-.faq {
-  /*background: #263D42;*/
-  background: #0B3954;
-}
-
 .faq h1 {
-  color: white;
+  color: #0B3954;
 }
 
 .faq .collapsible-header {
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 20px;
-  background: #ECEEF3;
+  /*background: #ECEEF3;*/
+  background: white;
   color: #263D42;
 }
 
 .faq .collapsible-body {
   color: #263D42;
-  background: #ECEEF3;
+  /*background: #ECEEF3;*/
+  background: white;
+}
+
+/* APIs */
+.apis {
+  background: #0B3954;
+}
+
+.apis h1 {
+  color: white;
+}
+
+.apiCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.apiCards .card {
+  padding: 30px;
+  margin: 10px;
+  min-width: 200px;
+  width: 25%;
+}
+
+.apiCards .card .card-title {
+  text-align: center;
+  display: block;
+  color: white;
 }
 
 
@@ -123,14 +146,21 @@ p {
 
 /* Schedule */
 .schedule {
+  background: #0B3954;
   color: #263D42;
+}
+
+.schedule h1 {
+  color: white;
 }
 
 .schedule h3 {
   padding: 1em;
   text-align: center;
-  border-bottom: 2px solid #333;
-  color: #333;
+  /*border-bottom: 2px solid #333;*/
+  /*color: #333;*/
+  color: cyan;
+  border-bottom: 2px solid cyan;
   font-size: 24px;
   margin-bottom: 0px;
 }
