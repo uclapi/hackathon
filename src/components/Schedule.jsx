@@ -5,63 +5,105 @@ let schedule = {
   'saturday': [
     {
       'time': "09:00 - 10:00",
-      'title': "Registration + Breakfast",
+      'title': "Registration Opens & Breakfast",
       'description': "",
-      'location': "Wilkins Marquee",
+      'location': "Outside Wilkins Gustave Tuck LT",
     },
     {
       'time': "10:00 - 11:00",
-      'title': "Opening Ceremony",
+      'title': "Opening presentation",
       'description': "",
-      'location': "Wilkins Marquee",
+      'location': "Wilkins Gustave Tuck Lecture Theatre",
     },
     {
-      'time': "11:00 - 13:00",
-      'title': "Hacking begins + team formation",
+      'time': "11:00 - 11:30",
+      'title': "Hacking begins + team building",
       'description': "Form your teams",
-      'location': "Wilkins Marquee",
+      'location': "Jeremy Bentham Room",
+    },
+    {
+      'time': "12:00 - 12:30",
+      'title': "Sticker exchange - Bring yo stickers",
+      'description': "",
+      'location': "Jeremy Bentham Room",
+    },
+    {
+      'time': "12:00 - 13:00",
+      'title': "Github Workshop",
+      'description': "Form your teams",
+      'location': "Chadwick G08",
     },
     {
       'time': "13:00 - 14:00",
       'title': "Lunch",
       'description': "",
-      'location': "Rooftop Garden",
+      'location': "Jeremy Bentham Room",
     },
     {
       'time': "14:00 - 15:00",
       'title': "Docker Workshop",
       'description': "",
-      'location': "Rooftop Garden",
+      'location': "Chadwick G07",
     },
     {
       'time': "15:00 - 16:00",
       'title': "UCL API Workshop",
       'description': "",
-      'location': "Rooftop Garden",
+      'location': "Chadwick G08",
     },
     {
       'time': "16:00 - 17:00",
       'title': "Vue Workshop",
       'description': "",
-      'location': "Rooftop Garden",
+      'location': "Chadwick G07",
+    },
+    {
+      'time': "16:00 - 17:00",
+      'title': "Vue Workshop",
+      'description': "",
+      'location': "Chadwick G07",
     },
     {
       'time': "17:00 - 18:00",
       'title': "GraphQL Workshop",
       'description': "",
-      'location': "Rooftop Garden",
+      'location': "Chadwick G08",
     },
     {
       'time': "18:00 - 19:00",
-      'title': "Slack Bot Workshop",
+      'title': "Developer Experience Workshop",
       'description': "",
-      'location': "Rooftop Garden",
+      'location': "Chadwick G07",
     },
     {
-      'time': "19:00 - 21:00",
+      'time': "19:00 - 20:00",
       'title': "Dinner",
       'description': "",
-      'location': "Wilkins Marquee",
+      'location': "Jeremy Bentham Room",
+    },
+    {
+      'time': "20:00 - 21:00",
+      'title': "Horrible UX minigame",
+      'description': "",
+      'location': "Chadwick G08",
+    },
+    {
+      'time': "21:00 - 22:00",
+      'title': "Slack bot Workshop",
+      'description': "",
+      'location': "Chadwick G07",
+    },
+    {
+      'time': "22:00 - 22:30",
+      'title': "Sleeping Rooms Open",
+      'description': "",
+      'location': "Wilkins Garden Room (Female), Haldane room (Male)",
+    },
+    {
+      'time': "23:00 - 23:45",
+      'title': "Code in the Dark",
+      'description': "",
+      'location': "Chadwick G08",
     },
   ],
   "sunday": [
@@ -69,47 +111,29 @@ let schedule = {
       'time': "00:00 - 01:00",
       'title': "Midnight Meal",
       'description': "",
-      'location': "Wilkins Marquee",
+      'location': "Jeremy Bentham Room",
     },
     {
       'time': "08:00 - 09:00",
       'title': "Breakfast",
       'description': "",
-      'location': "Wilkins Marquee",
+      'location': "Jeremy Bentham Room",
     },
     {
-      'time': "10:00",
+      'time': "11:30 - 12:00",
       'title': "Submissions Due",
       'description': "",
-      'location': "Wilkins Marquee",
-    },
-    {
-      'time': "11:00 - 12:00",
-      'title': "Presentations",
-      'description': "",
-      'location': "Rooftop Garden",
+      'location': "",
     },
     {
       'time': "12:00 - 13:00",
       'title': "Lunch",
       'description': "",
-      'location': "Wilkins Marquee",
+      'location': "Jeremy Bentham Room",
     },
     {
-      'time': "13:00 - 15:00",
-      'title': "Presentations",
-      'description': "",
-      'location': "Wilkins Gustave Tuck LT",
-    },
-    {
-      'time': "15:30 - 16:00",
-      'title': "Closing words",
-      'description': "",
-      'location': "Wilkins Gustave Tuck LT",
-    },
-    {
-      'time': "16:00",
-      'title': "UCL API Hackathon ends",
+      'time': "13:30 - 15:30",
+      'title': "Presentations - Everybody Presents",
       'description': "",
       'location': "Wilkins Gustave Tuck LT",
     },
@@ -124,7 +148,13 @@ const tableRow = (e, key) => (
       </td>
       <td>
         <p className="time">{e.time}</p>
-        {/* <p><i className="material-icons">location_on</i> {e.location}</p> */}
+        {
+          (e.location) ? (
+            <p><i className="material-icons">location_on</i> {e.location}</p>
+          ) : (
+            <div></div>
+          )
+        }
       </td>
     </tr>
 )
