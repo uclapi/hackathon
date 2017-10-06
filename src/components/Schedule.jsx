@@ -17,7 +17,7 @@ let schedule = {
     },
     {
       'time': "11:00 - 11:30",
-      'title': "Hacking begins + team building",
+      'title': "Hacking begins + Team Building",
       'description': "Form your teams",
       'location': "Jeremy Bentham Room",
     },
@@ -29,7 +29,7 @@ let schedule = {
     },
     {
       'time': "12:00 - 13:00",
-      'title': "Github Workshop",
+      'title': "GitHub Workshop",
       'description': "Form your teams",
       'location': "Chadwick G08",
     },
@@ -52,26 +52,14 @@ let schedule = {
       'location': "Chadwick G08",
     },
     {
-      'time': "16:00 - 17:00",
-      'title': "Vue Workshop",
+      'time': "16:00 - 18:00",
+      'title': "Vue + GraphQL Workshop",
       'description': "",
       'location': "Chadwick G07",
-    },
-    {
-      'time': "16:00 - 17:00",
-      'title': "Vue Workshop",
-      'description': "",
-      'location': "Chadwick G07",
-    },
-    {
-      'time': "17:00 - 18:00",
-      'title': "GraphQL Workshop",
-      'description': "",
-      'location': "Chadwick G08",
     },
     {
       'time': "18:00 - 19:00",
-      'title': "Developer Experience Workshop",
+      'title': "User Experience Workshop",
       'description': "",
       'location': "Chadwick G07",
     },
@@ -86,12 +74,6 @@ let schedule = {
       'title': "Horrible UX minigame",
       'description': "",
       'location': "Chadwick G08",
-    },
-    {
-      'time': "21:00 - 22:00",
-      'title': "Slack bot Workshop",
-      'description': "",
-      'location': "Chadwick G07",
     },
     {
       'time': "22:00 - 22:30",
