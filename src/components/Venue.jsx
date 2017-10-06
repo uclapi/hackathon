@@ -1,6 +1,6 @@
 import React from 'react';
 
-import uclMap from './../img/uclMap.png';
+import uclMap from './../img/map.png';
 
 
 export default class Venue extends React.Component {
@@ -10,8 +10,9 @@ export default class Venue extends React.Component {
         <div className="venue">
           <div className="container">
             <h1>The Venue</h1>
-            <p className="center">
-              The event will be held at UCL, in the Wilkins Building which is the building in every picture ever of UCL.<br />
+            <p>
+              The event will be held at UCL, in the Wilkins Building which is the building in every picture ever of UCL.
+              Here's a map for your convenience! If you get lost or don't know where to go, ask a volunteer or a mentor!
             </p>
             {/* <p>
               How to get here?
@@ -47,8 +48,7 @@ export default class Venue extends React.Component {
                 style={{border: 0}}
                 allowFullScreen />
             </div> */}
-            {/* <p>Here's a map for your convenience! If you get lost or don't know where to go, ask a volunteer or a mentor!</p>
-            <img src={uclMap} className="responsive-img" /> */}
+            <img src={uclMap} className="responsive-img" />
           </div>
         </div>
       )
