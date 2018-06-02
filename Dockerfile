@@ -36,5 +36,5 @@ RUN apk add postgresql-libs && \
 # Install the requirements components
 RUN pip install -r requirements.txt
 
-# Run the backend
-CMD gunicorn --pythonpath backend backend.wsgi --bind 0.0.0.0:80 --log-level=info
+# Run migrations and then start the backend via gunicorn
+CMD /bin/bash -c "python3 backend/manage.py migrate && gunicorn --pythonpath backend backend.wsgi --bind 0.0.0.0:80 --log-level=info"
