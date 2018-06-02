@@ -6,7 +6,7 @@ FROM python:3
 ENV NODE_VERSION 8.11.2
 
 RUN addgroup -g 1000 node \
-    && adduser -u 1000 -G node -s /bin/sh -D node \
+    && adduser -u 1000 --gid node -s /bin/sh -D node \
     && apk add --no-cache \
         libstdc++ \
     && apk add --no-cache --virtual .build-deps \
