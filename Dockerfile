@@ -33,4 +33,4 @@ RUN apk add postgresql-libs && \
 RUN pip install -r requirements.txt
 
 # Run the backend
-CMD gunicorn --pythonpath backend backend.wsgi
+CMD gunicorn --pythonpath backend backend.wsgi --bind 0.0.0.0:80 --log-level=info
