@@ -25,6 +25,10 @@ WORKDIR src/
 # Install the frontend build components
 RUN npm install
 
+# Build webpack frontend code
+ENV NODE_ENV production
+RUN npm run docker-build
+
 # Get required PostgreSQL Libraries
 RUN apk add postgresql-libs && \
     apk add --virtual .build-deps gcc musl-dev postgresql-dev
