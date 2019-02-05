@@ -1,5 +1,5 @@
-# Start with a base Node.js 9 image
-FROM node:9-alpine
+# Start with a base Node.js 11 image
+FROM node:11-alpine
 
 # Update package lists
 RUN apk update
