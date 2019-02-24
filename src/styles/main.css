@@ -1,16 +1,17 @@
 body {
-  font-family: 'Passion One', cursive;
-  background: #CCDBDC;
+  font-family: 'Roboto', cursive;
+  background: #606060;
 }
 
 h1 {
   text-align: center;
-  color: #0B3954;
+  color: #48B186;
+  font-weight: 200;
 }
 
 p {
   font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
@@ -40,7 +41,7 @@ p {
 .header h1 {
   margin-top: 20px;
   margin-bottom: 30px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 900;
   color: white;
 }
@@ -49,17 +50,22 @@ p {
   opacity: .8;
 }
 
+.header h3 {
+  opacity: .6;
+  font-size: 2rem;
+}
+
 .header h6 {
   font-weight: 200;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 
 /* Description */
 .info {
-  background: #0B3954;
+  background: #48B186;
   text-align: center;
-  color: #CCDBDC;
+  color: white;
 }
 
 .info h1 {
@@ -70,13 +76,23 @@ p {
   text-align: left;
 }
 
+.description p {
+  color:white;
+  opacity: 0.8;
+}
+
+.venue p {
+  color:white;
+  opacity: 0.8;
+}
+
 
 /* Venue */
 
 
 /* FAQ */
 .faq h1 {
-  color: #0B3954;
+  color: #48B186;
 }
 
 .faq .collapsible-header {
@@ -96,7 +112,7 @@ p {
 
 /* APIs */
 .apis {
-  background: #0B3954;
+  background: #48B186;
 }
 
 .apis h1 {
@@ -112,14 +128,20 @@ p {
 .apiCards .card {
   padding: 30px;
   margin: 10px;
-  min-width: 200px;
-  width: 25%;
+  width: 500px;
+  max-width: 80%;
+  height: 150px;
 }
 
 .apiCards .card .card-title {
   text-align: center;
   display: block;
   color: white;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 
@@ -146,7 +168,7 @@ p {
 
 /* Schedule */
 .schedule {
-  background: #0B3954;
+  background: #48B186;
   color: #263D42;
 }
 
@@ -171,7 +193,7 @@ p {
 }
 
 .schedule tr {
-  border-bottom: 2px solid #CCDBDC;
+  border-bottom: 2px solid #606060;
 }
 
 .schedule .time {
@@ -189,7 +211,7 @@ p {
 
 /* Apply */
 .apply {
-  background: #0B3954;
+  background: #48B186;
 }
 
 .apply h1 {

@@ -26,7 +26,7 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ['DJANGO_DEBUG'] == 'True'
 
-ALLOWED_HOSTS = ['hackathon.uclapi.com']
+ALLOWED_HOSTS = ['hackathon.uclapi.com', 'localhost', '127.0.0.1']
 
 
 # Application definition

@@ -20,7 +20,7 @@ export default class Header extends React.Component {
           <h5 className="yellow-text">There was an error authenticating you, please register again!</h5>
           <form action="/applications/login/process" method="post">
             <DjangoCSRFToken />
-            <button className="btn" type="submit">Register Now</button>
+            <button className="btn white teal-text" type="submit">Register Now</button>
           </form>
         </div>
       )
@@ -39,7 +39,7 @@ export default class Header extends React.Component {
         <div>
           <form action="/applications/login/process" method="post">
             <DjangoCSRFToken />
-            <button className="btn" type="submit">Register Now</button>
+            <button className="btn white teal-text" type="submit">Register Now</button>
           </form>
           <br />
           <h6>
@@ -53,7 +53,8 @@ export default class Header extends React.Component {
       <div className="header">
         <img src={logoFile} />
         <h1>UCL API Hackathon</h1>
-        <h2>7th-8th October 2017</h2>
+        <h2>23rd - 24th February 2018</h2>
+        <h3>IDEA London, Moorgate</h3>
         { application }
       </div>
     )
