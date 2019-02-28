@@ -7,7 +7,7 @@ export default class Venue extends React.Component {
 
     render () {
       return (
-        <div className="venue">
+        <div className="venue light">
           <div className="container">
             <h1>The Venue</h1>
             <p>

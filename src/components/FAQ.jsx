@@ -59,7 +59,7 @@ export default class FAQ extends React.Component {
 
   render () {
     return (
-      <div className="faq">
+      <div className="faq light">
         <div className="container">
           <h1>Frequently Asked Questions</h1>
           <ul className="collapsible" data-collapsible="accordion">

@@ -146,7 +146,7 @@ export default class Schedule extends React.Component {
 
     render () {
       return (
-        <div className="schedule">
+        <div className="schedule custom_green">
           <div className="container">
             <h1>Schedule</h1>
             <h3>Saturday</h3>

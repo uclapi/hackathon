@@ -2,24 +2,45 @@ body {
   font-family: 'Roboto', cursive;
   background: #606060;
 }
-
 h1 {
   text-align: center;
   color: #48B186;
-  font-weight: 200;
+  font-weight: bold;
 }
-
+a {
+  color: #245a43;
+}
 p {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
-
 .container {
   padding-top: 40px;
   padding-bottom: 60px;
+  text-align: center;
 }
-
+.custom_green {
+  background-color: #49b287;
+}
+.custom_green p {
+  color: white;
+}
+.custom_green h1 {
+  color: #FFF;
+}
+.dark_grey {
+  background-color: #313537;
+}
+.light {
+  background-color: #ecf0f1;
+}
+.light p {
+  color: black;
+}
+.light h1 {
+  color: #49b287;
+}
 
 /* Header */
 .header {
@@ -30,14 +51,12 @@ p {
   padding-bottom: 10vh;
   color: white;
 }
-
 .header img {
   height: 200px;
   width: 200px;
   margin: 0 auto;
   opacity: .7;
 }
-
 .header h1 {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -45,56 +64,34 @@ p {
   font-weight: 900;
   color: white;
 }
-
 .header h2 {
   opacity: .8;
 }
-
 .header h3 {
   opacity: .6;
   font-size: 2rem;
 }
-
 .header h6 {
   font-weight: 200;
   font-family: 'Roboto', sans-serif;
 }
 
-
-/* Description */
-.info {
-  background: #48B186;
-  text-align: center;
-  color: white;
-}
-
-.info h1 {
-  color: white;
-}
-
-.info p {
-  text-align: left;
-}
-
-.description p {
-  color:white;
-  opacity: 0.8;
-}
-
+/* Info Page 
+.info { text-align: center; }
+.info h1 { color: white; }
+.info p { text-align: left; }
+.description p { color:white;opacity: 0.8; }
 .venue p {
   color:white;
   opacity: 0.8;
 }
-
-
+*/
 /* Venue */
 
-
-/* FAQ */
+/* FAQ */ 
 .faq h1 {
   color: #48B186;
 }
-
 .faq .collapsible-header {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -103,21 +100,20 @@ p {
   background: white;
   color: #263D42;
 }
-
 .faq .collapsible-body {
   color: #263D42;
   /*background: #ECEEF3;*/
   background: white;
 }
 
-/* APIs */
+/* APIs 
 .apis {
   background: #48B186;
 }
 
 .apis h1 {
   color: white;
-}
+}*/
 
 .apiCards {
   display: flex;
@@ -144,8 +140,10 @@ p {
   transform: translate(-50%, -50%);
 }
 
-
 /* Sponsors */
+.sponsor-holder {
+  padding-top: 40px;
+}
 .sponsors, .partners {
   display: flex;
   flex-direction: row;

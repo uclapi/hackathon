@@ -5,7 +5,7 @@ export default class Info extends React.Component {
 
     render () {
       return (
-        <div className="info">
+        <div className="info custom_green">
           <div className="container">
             <h1>What is UCL API?</h1>
             <p>UCL API is a <b>student-built</b> platform for <b>student developers</b> to improve the <b>student experience</b> of everyone at UCL.</p>

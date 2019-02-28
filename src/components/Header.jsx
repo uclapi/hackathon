@@ -53,8 +53,8 @@ export default class Header extends React.Component {
       <div className="header">
         <img src={logoFile} />
         <h1>UCL API Hackathon</h1>
-        <h2>23rd - 24th February 2018</h2>
-        <h3>IDEA London, Moorgate</h3>
+        <h2>9th - 10th March 2019</h2>
+        <h3>Malet Place Building, UCL</h3>
         { application }
       </div>
     )
