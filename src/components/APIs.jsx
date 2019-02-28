@@ -7,21 +7,11 @@ export default class APIs extends React.Component {
       return (
         <div className="apis">
           <div className="container">
-            <h1>3 new APIs launching at the hackathon!</h1>
+            <h1>Exciting news soon!</h1>
             <div className="apiCards">
               <div className="card light-blue">
                 <span className="card-title">
-                  OAuth
-                </span>
-              </div>
-              <div className="card teal">
-                <span className="card-title">
-                  Timetable
-                </span>
-              </div>
-              <div className="card amber">
-                <span className="card-title">
-                  Search
+                  A special surprise is coming! Get a ticket to find out more...
                 </span>
               </div>
             </div>

@@ -23,7 +23,7 @@ export default class Apply extends React.Component {
             <h1>Register Now</h1>
             <form action="/applications/login/process" method="post">
               <DjangoCSRFToken />
-              <button className="btn" type="submit">Register Now</button>
+              <button className="btn white teal-text" type="submit">Register Now</button>
             </form>
           </div>
         </div>

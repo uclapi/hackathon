@@ -21,7 +21,7 @@ export default class Info extends React.Component {
             <p>
               Once you're ready, hit the button below to dive right in and get started building on top of UCL API.
             </p>
-            <a className="btn" href="https://uclapi.com/dashboard/">Get Started with UCL API</a>
+            <a className="btn white teal-text" href="https://uclapi.com/dashboard/">Get Started with UCL API</a>
           </div>
         </div>
       )
