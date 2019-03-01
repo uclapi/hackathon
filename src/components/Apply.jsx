@@ -18,7 +18,7 @@ export default class Apply extends React.Component {
     }
     else {
       application = (
-        <div className="apply">
+        <div className="apply custom_green">
           <div className="container">
             <h1>Register Now</h1>
             <form action="/applications/login/process" method="post">

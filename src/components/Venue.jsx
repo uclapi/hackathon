@@ -7,12 +7,12 @@ export default class Venue extends React.Component {
 
     render () {
       return (
-        <div className="venue">
+        <div className="venue light">
           <div className="container">
             <h1>The Venue</h1>
             <p>
-              The event will be held at UCL, in the Wilkins Building which is the building in every picture ever of UCL.
-              Here's a map for your convenience! If you get lost or don't know where to go, ask a volunteer or a mentor!
+              The event will be held at UCL, in Malet Place Building which is the engineering building as you come in 
+              from the gates to Malet Place. Here's a map for your convenience! If you get lost or don't know where to go, ask a volunteer or a mentor!
             </p>
             {/* <p>
               How to get here?

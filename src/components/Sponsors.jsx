@@ -23,33 +23,17 @@ let sponsors = [
 ];
 
 let partners = [
-  {
+  /*{
     "title": "Travis",
     "imageLink": Travis,
     "link": "https://travis-ci.org/"
-  },
-  {
-    "title": "Glitch",
-    "imageLink": Glitch,
-    "link": "https://glitch.com/"
-  },
-  {
-    "title": "Postman",
-    "imageLink": Postman,
-    "link": "https://www.getpostman.com/"
-  },
-  {
-    "title": "Slack",
-    "imageLink": Slack,
-    "link": "https://slack.com/"
-  },
-  {
-    "title": "Docker",
-    "imageLink": Docker,
-    "link": "https://docker.io/"
-  },
+  }*/
 ]
 
+/*<h1>Partners</h1>
+<div className="partners">
+  {partners.map((s, i) => Sponsor(s, i))}
+</div>*/
 
 const Sponsor = (s, key) => (
   <a href={s.link} target="_blank" key={key}>
@@ -61,14 +45,10 @@ export default class Sponsors extends React.Component {
 
     render () {
       return (
-        <div>
+        <div className="sponsor-holder light">
           <h1>Sponsors</h1>
           <div className="sponsors">
             {sponsors.map((s, i) => Sponsor(s, i))}
-          </div>
-          <h1>Partners</h1>
-          <div className="partners">
-            {partners.map((s, i) => Sponsor(s, i))}
           </div>
         </div>
       )

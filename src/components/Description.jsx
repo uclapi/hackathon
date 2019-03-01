@@ -5,7 +5,7 @@ export default class Description extends React.Component {
 
     render () {
       return (
-        <div className="description">
+        <div className="description light">
           <div className="container">
             <h1>What is <a href="https://uclapi.com">UCL API</a> Hackathon?</h1>
             <p>
