@@ -10,6 +10,9 @@ h1 {
 a {
   color: #245a43;
 }
+a:hover {
+  text-decoration: underline;
+}
 p {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
@@ -163,13 +166,6 @@ p {
   height: 15vw;
 }
 
-
-/* Schedule */
-.schedule {
-  background: #48B186;
-  color: #263D42;
-}
-
 .schedule h1 {
   color: white;
 }
@@ -179,9 +175,10 @@ p {
   text-align: center;
   /*border-bottom: 2px solid #333;*/
   /*color: #333;*/
-  color: cyan;
-  border-bottom: 2px solid cyan;
-  font-size: 24px;
+  color: #245a43;
+  border-bottom: 2px solid #245a43;
+  font-size: 30px;
+  font-weight: bold;
   margin-bottom: 0px;
 }
 
@@ -191,7 +188,7 @@ p {
 }
 
 .schedule tr {
-  border-bottom: 2px solid #606060;
+  border-bottom: 2px solid #245a43;
 }
 
 .schedule .time {
@@ -200,6 +197,7 @@ p {
 
 .schedule td p {
   margin: 0px;
+  color: #49b287;
 }
 
 .schedule i, .schedule p {
