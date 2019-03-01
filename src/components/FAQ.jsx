@@ -8,7 +8,7 @@ let questions = [
   },
   {
     question: "Who can attend?",
-    answer: "If you're a current UCL student, and you're over 18, you can attend!"
+    answer: "If you're a current UCL student (both undergrads and postgrads are welcome), and you're over 18, you can attend!"
   },
   {
     question: "How large should my team be?",
@@ -20,7 +20,7 @@ let questions = [
   },
   {
     question: "Can I stay the night?",
-    answer: "Yes! Most people will be staying overnight. We will have sleeping spaces set up, but you may want to bring some stuff to stay super comfy and warm."
+    answer: "No, unfortunately. You can continue working throughout the night (e.g. at the new UCL Student Centre which is open 24/7), but the hackathon venue will be closed at 8.30pm. Alternatively, you could also get a good night's rest and return refreshed and energised at 9am on Sunday to continue hacking."
   },
   {
     question: "What should I bring?",
@@ -36,7 +36,7 @@ let questions = [
   },
   {
     question: "What if I have another question?",
-    answer: <p>Tweet @ us at <a href="https://twitter.com/uclapi">@uclapi</a> or email us: <a href="mailto:isd.apiteam@ucl.ac.uk">isd.apiteam@ucl.ac.uk</a>.</p>
+    answer: <p>Message us <a href="https://www.facebook.com/uclapi/">on Facebook</a>, tweet @ us at <a href="https://twitter.com/uclapi">@uclapi</a> or email us: <a href="mailto:isd.apiteam@ucl.ac.uk">isd.apiteam@ucl.ac.uk</a>.</p>
   },
 ];
 
