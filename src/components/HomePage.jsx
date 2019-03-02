@@ -11,6 +11,7 @@ import FAQ from './FAQ.jsx';
 import Info from './Info.jsx';
 import Sponsors from './Sponsors.jsx';
 import Apply from './Apply.jsx';
+import Challenges from './Challenges.jsx';
 
 
 export default class HomePage extends React.Component {
@@ -26,6 +27,7 @@ export default class HomePage extends React.Component {
             Fork me on GitHub
           </GitHubForkRibbon>
           <Header />
+          <Challenges />
           <Description />
           <Examples />
           <Venue />
