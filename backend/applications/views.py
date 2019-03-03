@@ -71,6 +71,7 @@ def callback(request):
     params = {
         "grant_type": "authorization_code",
         "code": code,
+        "client_id": os.environ["UCLAPI_CLIENT_ID"],
         "client_secret": os.environ["UCLAPI_CLIENT_SECRET"]
     }
 
@@ -112,7 +113,6 @@ def callback(request):
     url = os.environ["UCLAPI_URL"] + "/oauth/user/data"
     params = {
         "token": token_code,
-        "client_id": os.environ["UCLAPI_CLIENT_ID"],
         "client_secret": os.environ["UCLAPI_CLIENT_SECRET"]
     }
 
