@@ -112,6 +112,7 @@ def callback(request):
     url = os.environ["UCLAPI_URL"] + "/oauth/user/data"
     params = {
         "token": token_code,
+        "client_id": os.environ["UCLAPI_CLIENT_ID"],
         "client_secret": os.environ["UCLAPI_CLIENT_SECRET"]
     }
 
