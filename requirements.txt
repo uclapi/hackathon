@@ -11,5 +11,5 @@ opbeat==3.5.2
 psycopg2==2.7.3.1
 pytz==2017.2
 requests==2.18.4
-urllib3==1.22
+urllib3==1.24.1
 whitenoise==3.3.0
