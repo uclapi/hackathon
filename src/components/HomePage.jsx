@@ -12,6 +12,7 @@ import Info from './Info.jsx';
 import Sponsors from './Sponsors.jsx';
 import Apply from './Apply.jsx';
 import Challenges from './Challenges.jsx';
+import Assistant from './Assistant.jsx';
 
 
 export default class HomePage extends React.Component {
@@ -27,12 +28,13 @@ export default class HomePage extends React.Component {
             Fork me on GitHub
           </GitHubForkRibbon>
           <Header />
-          <Challenges />
           <Description />
           <Examples />
           <Venue />
           <Schedule />
+          <Assistant />
           <FAQ />
+          <Challenges />
           <Info />
           <Sponsors />
           <Apply />

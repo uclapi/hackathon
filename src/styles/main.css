@@ -302,3 +302,21 @@ p {
 .random-idea p {
   color: #000;
 }
+
+.assistant-section {
+  background-color: #fff;
+}
+
+#assistant-device {
+  width: 200px;
+}
+
+.assistant-features {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.assistant-features i {
+  vertical-align: middle;
+  margin-right: 20px;
+}
