@@ -2,7 +2,7 @@ certifi==2017.7.27.1
 chardet==3.0.4
 dj-database-url==0.4.2
 Django==1.11.5
-django-dotenv==1.4.1
+django-dotenv==1.4.2
 django-webpack-loader==0.5.0
 eventbrite==3.3.3
 gunicorn==19.7.1
@@ -10,6 +10,6 @@ idna==2.6
 opbeat==3.5.2
 psycopg2==2.7.3.1
 pytz==2018.9
-requests==2.18.4
+requests==2.21.0
 urllib3==1.24.1
 whitenoise==3.3.0
