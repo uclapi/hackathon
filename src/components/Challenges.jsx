@@ -4,17 +4,11 @@ import google from '../img/google-home-mini.png';
 
 let challenges = [
   {
-    "title": "Create a page for UCL assistant",
-    "description": "Have a chance to develop a fully fledged page for a new asssistant app for UCL students",
+    "title": "The UCL assistant Challenge",
+    "description": "Add a new feature, redesign an existing page, or otherwise make a snazzy & impactful improvement to the new UCL Assistant App",
     "image_link": google,
     "prize": "Google Home Mini"
   },
-  /*{
-    "title": "Create a page for UCL assistant",
-    "description": "Have a chance to develop a fully fledged page for a new asssistant app for UCL students",
-    "image_link": google,
-    "prize": "Google Home"
-  },*/
 ];
 
 const Challenge = (s, key) => (
