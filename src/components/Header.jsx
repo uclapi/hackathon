@@ -42,9 +42,9 @@ export default class Header extends React.Component {
             <button className="btn white teal-text" type="submit">Register Now</button>
           </form>
           <br />
-          <h6>
+          {/* <h6>
             First year and don't yet have a UCL user id and password? Complete pre enrolment on <a href="https://www.ucl.ac.uk/portico">Portico</a>
-          </h6>
+          </h6> */}
         </div>
       );
     }
