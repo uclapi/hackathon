@@ -28,7 +28,7 @@
     "react-dom": "^15.5.4",
     "react-github-fork-ribbon": "^0.6.0",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.11.3"
+    "webpack-dev-server": "^2.11.5"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
