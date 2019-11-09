@@ -1,42 +1,53 @@
 import React from 'react';
 
-import GitHubForkRibbon from 'react-github-fork-ribbon';
+// Styles
+import 'Styles/uclapi-hackathon.scss';
+// Legacy
+import 'Styles/navbar.scss';
 
-import Header from './Header.jsx';
-import Description from './Description.jsx';
-import Examples from './Examples.jsx';
-import Venue from './Venue.jsx';
-import Schedule from './Schedule.jsx';
-import FAQ from './FAQ.jsx';
-import Info from './Info.jsx';
-import Sponsors from './Sponsors.jsx';
-import Apply from './Apply.jsx';
-import Challenges from './Challenges.jsx';
+// Images
+
+// Components
+import { Row, Column, TextView, ButtonView, CardView, ImageView, NavBar, Footer } from 'Layout/Items.jsx';
 
 
 export default class HomePage extends React.Component {
-
     render () {
+      var date = "9th - 10th March 2019"
+      var location = "Malet Place Building, UCL"
+      var registerLink = "";
+
       return (
-        <div>
-          <GitHubForkRibbon
-            href="https://github.com/uclapi/hackathon"
-            target="_blank"
-            position="right"
-          >
-            Fork me on GitHub
-          </GitHubForkRibbon>
-          <Header />
-          <Challenges />
-          <Description />
-          <Examples />
-          <Venue />
-          <Schedule />
-          <FAQ />
-          <Info />
-          <Sponsors />
-          <Apply />
-        </div>
+        <React.Fragment>
+
+          <NavBar />
+
+          <Row height = '800px' styling='splash-parallax'>
+            <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
+              <TextView text='UCL API Hackathon' heading={1} align={'center'}/>
+              <TextView text={date} heading={2} align={'center'}/>
+              <TextView text={location} heading={3} align={'center'}/>
+              <ButtonView text={'Register Now'} link={registerLink} type={'alternate'}/>
+            </Column>
+          </Row>
+
+          <Row styling="secondary">
+            <TextView text="What is UCL API Hackathon?" heading={1} align={'center'}/>
+            <TextView text={`UCL API Hackathon is a 24-hour event held at UCL. It's an 
+                opportunity for you to spend a weekend building on top of the student-developed
+                API for UCL.`} heading={5} align={'center'}/>
+            <TextView text={`The API has been built to create a simple programmatic interface 
+            to UCL’s digital services, enabling the development of an ecosystem of student-made
+              tools and applications. Students can now build tools which they themselves will 
+              use and maintain!`} heading={5} align={'center'}/>
+            <TextView text={`If you want to use the API to build tools that help yourself and 
+              other students, then this event is for you! Or, if you want to learn more about 
+              APIs, programming, and new technologies, then come along and dive right in!`} heading={5} align={'center'}/>
+            <TextView text={`At the end of the event, you can show off what you've built 
+              and learned by presenting to everyone who attended!`} heading={5} align={'center'}/>
+          </Row>
+          
+        </React.Fragment>
       )
     }
 
