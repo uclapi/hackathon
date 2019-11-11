@@ -23,6 +23,7 @@ export default class Footer extends React.Component {
     return (
       <Row styling='secondary' style={ { padding : '20px 0'} }>
           <Column width='1-2' horizontalAlignment='center'>
+              <TextView text="UCL API Hackathon 2019" heading="4" align="center" style={ {"marginTop" : "20px"} }/>
               <Column maxWidth='160px' width='1-1' horizontalAlignment='center'>
                 <CardView width='1-3' type='github' link='https://github.com/uclapi'>
                   <ImageView src={github} width={logosize} height={logosize} description={'github logo'} isCentered={true} />

@@ -101,6 +101,8 @@ export default class HomePage extends React.Component {
               }
             </Column>
           </Row>
+
+          <Footer/>
           
         </React.Fragment>
       )
