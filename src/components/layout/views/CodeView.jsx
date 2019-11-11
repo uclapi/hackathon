@@ -32,24 +32,24 @@ export default class CodeView extends React.Component {
 
     this.DEBUGGING = false;
 
-    // Every button view should contain a link and text
+    this.getLanguages = this.getLanguages.bind(this);
+    this.getResponse = this.getResponse.bind(this);
+
+    // Every code view should contain a type
     if(typeof this.props.type == 'undefined') {console.log('EXCEPTION: CodeView.constructor: no type defined');}
     else if (this.props.type == 'request') {
       if(typeof this.props.url == 'undefined') {console.log('EXCEPTION: CodeView.constructor: request but no url defined');}
       if(typeof this.props.params == 'undefined') {console.log('EXCEPTION: CodeView.constructor: request but no params defined');}
-    } else if (this.props.type == 'request') {
+    } else if (this.props.type == 'response') {
       if(typeof this.props.response == 'undefined') {console.log('EXCEPTION: CodeView.constructor: response but no response defined');}
     } else {
       console.log('EXCEPTION: CodeView.constructor: Type of code view is not recognized');
     }
 
-    this.getLanguages = this.getLanguages.bind(this);
-    this.getResponse = this.getResponse.bind(this);
-
     this.state = {
       languages: this.getLanguages(),
       tabIndex: 0
-    }
+    };
   }
 
   render() {

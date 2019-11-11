@@ -13,6 +13,7 @@
   - Color Scheme
   - Sizings
   - Text
+  - Lists
   - Alignments
   - Containers
   - Buttons
@@ -145,6 +146,23 @@ a:hover { color: $color-grey-light; }
 
 .alt-text { color: lighten($primary-highlight-color, 10%); text-decoration-color: $color-grey-dark; }
 .alt-text:hover { color: lighten($primary-highlight-color, 20%); }
+
+/** Lists **/
+
+ul {
+
+}
+
+li {
+  margin: 20px 0;
+  list-style-type: none;
+}
+
+li:before {
+  content: '\1F47E';
+  margin-left: -20px;
+  margin-right: 10px;
+}
 
 /** Alignments **/
 
@@ -399,12 +417,12 @@ input:focus{
 }
 /** For Autocomplete forms **/
 
-ul {
+.react-tabs ul {
   margin: 0;
   padding-left: 0;
   border-radius: 10px
 }
-li {
+.react-tabs li {
   list-style-type: none;
   margin: 0;
   float: left;
