@@ -193,7 +193,7 @@ export default class HomePage extends React.Component {
           />
 
           <Row height='500px' styling='team-parallax' style={{ 'textAlign' : 'center' }} noPadding>
-            <Explosion particles={25} speed={400} maxsize={15} isOn={animations["2018image"] ? true : false}/>
+            <Explosion width={1000} height={500} particles={30} speed={500} maxsize={15} isOn={animations["2018image"] ? true : false} gravity/>
             <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
               <LeftSlideIn pose={animations["2018image"] ? 'open' : 'closed'} style={{'transitionTimingFunction' :'cubic-bezier(0.175, 0.885, 0.32, 1.275)'}}>
                 <TextView text="The 2018 Hackathon Class!" heading={1} align={'center'}/>

@@ -6,8 +6,11 @@ this.props.particles
 this.props.speed
 this.props.size
 this.props.isOn
+this.props.width
+this.props.height
 
 OPTIONAL ATTRIBUTES:
+this.props.gravity
 **/
 
 export default class Explosion extends React.Component {
@@ -18,9 +21,9 @@ export default class Explosion extends React.Component {
 		// Constants for the class
 		this.DEBUGGING = false;
 		this.DELTA_TIME = 16;
-		this.WIDTH = 500;
-		this.HEIGHT = 500;
-		this.RESISTENCE = 0;
+		this.WIDTH = this.props.width;
+		this.HEIGHT = this.props.height;
+		this.RESISTENCE = 50;
 		this.MAX_TIME = 2500;
 
 		// Bind functions
@@ -35,8 +38,8 @@ export default class Explosion extends React.Component {
 		for(var i=0; i<this.props.particles; i++) {
 			radius.push(0);
 			theta.push(Math.random()*Math.PI*2);
-			delay.push(Math.random()*1000);
-			size.push(Math.random()*this.props.maxsize);
+			delay.push(Math.random()*700);
+			size.push( ( this.props.maxsize / 2 )+ ( Math.random()*(this.props.maxsize / 2) ) );
 		}
 
 		// Save class and stylings to the state
@@ -46,9 +49,12 @@ export default class Explosion extends React.Component {
 			delay: delay,
 			radius: radius,
 			theta: theta,
-			colors: ["#a864fd", "#29cdff", "78ff44", "ff718d", "#fdff6a"],
+			colors: ["#a864fd", "#29cdff", "78ff44", "ff718d", "#fdff6a",
+			"#f6db5f", "ffb554", "fe5e51", "9e3d64", "36abb5"],
 			intervalId: 0,
 			totalTime: 0,
+			verticalSpeed: 0, 
+			verticalDisplacement: 0
 		};
 
 	}
@@ -78,7 +84,7 @@ export default class Explosion extends React.Component {
 		    const centerX = this.WIDTH / 2;
 		    const centerY = this.HEIGHT / 2;
 
-		    var { radius, delay, theta, totalTime, size } = this.state;
+		    var { radius, delay, theta, totalTime, size, colors, verticalDisplacement} = this.state;
 
 			// Create the particles
 			for(var i=0; i<this.props.particles; i++) {
@@ -87,13 +93,18 @@ export default class Explosion extends React.Component {
 					if(this.DEBUGGING) { console.log("polar coords, r: " + radius[i] + " theta: " + theta[i]); }
 
 					const x = centerX + (Math.cos(theta[i]) * radius[i]);
-					const y = centerY + (Math.sin(theta[i]) * radius[i]);
+					var y = centerY + (Math.sin(theta[i]) * radius[i]);
+					if(this.props.gravity) { y += verticalDisplacement; }
 
 					context.beginPath();
 				    context.arc(x, y, size[i], 0, 2 * Math.PI, false);
-				    context.fillStyle = this.state.colors[colorIndex];
+				    context.fillStyle = colors[colorIndex];
 				    context.fill();
 					colorIndex ++;
+
+					if(colorIndex == colors.length) {
+						colorIndex = 0;
+					}
 
 					if(this.DEBUGGING) { console.log("rendered at: (" + x + ", " + y + ")"); }
 				}
@@ -101,6 +112,8 @@ export default class Explosion extends React.Component {
 
 			const newSpeed = this.state.speed - (this.RESISTENCE * this.DELTA_TIME / 1000);
 			const newTime = this.state.totalTime + this.DELTA_TIME;
+			const newVerticalSpeed = this.state.verticalSpeed + (10 * this.DELTA_TIME / 1000);
+			const newVerticalDisplacement = this.state.verticalDisplacement - (newVerticalSpeed * this.DELTA_TIME / 1000);
 
 			this.setState({ 
 				radius : radius, 
