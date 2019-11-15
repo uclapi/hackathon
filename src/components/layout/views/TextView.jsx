@@ -51,12 +51,12 @@ export default class TextView extends React.Component {
         <this.state.heading style={this.state.style}>
           {this.state.link ? (
             <a className='default-transition color-transition' href={this.props.link}>
-              <div style={this.state.style}>
+              <div className='text-view' style={this.state.style}>
                 {this.props.text}
               </div>
             </a>
           ) : (
-            <div style={this.state.style}>
+            <div className='text-view' style={this.state.style}>
               {this.props.text}
             </div>
           )}

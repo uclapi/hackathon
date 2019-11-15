@@ -14,6 +14,7 @@ this.props.style (An array of styles to add to the component)
 this.props.noPadding (Removes the default padding of 50px)
 
 **/
+
 export default class Row extends React.Component {
 
   constructor(props) {
@@ -40,6 +41,8 @@ export default class Row extends React.Component {
   }
 
   render() {
+    const { isOpen } = this.state
+
     return (
       <div className={ this.state.class } style={ this.state.style }>
           {this.props.children}

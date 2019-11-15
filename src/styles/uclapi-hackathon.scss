@@ -25,7 +25,7 @@
   - Auto complete forms
   - Code View
   - Social Media Button Stylings
-
+  - Animations
 **/
 
 /** Setup **/
@@ -40,10 +40,10 @@ html, button, input, select, textarea {
 
 /** Color Scheme **/
 
-$primary-color: #296da7;
-$primary-highlight-color: #3498db;
+$primary-color: #57606f;
+$primary-highlight-color: lighten($primary-color, 10%);
 
-$secondary-color: #313537;
+$secondary-color: #49B287;
 
 $accent-color: #8D6E63;
 $highlight-color: #B18453;
@@ -80,7 +80,7 @@ body {
 
 .splash-parallax {
   background-image: url("~Images/portico.jpg");
-  box-shadow: inset 0 0 10px $color-black-transparent-04;
+  box-shadow: inset 0 0 30px $color-black-transparent-04;
 
   /* Full height */
   height: 100%;
@@ -147,21 +147,27 @@ a:hover { color: $color-grey-light; }
 .alt-text { color: lighten($primary-highlight-color, 10%); text-decoration-color: $color-grey-dark; }
 .alt-text:hover { color: lighten($primary-highlight-color, 20%); }
 
-/** Lists **/
+/** Lists in text **/
 
-ul {
+.text-view ul {
 
+}
+
+.text-view li {
+  margin: 20px 0;
+  list-style-type: none;
+  display: block;
+}
+
+.text-view li:before {
+  content: '\1F47D';
+  margin-left: -20px;
+  margin-right: 10px;
 }
 
 li {
-  margin: 20px 0;
-  list-style-type: none;
-}
-
-li:before {
-  content: '\1F47E';
-  margin-left: -20px;
-  margin-right: 10px;
+  width: fit-content;
+  display: inline-block;
 }
 
 /** Alignments **/
@@ -206,6 +212,7 @@ li:before {
   min-height: 100%;
   position: relative;
   width: 100%;
+  margin: 0;
 }
 
 .vertical-padding {
@@ -232,11 +239,11 @@ li:before {
 .uclapi-card-clicked-default:hover { background-color: $color-grey-mid;  }
 
 .alternate-button,
-.image-button { background-color: $color-white; color: $color-black; }
+.image-button { background-color: $secondary-color; color: #fff; }
 
 .alternate-button:hover,
 .image-button:hover,
-.uclapi-card-clicked-alternate:hover { background-color: $color-grey-light2;  }
+.uclapi-card-clicked-alternate:hover { background-color: lighten($secondary-color, 10%);  }
 
 .emphasis-button, { background-color: lighten($primary-highlight-color, 10%); color: black; }
 .emphasis-button:hover { background-color: lighten($primary-highlight-color, 20%);  }
@@ -262,7 +269,11 @@ li:before {
 }
 
 .uclapi-card-default {
-  background-color: $color-grey-dark;
+  background-color: $primary-color;
+}
+
+.uclapi-card-alternate {
+  background-color: $secondary-color;
 }
 
 .uclapi-card-wrap-around {
@@ -273,9 +284,6 @@ li:before {
   padding: 0;
 }
 
-.uclapi-card-alternate {
-  background-color: $color-white;
-}
 
 .uclapi-card-emphasis {
   background-color: $primary-color;
@@ -524,4 +532,12 @@ pre {
 }
 .uclapi-card-github:hover {
   background-color: lighten($color-black, 20%);
+}
+
+/* Animations */
+
+.animated-card {
+  width: fit-content;
+  display: inline-block;
+  margin: 0 2%;
 }

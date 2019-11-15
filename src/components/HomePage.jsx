@@ -1,4 +1,6 @@
 import React from 'react';
+import posed from 'react-pose';
+import { Waypoint } from 'react-waypoint';
 
 // Styles
 import 'Styles/uclapi-hackathon.scss';
@@ -45,8 +47,51 @@ let categories = [
   }
 ]
 
+const FocusIn = posed.div({
+  open: { 'padding': '0' },
+  closed: { 'padding': '50px' }
+});
+
+const LeftSlideIn = posed.div({
+  open: { 'marginLeft': '0' },
+  closed: { 'marginLeft': '-200px' }
+});
+
 export default class HomePage extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.DEBUGGING = true;
+
+      this.state = {
+        animations: {
+            "landingpage" : false,
+            "description" : false,
+            "categories" : false,
+        }
+      }
+
+      this.toggleAnimation = this.toggleAnimation.bind(this);
+    }
+    
+    toggleAnimation(name, isOn) {
+      if(this.DEBUGGING) { console.log("animation triggered for: " + name); }
+
+      const ANIMATION_DELAY = 400;
+
+      setTimeout(() => { 
+        var animationsChange = this.state.animations;
+        animationsChange[name] = isOn;
+
+        this.setState({ 
+          animations: animationsChange
+        });
+      }, 400);
+    }
+
     render () {
+      const { animations } = this.state
+
       var date = "9th - 10th March 2019"
       var location = "Malet Place Building, UCL"
       var registerLink = "";
@@ -58,16 +103,28 @@ export default class HomePage extends React.Component {
 
           <NavBar />
 
+          <Waypoint
+            onEnter={ (props) => {this.toggleAnimation("landingpage", true)} }
+            onLeave={ (props) => {this.toggleAnimation("landingpage", false)} }
+          />
+
           <Row height = '600px' styling='splash-parallax'>
             <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
               <TextView text='UCL API Hackathon' heading={1} align={'center'}/>
               <TextView text={date} heading={2} align={'center'}/>
               <TextView text={location} heading={3} align={'center'}/>
-              <ButtonView text={'Register Now'} link={registerLink} type={'alternate'}/>
+              <LeftSlideIn pose={animations["landingpage"] ? 'open' : 'closed'} style={{'transitionTimingFunction' :'cubic-bezier(0.175, 0.885, 0.32, 1.275)'}}>
+                <ButtonView text={'Register Now'} link={registerLink} type="alternate"/>
+              </LeftSlideIn>
             </Column>
           </Row>
 
-          <Row styling="secondary">
+          <Waypoint
+            onEnter={ (props) => {this.toggleAnimation("description", true)} }
+            onLeave={ (props) => {this.toggleAnimation("description", false)} }
+          />
+
+          <Row styling="primary">
             <Column width='4-10' horizontalAlignment='center'>
               <TextView text="What is UCL API Hackathon?" heading={1} align={'center'}/>
               <TextView text={`UCL API Hackathon is a 24-hour event held at UCL. It's an 
@@ -85,18 +142,25 @@ export default class HomePage extends React.Component {
             </Column>
           </Row>
 
+          <Waypoint
+            onEnter={ (props) => {this.toggleAnimation("categories", true)} }
+            onLeave={ (props) => {this.toggleAnimation("categories", false)} }
+          />
+
           <Row styling='splash-parallax'>
             <Column width='2-3' horizontalAlignment="center">
-              <TextView text="Categories" heading="1"/>
+              <TextView text="Categories" heading="1" />
               {
                 categories.map( (category, i) => 
-                  <CardView width={"1-"+categories.length} minWidth="300px" key={i} style={ { "padding" : "20px 0" } }>
-                    <Column width='2-3' horizontalAlignment='center'>
-                      <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image}/> 
-                      <TextView text={category.title} heading={1} align={'center'}/>
-                      <TextView text={category.description} heading={5} align={'left'}/>
-                    </Column>
-                  </CardView>
+                  <FocusIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'}>
+                    <CardView width={"1-"+categories.length} minWidth="300px" key={i} style={ { "padding" : "20px 0" } }>
+                      <Column width='2-3' horizontalAlignment='center'>
+                        <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image}/>
+                        <TextView text={category.title} heading={1} align='center'/>
+                        <TextView text={category.description} heading={5} align={'left'}/>
+                      </Column>
+                    </CardView>
+                  </FocusIn>
                 )
               }
             </Column>
