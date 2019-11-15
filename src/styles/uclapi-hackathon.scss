@@ -92,6 +92,20 @@ body {
   background-size: cover;
 }
 
+.team-parallax {
+  background-image: url("~Images/teambg.jpg");
+  box-shadow: inset 0 0 10px $color-black-transparent-04;
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .primary-highlight { background-color: $primary-highlight-color }
 .primary { background-color: $primary-color }
 
