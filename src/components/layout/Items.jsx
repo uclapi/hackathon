@@ -14,6 +14,8 @@ import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
 // Animations
 import Explosion from './animations/Explosion.jsx';
+// Maps
+import MapFragment from './views/MapFragment.jsx';
 
 export {
     Row,
@@ -26,5 +28,6 @@ export {
     NavBar, 
     Footer, 
     AutoCompleteView,
-    Explosion
+    Explosion,
+    MapFragment
 }
