@@ -25,6 +25,7 @@ export default class Explosion extends React.Component {
 		this.HEIGHT = this.props.height;
 		this.RESISTENCE = 50;
 		this.MAX_TIME = 2500;
+		this.FADE_TIME = 500;
 
 		// Bind functions
 		this.updateCanvas = this.updateCanvas.bind(this);
@@ -86,6 +87,11 @@ export default class Explosion extends React.Component {
 
 		    var { radius, delay, theta, totalTime, size, colors, verticalDisplacement} = this.state;
 
+		    const timeLeft = this.MAX_TIME - totalTime;
+		    if( timeLeft < this.FADE_TIME) {
+		    	context.globalAlpha = timeLeft / this.FADE_TIME;
+		    }
+
 			// Create the particles
 			for(var i=0; i<this.props.particles; i++) {
 				if(delay[i] < totalTime) {
@@ -95,6 +101,7 @@ export default class Explosion extends React.Component {
 					const x = centerX + (Math.cos(theta[i]) * radius[i]);
 					var y = centerY + (Math.sin(theta[i]) * radius[i]);
 					if(this.props.gravity) { y += verticalDisplacement; }
+					if(y > this.HEIGHT) { y = this.HEIGHT; }
 
 					context.beginPath();
 				    context.arc(x, y, size[i], 0, 2 * Math.PI, false);
@@ -112,13 +119,17 @@ export default class Explosion extends React.Component {
 
 			const newSpeed = this.state.speed - (this.RESISTENCE * this.DELTA_TIME / 1000);
 			const newTime = this.state.totalTime + this.DELTA_TIME;
-			const newVerticalSpeed = this.state.verticalSpeed + (10 * this.DELTA_TIME / 1000);
-			const newVerticalDisplacement = this.state.verticalDisplacement - (newVerticalSpeed * this.DELTA_TIME / 1000);
+			const newVerticalSpeed = this.state.verticalSpeed + (500 * this.DELTA_TIME / 1000);
+			const newVerticalDisplacement = this.state.verticalDisplacement + (newVerticalSpeed * this.DELTA_TIME / 1000);
+
+			console.log(this.state.verticalDisplacement);
 
 			this.setState({ 
 				radius : radius, 
 				speed: newSpeed,
-				totalTime: newTime
+				totalTime: newTime,
+				verticalSpeed: newVerticalSpeed,
+				verticalDisplacement: newVerticalDisplacement
 			});
 
 			if(newTime > this.MAX_TIME) {
