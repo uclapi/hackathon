@@ -12,7 +12,8 @@ import glitch from 'Images/glitch.png';
 import confetti from 'Images/confetti.png';
 
 // Components
-import { Row, Column, TextView, ButtonView, CardView, ImageView, NavBar, Footer } from 'Layout/Items.jsx';
+import { Row, Column, TextView, ButtonView, CardView, 
+  ImageView, NavBar, Footer, Explosion } from 'Layout/Items.jsx';
 
 // Constants#
 let categories = [
@@ -56,11 +57,6 @@ const FocusIn = posed.div({
 const LeftSlideIn = posed.div({
   open: { 'marginLeft': '0' },
   closed: { 'marginLeft': '-200px' }
-});
-
-const FallDown = posed.div({
-  open: { 'opacity' : '0' },
-  closed: { 'opacity' : '1' }
 });
 
 export default class HomePage extends React.Component {
@@ -196,12 +192,8 @@ export default class HomePage extends React.Component {
             onEnter={ (props) => {this.toggleAnimation("2018image", true)} }
           />
 
-          <Row height='400px' styling='team-parallax'>
-
-            <FallDown pose={animations["2018image"] ? 'open' : 'closed'} style={{'transitionDuration' :'1000'}}>
-              <ImageView src={confetti} width="100%" height="400px" description="confetti from a party"/>
-            </FallDown>
-
+          <Row height='500px' styling='team-parallax' style={{ 'textAlign' : 'center' }} noPadding>
+            <Explosion particles={25} speed={400} maxsize={15} isOn={animations["2018image"] ? true : false}/>
             <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
               <LeftSlideIn pose={animations["2018image"] ? 'open' : 'closed'} style={{'transitionTimingFunction' :'cubic-bezier(0.175, 0.885, 0.32, 1.275)'}}>
                 <TextView text="The 2018 Hackathon Class!" heading={1} align={'center'}/>

@@ -36,7 +36,7 @@ export default class Row extends React.Component {
 
     this.state = {
       class: this.class,
-      style: this.style
+      style: this.style,
     };
   }
 

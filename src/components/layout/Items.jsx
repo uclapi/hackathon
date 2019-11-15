@@ -12,6 +12,8 @@ import AutoCompleteView from './views/AutoCompleteView.jsx';
 // Custom UCL API Components
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
+// Animations
+import Explosion from './animations/Explosion.jsx';
 
 export {
     Row,
@@ -23,5 +25,6 @@ export {
     CodeView,
     NavBar, 
     Footer, 
-    AutoCompleteView
+    AutoCompleteView,
+    Explosion
 }
