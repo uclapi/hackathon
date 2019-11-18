@@ -103,9 +103,18 @@ export default class Explosion extends React.Component {
 					if(this.props.gravity) { y += verticalDisplacement; }
 					if(y > this.HEIGHT) { y = this.HEIGHT; }
 
-					context.beginPath();
-				    context.arc(x, y, size[i], 0, 2 * Math.PI, false);
 				    context.fillStyle = colors[colorIndex];
+				    context.beginPath();
+
+					switch(this.props.shape) {
+						case "square":
+							context.rect(x - (size[i]/2), y - (size[i]/2), size[i], (size[i]/2));
+							break;
+
+						default:
+							context.arc(x, y, size[i], 0, 2 * Math.PI, false);
+					}
+
 				    context.fill();
 					colorIndex ++;
 
