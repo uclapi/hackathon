@@ -131,8 +131,6 @@ export default class Explosion extends React.Component {
 			const newVerticalSpeed = this.state.verticalSpeed + (500 * this.DELTA_TIME / 1000);
 			const newVerticalDisplacement = this.state.verticalDisplacement + (newVerticalSpeed * this.DELTA_TIME / 1000);
 
-			console.log(this.state.verticalDisplacement);
-
 			this.setState({ 
 				radius : radius, 
 				speed: newSpeed,

@@ -101,6 +101,21 @@ export default class HomePage extends React.Component {
 
       var categoryImageSize = "50px";
 
+      const items = []
+
+      for (var i=0; i<6; i++) {
+        items.push(
+          {
+            id_: i,
+            color_: "red",
+            position: {
+              lat: i<3 ? 51.524776 - (0.001*i) : 51.524776 - (0.001*(i-3)),
+              lng: i<3 ? -0.133583 : -0.134883
+            }
+          }
+        )
+      }
+
       return (
         <React.Fragment>
 
@@ -205,7 +220,7 @@ export default class HomePage extends React.Component {
           </Row>
 
           <Row height="500px" noPadding>
-            <MapFragment height="500px"/>
+            <MapFragment height="500px" markers={items}/>
           </Row>
 
           <Footer/>

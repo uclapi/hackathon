@@ -109,11 +109,11 @@ Map.propTypes = {
 }
 
 Map.defaultProps = {
-  zoom: 6,
+  zoom: 15,
   // London, by default
   initialCenter: {
-    lat: 51.5074,
-    lng: 0.1278
+    lat: 51.5246,
+    lng: 0.1340
   },
   centerAroundCurrentLocation: true
 }

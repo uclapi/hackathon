@@ -2,6 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
+import alex from 'Images/team/alex.jpg'
+import anush from 'Images/team/anush.jpg'
+import harry from 'Images/team/harry.jpg'
+import huey from 'Images/team/huey.jpg'
+import kimia from 'Images/team/kimia.jpg'
+import zak from 'Images/team/zak.jpg'
+
+let team = [
+	alex,
+	anush,
+	harry,
+	huey,
+	kimia,
+	zak
+]
+
 class Marker extends React.Component {
 	constructor(props) {
         super(props);
@@ -35,7 +51,7 @@ class Marker extends React.Component {
 		position = new google.maps.LatLng(pos.lat, pos.lng);
 
 		var image = {
-			url: "images/house.svg",
+			url: team[this.props.id_],
 			size: new google.maps.Size(32, 32),
 			scaledSize: new google.maps.Size(32, 32)
 		};

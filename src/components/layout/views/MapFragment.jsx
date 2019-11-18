@@ -20,11 +20,19 @@ class MapFragment extends React.Component {
 
     return  <div style={{containerStyles}}>
     			<Map google={this.props.google} height={this.props.height}>
-    			</Map>
+      			 {this.props.markers.map((marker, i) => {
+                return <Marker
+                        name_ = {marker.name_}
+                        id_ = {marker.id_}
+                        color_ = {marker.color_}
+                        position= {marker.position}
+                        />
+            })}
+          </Map>
     		</div>
   }
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBuviEt2BLE039rNeLfbT4MDHcEOK8KMHI'
+  apiKey: 'AIzaSyBPqj02ug28JWl-8pbuvWQNWJuYK6CFnNA'
 })(MapFragment);
