@@ -42,9 +42,9 @@ export default class Header extends React.Component {
             <button className="btn white teal-text" type="submit">Register Now</button>
           </form>
           <br />
-          <h6>
+          {/* <h6>
             First year and don't yet have a UCL user id and password? Complete pre enrolment on <a href="https://www.ucl.ac.uk/portico">Portico</a>
-          </h6>
+          </h6> */}
         </div>
       );
     }
@@ -54,7 +54,7 @@ export default class Header extends React.Component {
         <img src={logoFile} />
         <h1>UCL API Hackathon</h1>
         <h2>9th - 10th March 2019</h2>
-        <h3>Malet Place Building, UCL</h3>
+        <h3>Malet Place Engineering Building, UCL</h3>
         { application }
       </div>
     )
