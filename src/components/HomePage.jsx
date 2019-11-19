@@ -219,8 +219,18 @@ export default class HomePage extends React.Component {
             </Column>
           </Row>
 
-          <Row height="500px" noPadding>
-            <MapFragment height="500px" markers={items}/>
+          <Row height="500px" noPadding styling="primary">
+            <Column width='2-3' style={{"display" : "inline-block", "float" : "left"}}>
+              <MapFragment height="500px" markers={items}/>
+            </Column>
+            <Column width='1-3' style={{"display" : "inline-block", "float" : "left"}}>
+              <Row height="500px" noPadding styling="secondary">
+                <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
+                  <TextView text="Location:" heading={1} align={'center'}/>
+                  <TextView text="South Cloisters" heading={1} align={'center'}/>
+                </Column>
+              </Row>
+            </Column>
           </Row>
 
           <Footer/>
