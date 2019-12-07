@@ -32,7 +32,7 @@ export default class Explosion extends React.Component {
 		super(props)
 
 		// Constants for the class
-		this.DEBUGGING = true
+		this.DEBUGGING = false
 		this.DELTA_TIME = 16
 		this.RESISTENCE = 50
 		this.MAX_TIME = 2500
