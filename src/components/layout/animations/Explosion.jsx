@@ -32,7 +32,7 @@ export default class Explosion extends React.Component {
 		super(props)
 
 		// Constants for the class
-		this.DEBUGGING = false
+		this.DEBUGGING = true
 		this.DELTA_TIME = 16
 		this.RESISTENCE = 50
 		this.MAX_TIME = 2500
@@ -62,6 +62,9 @@ export default class Explosion extends React.Component {
 			active: false,
 		}
 
+		setTimeout(() => {
+			this.setupAnimation()
+		}, 100)
 	}
 
 	setupAnimation() {
@@ -122,22 +125,20 @@ export default class Explosion extends React.Component {
 	}
 
 	updateCanvas() {
-	    if(this.props.isOn) {
-	    	var newWidth = this.refs.canvas.clientWidth
-	    	var newHeight = this.refs.canvas.clientHeight
-	    	
-	    	if(newWidth != this.state.width ||
-	    		newHeight != this.state.height) {
-	    		
-	    		this.setState({
-	    			width: newWidth,
-	    			height: newHeight,
-	    		})
-	    	}
+    	var newWidth = this.refs.canvas.clientWidth
+    	var newHeight = this.refs.canvas.clientHeight
 
-	    	const { width, height } = this.state
- 
-	    	if(this.DEBUGGING) { console.log("w: " + width + ", h: " + height) }
+    	if(newWidth != this.state.width ||
+    		newHeight != this.state.height) {
+    		
+    		this.setState({
+    			width: newWidth,
+    			height: newHeight,
+    		})
+    	}
+
+	    if(this.props.isOn) {
+			var { radius, delay, theta, totalTime, size, colors, verticalDisplacement, width, height} = this.state
 
 		    const context = this.refs.canvas.getContext('2d')
 		    context.clearRect(0,0, width, height)
@@ -147,7 +148,7 @@ export default class Explosion extends React.Component {
 		    const centerX = width / 2
 		    const centerY = height / 2
 
-		    var { radius, delay, theta, totalTime, size, colors, verticalDisplacement} = this.state
+	    	if(this.DEBUGGING) { console.log("w: " + width + ", h: " + height + ", number: " + radius.length) }
 
 		    const timeLeft = this.MAX_TIME - totalTime
 		    if( timeLeft < this.FADE_TIME) {
@@ -157,7 +158,7 @@ export default class Explosion extends React.Component {
 		    }
 
 			// Create the particles
-			for(var i=0; i<this.props.particles; i++) {
+			for(var i=0; i<radius.length; i++) {
 				if(delay[i] < totalTime) {
 					radius[i] =  radius[i] + (this.state.speed * 16 / 1000)
 					if(this.DEBUGGING) { console.log("polar coords, r: " + radius[i] + " theta: " + theta[i]) }
