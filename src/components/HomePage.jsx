@@ -213,7 +213,7 @@ export default class HomePage extends React.Component {
 
         <Row height='300px' styling='team-parallax' style={{ 'textAlign': 'center' }} noPadding>
 
-          <Explosion width={1000} height={300} particles={30} speed={800} maxsize={30}
+          <Explosion particles={30} speed={800} maxsize={30}
             isOn={animations["2018image"] ? true : false} shape="square" gravity />
 
           <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>

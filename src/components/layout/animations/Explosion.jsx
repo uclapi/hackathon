@@ -21,8 +21,6 @@ export default class Explosion extends React.Component {
 		// Constants for the class
 		this.DEBUGGING = false;
 		this.DELTA_TIME = 16;
-		this.WIDTH = this.props.width;
-		this.HEIGHT = this.props.height;
 		this.RESISTENCE = 50;
 		this.MAX_TIME = 2500;
 		this.FADE_TIME = 500;
@@ -55,7 +53,9 @@ export default class Explosion extends React.Component {
 			intervalId: 0,
 			totalTime: 0,
 			verticalSpeed: 0, 
-			verticalDisplacement: 0
+			verticalDisplacement: 0,
+			width: 100,
+			height: 100,
 		};
 
 	}
@@ -77,13 +77,29 @@ export default class Explosion extends React.Component {
 
 	updateCanvas() {
 	    if(this.props.isOn) {
+	    	var newWidth = this.refs.canvas.clientWidth
+	    	var newHeight = this.refs.canvas.clientHeight
+	    	
+	    	if(newWidth != this.state.width ||
+	    		newHeight != this.state.height) {
+	    		
+	    		this.setState({
+	    			width: newWidth,
+	    			height: newHeight,
+	    		})
+	    	}
+
+	    	const { width, height } = this.state
+ 
+	    	if(this.DEBUGGING) { console.log("w: " + width + ", h: " + height) }
+
 		    const context = this.refs.canvas.getContext('2d');
-		    context.clearRect(0,0, this.WIDTH, this.HEIGHT);
+		    context.clearRect(0,0, width, height);
 
 		    // Loop over colors
 		    var colorIndex = 0;
-		    const centerX = this.WIDTH / 2;
-		    const centerY = this.HEIGHT / 2;
+		    const centerX = width / 2;
+		    const centerY = height / 2;
 
 		    var { radius, delay, theta, totalTime, size, colors, verticalDisplacement} = this.state;
 
@@ -101,7 +117,7 @@ export default class Explosion extends React.Component {
 					const x = centerX + (Math.cos(theta[i]) * radius[i]);
 					var y = centerY + (Math.sin(theta[i]) * radius[i]);
 					if(this.props.gravity) { y += verticalDisplacement; }
-					if(y > this.HEIGHT) { y = this.HEIGHT; }
+					if(y > height) { y = height; }
 
 				    context.fillStyle = colors[colorIndex];
 				    context.beginPath();
@@ -146,8 +162,11 @@ export default class Explosion extends React.Component {
 	}
 
 	render() {
+		const { width, height } = this.state;
+
 		return (
-		     <canvas ref="canvas" width={this.WIDTH} height={this.HEIGHT} style={ { 'display' : 'inline'} }>
+		     <canvas ref="canvas" width={width} height={height}
+		      style={ { display : `inline`, width : `100%`, height : `100%`} }>
 		     	Your browser doesn't support canvas
 		     </canvas>
 		 );
