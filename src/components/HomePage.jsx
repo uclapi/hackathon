@@ -57,7 +57,7 @@ const FocusIn = posed.div({
 });
 
 const LeftSlideIn = posed.div({
-  open: { 'marginLeft': '0' },
+  open: { 'marginLeft': '0', 'marginRight' : '0'},
   closed: { 'marginLeft': '-200px' }
 });
 
@@ -167,22 +167,24 @@ export default class HomePage extends React.Component {
         />
 
         <Row styling='splash-parallax'>
-          <Column width='2-3' horizontalAlignment="center">
-            <TextView text="Categories" heading="1" />
-            {
-              categories.map((category, i) =>
-                <FocusIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'}>
-                  <CardView width={"1-" + categories.length} minWidth="300px" key={i} style={{ "padding": "20px 0" }}>
-                    <Column width='2-3' horizontalAlignment='center'>
-                      <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
-                      <TextView text={category.title} heading={1} align='center' />
-                      <TextView text={category.description} heading={5} align={'left'} />
-                    </Column>
-                  </CardView>
-                </FocusIn>
-              )
-            }
-          </Column>
+          <LeftSlideIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'}>
+            <Column width='1-1' horizontalAlignment="center">
+              <TextView text="Categories" heading="1" />
+              {
+                categories.map((category, i) =>
+                  
+                    <CardView width={"1-" + categories.length} minWidth="300px" key={i} style={{ "padding": "20px 0" }} snapAlign>
+                      <Column width='2-3' horizontalAlignment='center'>
+                        <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
+                        <TextView text={category.title} heading={1} align='center' />
+                        <TextView text={category.description} heading={5} align={'left'} />
+                      </Column>
+                    </CardView>
+                  
+                )
+              }
+            </Column>
+          </LeftSlideIn>
         </Row>
 
         <Waypoint

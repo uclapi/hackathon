@@ -3,7 +3,6 @@ import React from 'react';
 /**
 REQUIRED ATTRIBUTES:
 this.props.heading (what heading the text is)
-
 OPTIONAL ATTRIBUTES:
 this.props.align (the alignment of the text as in the css tag text-align)
 this.props.link (add a link to the text, this is the url to link to)
