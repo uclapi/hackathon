@@ -115,7 +115,7 @@ Map.defaultProps = {
     lat: 51.5246,
     lng: 0.1340
   },
-  centerAroundCurrentLocation: false
+  centerAroundCurrentLocation: false,
 }
 
 export default Map;

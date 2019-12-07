@@ -1,4 +1,4 @@
-export default builtApps = [
+export const builtApps = [
   {
     title: 'Roomie McRoomFace',
     description: 'A room booking system for the UCL Engineering Hub. If you\'re an undergraduate student part of the engineering faculty, you can log in and start booking rooms. Fun fact: this was actually built before the API existed!',
@@ -64,7 +64,7 @@ export default builtApps = [
   }
 ]
 
-export default ideas = [
+export const ideas = [
   'A Facebook messenger bot that messages your society group when a room booking made by your society is changed',
   'A Twitter bot that tweets when your society books a room',
   'A Twitter bot that tweets whenever a certain room is booked',
@@ -84,3 +84,8 @@ export default ideas = [
   'A web app that analyses your timetable and compares it with other timetables',
   'A Twitter bot that tweets whenever a library is unusually crowded',
 ]
+
+export default {
+  builtApps,
+  ideas,
+}
