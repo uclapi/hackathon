@@ -73,6 +73,8 @@ export default class HomePage extends React.Component {
         "description": false,
         "categories": false,
         "2018image": false,
+        "2018description": false,
+        "examples": false
       }
     }
 
@@ -184,7 +186,7 @@ export default class HomePage extends React.Component {
         </Row>
 
         <Waypoint
-          onEnter={(props) => { this.toggleAnimation("2018description", true) }}
+          onEnter={(props) => { this.toggleAnimation("examples", true) }}
         />
 
         <Row styling="primary">
@@ -218,6 +220,28 @@ export default class HomePage extends React.Component {
             <LeftSlideIn pose={animations["2018image"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
               <TextView text="The 2018 Hackathon Class!" heading={1} align={'center'} />
             </LeftSlideIn>
+          </Column>
+        </Row>
+
+        <Waypoint
+          onEnter={(props) => { this.toggleAnimation("2018description", true) }}
+        />
+
+        <Row styling="primary">
+          <Column width='4-10' horizontalAlignment='center'>
+            <TextView text="What did the previous contestants make?" heading={1} align={'center'} />
+            <TextView text={`UCL API Hackathon is a 24-hour event held at UCL. It's an 
+                  opportunity for you to spend a weekend building on top of the student-developed
+                  API for UCL.`} heading={5} align={'left'} />
+            <TextView text={`The API has been built to create a simple programmatic interface 
+              to UCL’s digital services, enabling the development of an ecosystem of student-made
+                tools and applications. Students can now build tools which they themselves will 
+                use and maintain!`} heading={5} align={'left'} />
+            <TextView text={`If you want to use the API to build tools that help yourself and 
+                other students, then this event is for you! Or, if you want to learn more about 
+                APIs, programming, and new technologies, then come along and dive right in!`} heading={5} align={'left'} />
+            <TextView text={`At the end of the event, you can show off what you've built 
+                and learned by presenting to everyone who attended!`} heading={5} align={'left'} />
           </Column>
         </Row>
 
