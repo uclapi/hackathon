@@ -1,4 +1,5 @@
 import React from 'react'
+import posed from 'react-pose';
 
 /**
 REQUIRED ATTRIBUTES:
@@ -12,6 +13,18 @@ this.props.height
 OPTIONAL ATTRIBUTES:
 this.props.gravity
 **/
+
+// Components used within
+import { ImageView } from 'Layout/Items.jsx'
+
+// Repeat animation image
+import replay from 'Images/repeat.svg'
+
+// Fade animation
+const FadeIn = posed.div({
+  open: { opacity: '1' },
+  closed: { opacity: 0 }
+});
 
 export default class Explosion extends React.Component {
 
@@ -66,6 +79,7 @@ export default class Explosion extends React.Component {
 		}
 
 		this.setState({
+			speed: this.props.speed,
 			size: size,
 			delay: delay,
 			radius: radius,
@@ -199,10 +213,19 @@ export default class Explosion extends React.Component {
 		const { width, height } = this.state
 
 		return (
-		     <canvas ref="canvas" width={width} height={height} onClick={this.startAnimation}
-		      style={ { display : `inline`, width : `100%`, height : `100%`} }>
-		     	Your browser doesn't support canvas
-		     </canvas>
+			<div className="canvas-holder" style={ { width : `100%`, height : `100%`} }
+					onClick={this.startAnimation}>
+			    <canvas ref="canvas" width={width} height={height}
+			    		style={ { display : `inline`, width : `100%`, height : `100%`} }>
+			     	Your browser doesn't support canvas
+			    </canvas>
+
+			    <FadeIn pose={(!this.state.active && this.props.isOn) ? 'open' : 'closed'} 
+			    	style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
+			    	<ImageView src={replay} width={`50px`} height={`50px`} description={`click to replay animation`} 
+			    			style = { { position : `absolute`, left : `50px`, bottom : `50px` } } />
+    			</FadeIn>
+		    </div>
 		 )
 	}
 
