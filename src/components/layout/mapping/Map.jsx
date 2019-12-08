@@ -109,11 +109,11 @@ Map.propTypes = {
 }
 
 Map.defaultProps = {
-  zoom: 15,
+  zoom: 18,
   // Center around the hackathon location
   initialCenter: {
-    lat: 51.522449,
-    lng: -0.132630
+    lat: 51.524658,
+    lng: -0.133564
   },
   centerAroundCurrentLocation: false,
 }

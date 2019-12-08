@@ -20,14 +20,16 @@ class MapFragment extends React.Component {
 
     return  <div style={{containerStyles}}>
     			<Map google={this.props.google} height={this.props.height}>
-      			 {this.props.markers.map((marker, i) => {
-                return <Marker
-                        name_ = {marker.name_}
-                        id_ = {marker.id_}
-                        color_ = {marker.color_}
-                        position= {marker.position}
-                        />
-            })}
+            <Polyline
+              path={this.props.locations}
+              color_="#000000"
+              fillColor="#E37222"
+              fillOpacity={0.35}
+              strokeColor="#E37222"
+              strokeOpacity={0.8}
+              strokeWeight={6}
+              fill="#FFFFFF"
+              />
           </Map>
     		</div>
   }

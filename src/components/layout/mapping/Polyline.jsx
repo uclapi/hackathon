@@ -23,8 +23,7 @@ class Polyline extends React.Component {
   	}
 
     componentDidUpdate(prevProps) {
-		if (this.props.map !== prevProps.map ||
-		!arePathsEqual(this.props.path, prevProps.path)) {
+		if (this.props.map !== prevProps.map) {
 		    if (this.polyline) {
 		    	this.polyline.setMap(null);
 		    }
@@ -46,6 +45,7 @@ class Polyline extends React.Component {
 	        strokeColor,
 	        strokeOpacity,
 	        strokeWeight,
+	        fill,
 	        ...props
     	} = this.props;
 
@@ -59,6 +59,7 @@ class Polyline extends React.Component {
 	      strokeColor,
 	      strokeOpacity,
 	      strokeWeight,
+	      fill,
 	      ...props
 	    };
 

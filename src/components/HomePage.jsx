@@ -106,26 +106,19 @@ export default class HomePage extends React.Component {
   render() {
     const { animations, showMore, ideaIndex } = this.state
 
-    var date = "9th - 10th March 2019"
-    var location = "Malet Place Building, UCL"
-    var registerLink = "";
+    const date = "9th - 10th March 2019"
+    const location = "Malet Place Building, UCL"
+    const registerLink = ""
 
-    var categoryImageSize = "50px";
+    const categoryImageSize = "50px"
 
-    const items = []
-
-    for (var i = 0; i < 6; i++) {
-      items.push(
-        {
-          id_: i,
-          color_: "red",
-          position: {
-            lat: i < 3 ? 51.524776 - (0.001 * i) : 51.524776 - (0.001 * (i - 3)),
-            lng: i < 3 ? -0.133583 : -0.134883
-          }
-        }
-      )
-    }
+    const locations = [{lat: 51.524463, lng: -0.133628},
+      {lat: 51.524670, lng: -0.133853},
+      {lat: 51.524729, lng: -0.133724},
+      {lat: 51.524982, lng: -0.133976},
+      {lat: 51.525054, lng: -0.133778},
+      {lat: 51.524574, lng: -0.133274},
+      {lat: 51.524463, lng: -0.133628},]
 
     return (
       <React.Fragment>
@@ -250,7 +243,7 @@ export default class HomePage extends React.Component {
               <TextView heading={`1`} text={`You could make...`}/>
           </Column>
           <Column width={`1-1`} horizontalAlignment='center' style={ {marginBottom : `20px`} }> 
-            <CardView width={"1-1"} minWidth="300px" key={i} type={`alternate`}style={{ padding: "20px 0", maxWidth : `300px`}} snapAlign>
+            <CardView width={"1-1"} minWidth="300px" type={`alternate`} style={ { padding: `20px 0`, maxWidth : `300px`} } snapAlign>
               <Column width='2-3' horizontalAlignment='center'>
                 <TextView text={ideas[ideaIndex]} heading={`p`} style={ { marginBottom : `0` } }/>
               </Column>
@@ -305,13 +298,13 @@ export default class HomePage extends React.Component {
 
         <Row height="500px" noPadding styling="primary">
           <Column width='2-3' style={{ "display": "inline-block", "float": "left" }}>
-            <MapFragment height="500px" markers={items} />
+            <MapFragment height="500px" locations={locations}/>
           </Column>
           <Column width='1-3' style={{ "display": "inline-block", "float": "left" }}>
             <Row height="500px" noPadding styling="secondary">
               <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
                 <TextView text="Location:" heading={1} align={'center'} />
-                <TextView text="South Cloisters" heading={1} align={'center'} />
+                <TextView text="North Cloisters" heading={1} align={'center'} />
               </Column>
             </Row>
           </Column>
