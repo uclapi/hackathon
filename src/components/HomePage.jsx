@@ -106,19 +106,27 @@ export default class HomePage extends React.Component {
   render() {
     const { animations, showMore, ideaIndex } = this.state
 
-    const date = "18th - 19th March 2020"
-    const location = "North Cloisters and Gustave Tuck"
+    const date = "18th - 19th January 2020"
+    const location = "North Cloisters and Gustave Tuck LT"
     const registerLink = ""
 
     const categoryImageSize = "50px"
-
-    const locations = [{lat: 51.524463, lng: -0.133628},
-      {lat: 51.524670, lng: -0.133853},
-      {lat: 51.524729, lng: -0.133724},
-      {lat: 51.524982, lng: -0.133976},
-      {lat: 51.525054, lng: -0.133778},
-      {lat: 51.524574, lng: -0.133274},
-      {lat: 51.524463, lng: -0.133628},]
+    
+    const locations = [{lng: -0.1339282, lat: 51.5252156},
+      {lng: -0.1338826, lat: 51.5251622},
+      {lng: -0.1340731, lat: 51.5250854},
+      {lng: -0.1340221, lat: 51.525042},
+      {lng: -0.1339121, lat: 51.5250854},
+      {lng: -0.1336359, lat: 51.5248384},
+      {lng: -0.1336788, lat: 51.5248217},
+      {lng: -0.1336412, lat: 51.5247917},
+      {lng: -0.13355, lat: 51.5248284},
+      {lng: -0.1335956, lat: 51.5248568},
+      {lng: -0.13355, lat: 51.5248735},
+      {lng: -0.1338183, lat: 51.5251154},
+      {lng: -0.1337485, lat: 51.5251421},
+      {lng: -0.1338558, lat: 51.5252406},
+      {lng: -0.1339282, lat: 51.5252156}, ]
 
     return (
       <React.Fragment>
@@ -298,7 +306,7 @@ export default class HomePage extends React.Component {
 
         <Row height="500px" noPadding styling="primary">
           <Column width='2-3' style={{ "display": "inline-block", "float": "left" }}>
-            <MapFragment height="500px" locations={locations}/>
+            <MapFragment locations={locations}/>
           </Column>
           <Column width='1-3' style={{ "display": "inline-block", "float": "left" }}>
             <Row height="500px" noPadding styling="secondary">
