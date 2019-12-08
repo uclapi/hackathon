@@ -106,8 +106,8 @@ export default class HomePage extends React.Component {
   render() {
     const { animations, showMore, ideaIndex } = this.state
 
-    const date = "9th - 10th March 2019"
-    const location = "Malet Place Building, UCL"
+    const date = "18th - 19th March 2020"
+    const location = "North Cloisters and Gustave Tuck"
     const registerLink = ""
 
     const categoryImageSize = "50px"
@@ -281,18 +281,18 @@ export default class HomePage extends React.Component {
         <Row styling="primary">
           <Column width='4-10' horizontalAlignment='center'>
             <TextView text="What did the previous contestants make?" heading={1} align={'center'} />
-            <TextView text={`UCL API Hackathon is a 24-hour event held at UCL. It's an 
-                  opportunity for you to spend a weekend building on top of the student-developed
-                  API for UCL.`} heading={5} align={'left'} />
-            <TextView text={`The API has been built to create a simple programmatic interface 
-              to UCL’s digital services, enabling the development of an ecosystem of student-made
-                tools and applications. Students can now build tools which they themselves will 
-                use and maintain!`} heading={5} align={'left'} />
-            <TextView text={`If you want to use the API to build tools that help yourself and 
-                other students, then this event is for you! Or, if you want to learn more about 
-                APIs, programming, and new technologies, then come along and dive right in!`} heading={5} align={'left'} />
-            <TextView text={`At the end of the event, you can show off what you've built 
-                and learned by presenting to everyone who attended!`} heading={5} align={'left'} />
+            <TextView text={`The 2018 hackathon took place in the computer science department labs and 
+              had a variety of interesting hacks created. Some participants opted to create pages for the 
+              UCL assistant app (UCL API's productivity app for students). Whilst other users opted to use 
+              the API to create either web apps or local projects.`} heading={5} align={'left'} />
+            <TextView text={`One team managed to use the UCL Union website to obtain information about all of 
+              the events at UCL. Using this data the team added a page to the assistant app which allowed you 
+              to look for and view events around UCL.`} heading={5} align={'left'} />
+            <TextView text={`Another team utilised the workspaces endpoints to find free tables with enough space
+            for a group of people. Not only this but it shows you on the map exactly where in the libraries
+            you can sit together! `} heading={5} align={'left'} />
+            <TextView text={`There were many other amazing projects which were created over the two days. 
+              We hope to see many more amazing applications made using the API this time around!`} heading={5} align={'left'} />
           </Column>
         </Row>
 
