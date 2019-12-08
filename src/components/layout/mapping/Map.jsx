@@ -110,12 +110,12 @@ Map.propTypes = {
 
 Map.defaultProps = {
   zoom: 15,
-  // London, by default
+  // Center around the hackathon location
   initialCenter: {
     lat: 51.5246,
     lng: 0.1340
   },
-  centerAroundCurrentLocation: true
+  centerAroundCurrentLocation: false,
 }
 
 export default Map;

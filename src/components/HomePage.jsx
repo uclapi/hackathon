@@ -17,6 +17,9 @@ import {
   ImageView, NavBar, Footer, Explosion, MapFragment
 } from 'Layout/Items.jsx';
 
+// Data
+import { builtApps, ideas } from 'Layout/data/Examples.jsx'
+
 // Constants#
 let categories = [
   {
@@ -51,6 +54,8 @@ let categories = [
   }
 ]
 
+const randIndex = arr => Math.floor(Math.random() * arr.length)
+
 const FocusIn = posed.div({
   open: { 'padding': '0' },
   closed: { 'padding': '50px' }
@@ -68,11 +73,15 @@ export default class HomePage extends React.Component {
     this.DEBUGGING = true;
 
     this.state = {
+      showMore: false,
+      ideaIndex: randIndex(ideas),
       animations: {
         "landingpage": false,
         "description": false,
         "categories": false,
         "2018image": false,
+        "2018description": false,
+        "examples": false,
       }
     }
 
@@ -95,7 +104,7 @@ export default class HomePage extends React.Component {
   }
 
   render() {
-    const { animations } = this.state
+    const { animations, showMore, ideaIndex } = this.state
 
     var date = "9th - 10th March 2019"
     var location = "Malet Place Building, UCL"
@@ -186,6 +195,93 @@ export default class HomePage extends React.Component {
         </Row>
 
         <Waypoint
+          onEnter={(props) => { this.toggleAnimation("examples", true) }}
+        />
+
+        <Row styling="primary" style={ {paddingTop : `50px` } } noPadding>
+          <Column width='4-10' horizontalAlignment='center'>
+            <TextView heading={`1`} text={`The API In Action`}/>
+            <TextView heading={`p`} text={`Here are some examples of things 
+              people have already built that make use of the UCL API. 
+              Check out the source code, play around with them, and get 
+              inspired!`}/>
+          </Column>
+        </Row>
+
+        <Row styling="primary" style={ {paddingBottom : `30px` } } noPadding>
+          <Column width='8-10' horizontalAlignment='center'>
+              <table className="built-apps-table">
+                <tbody>
+                  {
+                    (showMore ? builtApps : builtApps.slice(0, 1)).map(({ title, description, status, links }) => (
+                      <tr key={title}>
+                        <td>
+                          <h5>{title}</h5>
+                        </td>
+                        <td>
+                          <p>{description}</p>
+                        </td>
+                        <td>
+                          {
+                            // status && <div className="chip status">{status}</div>
+                          }
+                          {
+                            links.map(({ text, url }) => (
+                              <p key={url}><a href={url}>{text}</a></p>
+                            ))
+                          }
+                        </td>
+                      </tr>
+                    ))
+                  }
+                  { !showMore && (
+                    <tr>
+                      <td colSpan={3}>
+                        <ButtonView text={'Show more'} type="alternate" 
+                          onClick={() => {
+                            this.setState({ showMore: true })
+                          }} />
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+
+              <TextView heading={`1`} text={`You could make...`}/>
+          </Column>
+          <Column width={`1-1`} horizontalAlignment='center' style={ {marginBottom : `20px`} }> 
+            <CardView width={"1-1"} minWidth="300px" key={i} type={`alternate`}style={{ padding: "20px 0", maxWidth : `300px`}} snapAlign>
+              <Column width='2-3' horizontalAlignment='center'>
+                <TextView text={ideas[ideaIndex]} heading={`p`} style={ { marginBottom : `0` } }/>
+              </Column>
+            </CardView>
+          </Column>
+          <Column width='8-10' horizontalAlignment='center'>
+              <ButtonView text={'Inspire Me!'} type="alternate" 
+                onClick={() => {
+                  this.setState({ ideaIndex: randIndex(ideas) })
+                }} />
+          </Column>
+
+        </Row>
+
+        <Waypoint
+          onEnter={(props) => { this.toggleAnimation("2018image", true) }}
+        />
+
+        <Row height='300px' styling='team-parallax' style={{ 'textAlign': 'center' }} noPadding>
+
+          <Explosion particles={30} speed={800} maxsize={30}
+            isOn={animations["2018image"] ? true : false} shape="square" gravity />
+
+          <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
+            <LeftSlideIn pose={animations["2018image"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
+              <TextView text="The 2018 Hackathon Class!" heading={1} align={'center'} />
+            </LeftSlideIn>
+          </Column>
+        </Row>
+
+        <Waypoint
           onEnter={(props) => { this.toggleAnimation("2018description", true) }}
         />
 
@@ -204,22 +300,6 @@ export default class HomePage extends React.Component {
                 APIs, programming, and new technologies, then come along and dive right in!`} heading={5} align={'left'} />
             <TextView text={`At the end of the event, you can show off what you've built 
                 and learned by presenting to everyone who attended!`} heading={5} align={'left'} />
-          </Column>
-        </Row>
-
-        <Waypoint
-          onEnter={(props) => { this.toggleAnimation("2018image", true) }}
-        />
-
-        <Row height='300px' styling='team-parallax' style={{ 'textAlign': 'center' }} noPadding>
-
-          <Explosion particles={30} speed={800} maxsize={30}
-            isOn={animations["2018image"] ? true : false} shape="square" gravity />
-
-          <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
-            <LeftSlideIn pose={animations["2018image"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
-              <TextView text="The 2018 Hackathon Class!" heading={1} align={'center'} />
-            </LeftSlideIn>
           </Column>
         </Row>
 

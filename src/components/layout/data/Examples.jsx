@@ -1,6 +1,4 @@
-import React from 'react';
-
-const builtApps = [
+export const builtApps = [
   {
     title: 'Roomie McRoomFace',
     description: 'A room booking system for the UCL Engineering Hub. If you\'re an undergraduate student part of the engineering faculty, you can log in and start booking rooms. Fun fact: this was actually built before the API existed!',
@@ -66,7 +64,7 @@ const builtApps = [
   }
 ]
 
-const ideas = [
+export const ideas = [
   'A Facebook messenger bot that messages your society group when a room booking made by your society is changed',
   'A Twitter bot that tweets when your society books a room',
   'A Twitter bot that tweets whenever a certain room is booked',
@@ -87,87 +85,7 @@ const ideas = [
   'A Twitter bot that tweets whenever a library is unusually crowded',
 ]
 
-const randIndex = arr => Math.floor(Math.random() * arr.length)
-
-export default class Examples extends React.Component {
-    constructor(){
-      super()
-      this.state = {
-        showMore: false,
-        ideaIndex: randIndex(ideas),
-      }
-    }
-    render () {
-      const { showMore, ideaIndex } = this.state
-      return (
-        <div className="examples custom_green">
-          <div className="container">
-            <div className="card-half">
-              <h1>The API In Action</h1>
-              <p>
-                Here are some examples of things people have already built that make use of the UCL API. Check out the source code, play around with them, and get inspired!
-              </p>
-              <table className="built-apps-table">
-                <tbody>
-                  {
-                    (showMore ? builtApps : builtApps.slice(0, 1)).map(({ title, description, status, links }) => (
-                      <tr key={title}>
-                        <td>
-                          <h5>{title}</h5>
-                        </td>
-                        <td>
-                          <p>{description}</p>
-                        </td>
-                        <td>
-                          {
-                            // status && <div className="chip status">{status}</div>
-                          }
-                          {
-                            links.map(({ text, url }) => (
-                              <p key={url}><a href={url}>{text}</a></p>
-                            ))
-                          }
-                        </td>
-                      </tr>
-                    ))
-                  }
-                  { !showMore && (
-                    <tr>
-                      <td colSpan={3}>
-                        <button
-                          className="btn white teal-text"
-                          type="button"
-                          onClick={() => {
-                            this.setState({ showMore: true })
-                          }}
-                        >Show More</button>
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
-            <div className="card-half">
-              <h1>What to Build</h1>
-              <p>
-                Feel free to steal these ideas, riff on them, or come up with much better ones.
-              </p>
-              <div className="random-idea card-panel">
-                <p>
-                  {ideas[ideaIndex]}
-                </p>
-                <button
-                  className="waves-effect btn-large white teal-text"
-                  type="button"
-                  onClick={() => {
-                    this.setState({ ideaIndex: randIndex(ideas) })
-                  }}
-                >Inspire Me!</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    }
-
+export default {
+  builtApps,
+  ideas,
 }
