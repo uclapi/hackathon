@@ -1,10 +1,6 @@
 import React from 'react';
 
-import { GoogleApiWrapper } from 'google-maps-react';
-
-import Map from '../mapping/Map.jsx';
-import Marker from '../mapping/Marker.jsx';
-import Polyline from '../mapping/Polyline.jsx';
+import { GoogleApiWrapper, Polygon, Map} from 'google-maps-react';
 
 class MapFragment extends React.Component {
   constructor(props) {
@@ -15,19 +11,31 @@ class MapFragment extends React.Component {
 
     const containerStyles = {
         width: '100%',
-        height: this.props.height
-    };
+        height: '500px',
+    }
+
+    const mapStyle = {
+      width: '100%',
+      height: '500px',
+    }
 
     return  <div style={{containerStyles}}>
-    			<Map google={this.props.google} height={this.props.height}>
-      			 {this.props.markers.map((marker, i) => {
-                return <Marker
-                        name_ = {marker.name_}
-                        id_ = {marker.id_}
-                        color_ = {marker.color_}
-                        position= {marker.position}
-                        />
-            })}
+    			<Map
+            google={this.props.google}
+            style={mapStyle}
+            zoom={18}
+            // Center around the hackathon location
+            initialCenter={ {lng: -0.1344412, lat: 51.5249917} }
+            centerAroundCurrentLocation={false}
+          >
+            <Polygon
+              path={this.props.locations}
+              fillColor="#E37222"
+              fillOpacity={0.35}
+              strokeColor="#E37222"
+              strokeOpacity={0.8}
+              strokeWeight={6}
+            />
           </Map>
     		</div>
   }

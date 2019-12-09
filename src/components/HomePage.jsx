@@ -106,26 +106,29 @@ export default class HomePage extends React.Component {
   render() {
     const { animations, showMore, ideaIndex } = this.state
 
-    var date = "9th - 10th March 2019"
-    var location = "Malet Place Building, UCL"
-    var registerLink = "";
+    const date = "18th - 19th January 2020"
+    const location = "North Cloisters and Gustave Tuck LT"
+    
+    const registerLink = ""
+    const canRegister = false
 
-    var categoryImageSize = "50px";
-
-    const items = []
-
-    for (var i = 0; i < 6; i++) {
-      items.push(
-        {
-          id_: i,
-          color_: "red",
-          position: {
-            lat: i < 3 ? 51.524776 - (0.001 * i) : 51.524776 - (0.001 * (i - 3)),
-            lng: i < 3 ? -0.133583 : -0.134883
-          }
-        }
-      )
-    }
+    const categoryImageSize = "50px"
+    
+    const locations = [{lng: -0.1339282, lat: 51.5252156},
+      {lng: -0.1338826, lat: 51.5251622},
+      {lng: -0.1340731, lat: 51.5250854},
+      {lng: -0.1340221, lat: 51.525042},
+      {lng: -0.1339121, lat: 51.5250854},
+      {lng: -0.1336359, lat: 51.5248384},
+      {lng: -0.1336788, lat: 51.5248217},
+      {lng: -0.1336412, lat: 51.5247917},
+      {lng: -0.13355, lat: 51.5248284},
+      {lng: -0.1335956, lat: 51.5248568},
+      {lng: -0.13355, lat: 51.5248735},
+      {lng: -0.1338183, lat: 51.5251154},
+      {lng: -0.1337485, lat: 51.5251421},
+      {lng: -0.1338558, lat: 51.5252406},
+      {lng: -0.1339282, lat: 51.5252156}, ]
 
     return (
       <React.Fragment>
@@ -142,7 +145,11 @@ export default class HomePage extends React.Component {
             <TextView text={date} heading={2} align={'center'} />
             <TextView text={location} heading={3} align={'center'} />
             <LeftSlideIn pose={animations["landingpage"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
-              <ButtonView text={'Register Now'} link={registerLink} type="alternate" />
+              {canRegister ? ( 
+                <ButtonView text={'Register Now'} link={registerLink} type="alternate" />
+              ) : (
+                <ButtonView text={'Registration not open'} link={registerLink} type="default" onClick={ () => {} } />
+              )}
             </LeftSlideIn>
           </Column>
         </Row>
@@ -176,7 +183,7 @@ export default class HomePage extends React.Component {
         <Row styling='splash-parallax'>
           <LeftSlideIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'}>
             <Column width='1-1' horizontalAlignment="center">
-              <TextView text="Categories" heading="1" />
+              <TextView text="Challenges" heading="1" />
               {
                 categories.map((category, i) =>
                   
@@ -250,7 +257,7 @@ export default class HomePage extends React.Component {
               <TextView heading={`1`} text={`You could make...`}/>
           </Column>
           <Column width={`1-1`} horizontalAlignment='center' style={ {marginBottom : `20px`} }> 
-            <CardView width={"1-1"} minWidth="300px" key={i} type={`alternate`}style={{ padding: "20px 0", maxWidth : `300px`}} snapAlign>
+            <CardView width={"1-1"} minWidth="300px" type={`alternate`} style={ { padding: `20px 0`, maxWidth : `300px`} } snapAlign>
               <Column width='2-3' horizontalAlignment='center'>
                 <TextView text={ideas[ideaIndex]} heading={`p`} style={ { marginBottom : `0` } }/>
               </Column>
@@ -288,30 +295,30 @@ export default class HomePage extends React.Component {
         <Row styling="primary">
           <Column width='4-10' horizontalAlignment='center'>
             <TextView text="What did the previous contestants make?" heading={1} align={'center'} />
-            <TextView text={`UCL API Hackathon is a 24-hour event held at UCL. It's an 
-                  opportunity for you to spend a weekend building on top of the student-developed
-                  API for UCL.`} heading={5} align={'left'} />
-            <TextView text={`The API has been built to create a simple programmatic interface 
-              to UCL’s digital services, enabling the development of an ecosystem of student-made
-                tools and applications. Students can now build tools which they themselves will 
-                use and maintain!`} heading={5} align={'left'} />
-            <TextView text={`If you want to use the API to build tools that help yourself and 
-                other students, then this event is for you! Or, if you want to learn more about 
-                APIs, programming, and new technologies, then come along and dive right in!`} heading={5} align={'left'} />
-            <TextView text={`At the end of the event, you can show off what you've built 
-                and learned by presenting to everyone who attended!`} heading={5} align={'left'} />
+            <TextView text={`The 2018 hackathon took place in the computer science department labs and 
+              had a variety of interesting hacks created. Some participants opted to create pages for the 
+              UCL assistant app (UCL API's productivity app for students). Whilst other users opted to use 
+              the API to create either web apps or local projects.`} heading={5} align={'left'} />
+            <TextView text={`One team managed to use the UCL Union website to obtain information about all of 
+              the events at UCL. Using this data the team added a page to the assistant app which allowed you 
+              to look for and view events around UCL.`} heading={5} align={'left'} />
+            <TextView text={`Another team utilised the workspaces endpoints to find free tables with enough space
+            for a group of people. Not only this but it shows you on the map exactly where in the libraries
+            you can sit together! `} heading={5} align={'left'} />
+            <TextView text={`There were many other amazing projects which were created over the two days. 
+              We hope to see many more amazing applications made using the API this time around!`} heading={5} align={'left'} />
           </Column>
         </Row>
 
         <Row height="500px" noPadding styling="primary">
           <Column width='2-3' style={{ "display": "inline-block", "float": "left" }}>
-            <MapFragment height="500px" markers={items} />
+            <MapFragment locations={locations}/>
           </Column>
           <Column width='1-3' style={{ "display": "inline-block", "float": "left" }}>
             <Row height="500px" noPadding styling="secondary">
               <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
                 <TextView text="Location:" heading={1} align={'center'} />
-                <TextView text="South Cloisters" heading={1} align={'center'} />
+                <TextView text="North Cloisters" heading={1} align={'center'} />
               </Column>
             </Row>
           </Column>
