@@ -108,7 +108,9 @@ export default class HomePage extends React.Component {
 
     const date = "18th - 19th January 2020"
     const location = "North Cloisters and Gustave Tuck LT"
+    
     const registerLink = ""
+    const canRegister = false
 
     const categoryImageSize = "50px"
     
@@ -143,7 +145,11 @@ export default class HomePage extends React.Component {
             <TextView text={date} heading={2} align={'center'} />
             <TextView text={location} heading={3} align={'center'} />
             <LeftSlideIn pose={animations["landingpage"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
-              <ButtonView text={'Register Now'} link={registerLink} type="alternate" />
+              {canRegister ? ( 
+                <ButtonView text={'Register Now'} link={registerLink} type="alternate" />
+              ) : (
+                <ButtonView text={'Registration not open'} link={registerLink} type="default" onClick={ () => {} } />
+              )}
             </LeftSlideIn>
           </Column>
         </Row>
@@ -177,7 +183,7 @@ export default class HomePage extends React.Component {
         <Row styling='splash-parallax'>
           <LeftSlideIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'}>
             <Column width='1-1' horizontalAlignment="center">
-              <TextView text="Categories" heading="1" />
+              <TextView text="Challenges" heading="1" />
               {
                 categories.map((category, i) =>
                   
