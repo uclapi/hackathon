@@ -25,7 +25,7 @@ class MapFragment extends React.Component {
             style={mapStyle}
             zoom={18}
             // Center around the hackathon location
-            initialCenter={ {lng: -0.1336412, lat: 51.5247917} }
+            initialCenter={ {lng: -0.1344412, lat: 51.5249917} }
             centerAroundCurrentLocation={false}
           >
             <Polygon
