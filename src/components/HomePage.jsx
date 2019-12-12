@@ -8,7 +8,10 @@ import 'Styles/uclapi-hackathon.scss';
 import 'Styles/navbar.scss';
 
 // Images
-import glitch from 'Images/glitch.png';
+import individual from 'Images/individual.png';
+import society from 'Images/society.png';
+import deliveroo from 'Images/deliveroo.png';
+
 import confetti from 'Images/confetti.png';
 
 // Components
@@ -23,33 +26,33 @@ import { builtApps, ideas } from 'Layout/data/Examples.jsx'
 // Constants#
 let categories = [
   {
-    'title': `app`,
-    'image': glitch,
+    'title': `Best individual use`,
+    'image': individual,
     'description':
       (<ul>
-        <li>Make a mobile application</li>
-        <li>Give it some features</li>
+        <li>Make an application any student can use</li>
+        <li>Give it some innovative features</li>
         <li>Use the API and tell us how</li>
       </ul>)
   },
   {
-    'title': `app`,
-    'image': glitch,
+    'title': `Best society use`,
+    'image': society,
     'description':
       (<ul>
-        <li>Make a mobile application</li>
-        <li>Give it some features</li>
+        <li>Make something that helps out societies</li>
+        <li>Make it easy to use</li>
         <li>Use the API and tell us how</li>
       </ul>)
   },
   {
-    'title': `app`,
-    'image': glitch,
+    'title': `Deliveroo challenge`,
+    'image': deliveroo,
     'description':
       (<ul>
-        <li>Make a mobile application</li>
-        <li>Give it some features</li>
-        <li>Use the API and tell us how</li>
+        <li>Make an application </li>
+        <li>Use deliveroo in an interesting way</li>
+        <li>More details to come soon</li>
       </ul>)
   }
 ]
