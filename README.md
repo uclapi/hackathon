@@ -5,4 +5,4 @@
 1. Run `npm install`
 1. Run `npm start`
 
-After a PR is merged, changes are deployed automatically.
+After a PR is merged, changes are deployed automatically!
