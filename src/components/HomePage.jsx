@@ -8,11 +8,9 @@ import 'Styles/uclapi-hackathon.scss';
 import 'Styles/navbar.scss';
 
 // Images
-import individual from 'Images/individual.png';
-import society from 'Images/society.png';
-import deliveroo from 'Images/deliveroo.png';
-
-import confetti from 'Images/confetti.png';
+import individual from 'Images/icons/user.svg';
+import society from 'Images/icons/user-group.svg';
+import question from 'Images/icons/lightbulb.svg';
 
 // Components
 import {
@@ -46,12 +44,12 @@ let categories = [
       </ul>)
   },
   {
-    'title': `Deliveroo challenge`,
-    'image': deliveroo,
+    'title': `Sponsor challenge`,
+    'image': question,
     'description':
       (<ul>
         <li>Make an application </li>
-        <li>Use deliveroo in an interesting way</li>
+        <li>Use our sponsor API</li>
         <li>More details to come soon</li>
       </ul>)
   }
@@ -112,8 +110,8 @@ export default class HomePage extends React.Component {
     const date = "18th - 19th January 2020"
     const location = "North Cloisters and Gustave Tuck LT"
     
-    const registerLink = ""
-    const canRegister = false
+    const registerLink = "/login/process"
+    const canRegister = true
 
     const categoryImageSize = "50px"
     
@@ -190,12 +188,14 @@ export default class HomePage extends React.Component {
               {
                 categories.map((category, i) =>
                   
-                    <CardView width={"1-" + categories.length} minWidth="300px" key={i} style={{ "padding": "20px 0" }} snapAlign>
-                      <Column width='2-3' horizontalAlignment='center'>
-                        <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
-                        <TextView text={category.title} heading={1} align='center' />
-                        <TextView text={category.description} heading={5} align={'left'} />
-                      </Column>
+                    <CardView width={"1-" + categories.length} minWidth="300px" key={i} height="380px" style={{ padding: `20px 0`}} snapAlign>
+                      <Row height={`380px`} noPadding >
+                        <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
+                          <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
+                          <TextView text={category.title} heading={1} align='center' />
+                          <TextView text={category.description} heading={5} align={'left'} />
+                        </Column>
+                      </Row>
                     </CardView>
                   
                 )
