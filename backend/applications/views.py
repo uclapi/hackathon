@@ -126,7 +126,7 @@ def callback(request):
             }
         })
 
-    eventbrite_code = "Not-A-Real-Code"
+    eventbrite_code = "fake-code"
 
     if not eventbrite_code:
         return render(request, "home.html", {
