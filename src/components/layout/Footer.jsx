@@ -21,7 +21,7 @@ export default class Footer extends React.Component {
     var logosize = '20px';
 
     return (
-      <Row styling='primary' style={ { padding : '20px 0'} }>
+      <Row styling='primary' style={ { padding :  '0'} }>
           <Column width='1-2' horizontalAlignment='center'>
               <Column maxWidth='160px' width='1-1' horizontalAlignment='center'>
                 <CardView width='1-3' type='github' link='https://github.com/uclapi'>

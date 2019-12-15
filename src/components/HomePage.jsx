@@ -137,7 +137,7 @@ export default class HomePage extends React.Component {
 
         <Row height='800px' styling='splash-parallax' noPadding>
           <Explosion particles={30} speed={800} maxsize={30}
-            isOn={true} gravity />
+            isOn={true} isOn={animations["landingpage"] ? true : false}/>
           <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
             <TextView text='UCL API Hackathon' heading={1} align={'center'} />
             <TextView text={date} heading={2} align={'center'} />
@@ -157,7 +157,7 @@ export default class HomePage extends React.Component {
         />
 
         <Row styling="primary">
-          <Column width='2-3' maxWidth='450px' horizontalAlignment='center'>
+          <Column width='2-3' maxWidth='700px' horizontalAlignment='center'>
             <TextView text="What is UCL API Hackathon?" heading={1} align={'center'} />
             <TextView text={`UCL API Hackathon is a 24-hour event held at UCL. It's an 
                   opportunity for you to spend a weekend building on top of the student-developed
@@ -206,7 +206,7 @@ export default class HomePage extends React.Component {
         />
 
         <Row styling="primary" style={ {paddingTop : `50px` } } noPadding>
-          <Column width='2-3' maxWidth='450px' horizontalAlignment='center'>
+          <Column width='2-3' maxWidth='700px' horizontalAlignment='center'>
             <TextView heading={`1`} text={`The API In Action`}/>
             <TextView heading={`p`} text={`Here are some examples of things 
               people have already built that make use of the UCL API. 
@@ -222,13 +222,13 @@ export default class HomePage extends React.Component {
                   {
                     (showMore ? builtApps : builtApps.slice(0, 1)).map(({ title, description, status, links }) => (
                       <tr key={title}>
-                        <td>
+                        <td style={ { width : `25%` } }>
                           <h5>{title}</h5>
                         </td>
-                        <td>
+                        <td style={ { width : `50%`, textAlign : `left`} }>
                           <p>{description}</p>
                         </td>
-                        <td>
+                        <td style={ { width : `25%` } }>
                           {
                             // status && <div className="chip status">{status}</div>
                           }
@@ -256,8 +256,8 @@ export default class HomePage extends React.Component {
 
               <TextView heading={`1`} text={`You could make...`}/>
           </Column>
-          <Column width={`1-1`} horizontalAlignment='center' style={ {marginBottom : `20px`} }> 
-            <CardView width={"1-1"} minWidth="300px" type={`alternate`} style={ { padding: `20px 0`, maxWidth : `300px`} } snapAlign>
+          <Column width={`8-10`} horizontalAlignment='center' style={ {marginBottom : `20px`} }> 
+            <CardView width={"1-1"} type={`alternate`} style={ { padding: `20px 0`, margin : `0`, marginBottom : `20px`, borderRadius : `0` } } noPadding>
               <Column width='2-3' horizontalAlignment='center'>
                 <TextView text={ideas[ideaIndex]} heading={`p`} style={ { marginBottom : `0` } }/>
               </Column>
@@ -293,7 +293,7 @@ export default class HomePage extends React.Component {
         />
 
         <Row styling="primary">
-          <Column width='2-3' maxWidth='450px' horizontalAlignment='center'>
+          <Column width='2-3' maxWidth='700px' horizontalAlignment='center'>
             <TextView text="What did the previous contestants make?" heading={1} align={'center'} />
             <TextView text={`The 2018 hackathon took place in the computer science department labs and 
               had a variety of interesting hacks created. Some participants opted to create pages for the 
