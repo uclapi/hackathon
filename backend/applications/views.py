@@ -126,18 +126,7 @@ def callback(request):
             }
         })
 
-    eventbrite_code = generate_access_code(user_data)
-
-    if not eventbrite_code:
-        return render(request, "home.html", {
-            "initial_data": {
-                "error": "Error generating code",
-            }
-        })
-
     request.session["given_name"] = user_data["given_name"]
-    request.session["eventbrite_code"] = eventbrite_code
-    return redirect("{}?discount={}".format(
+    return redirect("{}".format(
         os.environ["EVENT_LINK"],
-        eventbrite_code,
     ))

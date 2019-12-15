@@ -120,7 +120,7 @@ export default class HomePage extends React.Component {
     const date = "18th - 19th January 2020"
     const location = "North Cloisters and Gustave Tuck LT"
     
-    const registerLink = "https://www.eventbrite.co.uk/e/ucl-api-hack-2020-tickets-86143534631?utm_term=eventurl_text"
+    const registerLink = "/login/process"
     const canRegister = true
 
     const categoryImageSize = "50px"
