@@ -12,6 +12,10 @@ import individual from 'Images/icons/user.svg';
 import society from 'Images/icons/user-group.svg';
 import question from 'Images/icons/lightbulb.svg';
 
+import aisoc from 'Images/sponsors/aisoc.png'
+import techsoc from 'Images/sponsors/techsoc.png' 
+import simplepoll from 'Images/sponsors/simplepoll.png'
+
 // Components
 import {
   Row, Column, TextView, ButtonView, CardView,
@@ -21,7 +25,18 @@ import {
 // Data
 import { builtApps, ideas } from 'Layout/data/Examples.jsx'
 
-// Constants#
+// Constants
+let sponsors = [
+  {
+    image: aisoc,
+  },
+  {
+    image: techsoc,
+  },
+  {
+    image: simplepoll,
+  },
+]
 let categories = [
   {
     'title': `Best individual use`,
@@ -330,6 +345,25 @@ export default class HomePage extends React.Component {
               <MapFragment locations={locations}/>
             </Column>
           </div>
+        </Row>
+
+        <Row styling='splash-parallax' noPadding style={ { paddingTop: `50px` } }>
+          <FocusIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'} style={ { marginLeft: 0, marginRight: 0 } }>
+            <Column width='1-1' horizontalAlignment="center">
+              <TextView text="Partners" heading="1" style={ { paddingBottom : `0`} }/>
+              {
+                sponsors.map((sponsor, i) =>
+                  
+                    <CardView width={"1-3"} minWidth="100px" maxWidth="100px" key={i} height="380px" style={{ padding: `20px 0`}} type="transparent" snapAlign noShadow>
+                      <Row height={`100px`} noPadding >
+                        <ImageView width={"100px"} height={"100px"} src={sponsor.image} />
+                      </Row>
+                    </CardView>
+                  
+                )
+              }
+            </Column>
+          </FocusIn>
         </Row>
 
         <Footer />
