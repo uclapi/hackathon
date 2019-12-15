@@ -58,13 +58,8 @@ let categories = [
 const randIndex = arr => Math.floor(Math.random() * arr.length)
 
 const FocusIn = posed.div({
-  open: { 'padding': '0' },
-  closed: { 'padding': '50px' }
-});
-
-const LeftSlideIn = posed.div({
-  open: { 'marginLeft': '0', 'marginRight' : '0'},
-  closed: { 'marginLeft': '-200px' }
+  open: { 'paddingTop': '0' },
+  closed: { 'paddingTop': '100px' }
 });
 
 export default class HomePage extends React.Component {
@@ -140,20 +135,20 @@ export default class HomePage extends React.Component {
           onEnter={(props) => { this.toggleAnimation("landingpage", true) }}
         />
 
-        <Row height='600px' styling='splash-parallax' noPadding>
+        <Row height='800px' styling='splash-parallax' noPadding>
           <Explosion particles={30} speed={800} maxsize={30}
             isOn={true} gravity />
           <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
             <TextView text='UCL API Hackathon' heading={1} align={'center'} />
             <TextView text={date} heading={2} align={'center'} />
             <TextView text={location} heading={3} align={'center'} />
-            <LeftSlideIn pose={animations["landingpage"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
+            <FocusIn pose={animations["landingpage"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
               {canRegister ? ( 
                 <ButtonView text={'Register Now'} link={registerLink} type="alternate" />
               ) : (
                 <ButtonView text={'Registration not open'} link={registerLink} type="default" onClick={ () => {} } />
               )}
-            </LeftSlideIn>
+            </FocusIn>
           </Column>
         </Row>
 
@@ -162,7 +157,7 @@ export default class HomePage extends React.Component {
         />
 
         <Row styling="primary">
-          <Column width='4-10' horizontalAlignment='center'>
+          <Column width='2-3' maxWidth='450px' horizontalAlignment='center'>
             <TextView text="What is UCL API Hackathon?" heading={1} align={'center'} />
             <TextView text={`UCL API Hackathon is a 24-hour event held at UCL. It's an 
                   opportunity for you to spend a weekend building on top of the student-developed
@@ -184,7 +179,7 @@ export default class HomePage extends React.Component {
         />
 
         <Row styling='splash-parallax'>
-          <LeftSlideIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'}>
+          <FocusIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'} style={ { marginLeft: 0, marginRight: 0 } }>
             <Column width='1-1' horizontalAlignment="center">
               <TextView text="Challenges" heading="1" />
               {
@@ -203,7 +198,7 @@ export default class HomePage extends React.Component {
                 )
               }
             </Column>
-          </LeftSlideIn>
+          </FocusIn>
         </Row>
 
         <Waypoint
@@ -211,7 +206,7 @@ export default class HomePage extends React.Component {
         />
 
         <Row styling="primary" style={ {paddingTop : `50px` } } noPadding>
-          <Column width='4-10' horizontalAlignment='center'>
+          <Column width='2-3' maxWidth='450px' horizontalAlignment='center'>
             <TextView heading={`1`} text={`The API In Action`}/>
             <TextView heading={`p`} text={`Here are some examples of things 
               people have already built that make use of the UCL API. 
@@ -287,9 +282,9 @@ export default class HomePage extends React.Component {
             isOn={animations["2018image"] ? true : false} shape="square" gravity />
 
           <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
-            <LeftSlideIn pose={animations["2018image"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
+            <FocusIn pose={animations["2018image"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
               <TextView text="The 2018 Hackathon Class!" heading={1} align={'center'} />
-            </LeftSlideIn>
+            </FocusIn>
           </Column>
         </Row>
 
@@ -298,7 +293,7 @@ export default class HomePage extends React.Component {
         />
 
         <Row styling="primary">
-          <Column width='4-10' horizontalAlignment='center'>
+          <Column width='2-3' maxWidth='450px' horizontalAlignment='center'>
             <TextView text="What did the previous contestants make?" heading={1} align={'center'} />
             <TextView text={`The 2018 hackathon took place in the computer science department labs and 
               had a variety of interesting hacks created. Some participants opted to create pages for the 
@@ -316,17 +311,25 @@ export default class HomePage extends React.Component {
         </Row>
 
         <Row height="500px" noPadding styling="primary">
-          <Column width='2-3' style={{ "display": "inline-block", "float": "left" }}>
-            <MapFragment locations={locations}/>
-          </Column>
-          <Column width='1-3' style={{ "display": "inline-block", "float": "left" }}>
-            <Row height="500px" noPadding styling="secondary">
-              <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
-                <TextView text="Location:" heading={1} align={'center'} />
-                <TextView text="North Cloisters" heading={1} align={'center'} />
-              </Column>
-            </Row>
-          </Column>
+          <div className={`default`}>
+            <Column width='2-3' style={{ "display": "inline-block", "float": "left" }}>
+              <MapFragment locations={locations}/>
+            </Column>
+            <Column width='1-3' style={{ "display": "inline-block", "float": "left" }}>
+              <Row height="500px" noPadding styling="secondary">
+                <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
+                  <TextView text="Location:" heading={1} align={'center'} />
+                  <TextView text="North Cloisters" heading={1} align={'center'} />
+                </Column>
+              </Row>
+            </Column>
+          </div>
+
+          <div className={`mobile tablet`}>
+            <Column width='1-1' style={{ "display": "inline-block", "float": "left" }}>
+              <MapFragment locations={locations}/>
+            </Column>
+          </div>
         </Row>
 
         <Footer />

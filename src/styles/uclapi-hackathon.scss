@@ -27,6 +27,7 @@
   - Social Media Button Stylings
   - Animations
   - Mapping
+  - Sizing
 
 **/
 
@@ -600,5 +601,31 @@ pre {
 
   p {
     margin-bottom: 0;
+  }
+}
+
+/** Sizing **/
+
+.mobile,
+.tablet,
+.default {
+  display: none;
+}
+
+@media screen and (min-width: 1130px) {
+  .default {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1130px) and (min-width: 700px) {
+  .tablet {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mobile {
+    display: block;
   }
 }
