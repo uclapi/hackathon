@@ -140,7 +140,9 @@ export default class HomePage extends React.Component {
           onEnter={(props) => { this.toggleAnimation("landingpage", true) }}
         />
 
-        <Row height='600px' styling='splash-parallax'>
+        <Row height='600px' styling='splash-parallax' noPadding>
+          <Explosion particles={30} speed={800} maxsize={30}
+            isOn={true} gravity />
           <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
             <TextView text='UCL API Hackathon' heading={1} align={'center'} />
             <TextView text={date} heading={2} align={'center'} />
