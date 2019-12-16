@@ -337,10 +337,12 @@ export default class HomePage extends React.Component {
               <MapFragment locations={locations}/>
             </Column>
             <Column width='1-3' style={{ "display": "inline-block", "float": "left" }}>
-              <Row height="500px" noPadding styling="secondary">
-                <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
-                  <TextView text="Location:" heading={1} align={'center'} />
-                  <TextView text="South Cloisters" heading={1} align={'center'} />
+              <Row height="500px" noPadding styling="transparent">
+                <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
+                  <CardView width={"1-1"} height="fit-content" style={ { padding: `20px 0` }}>
+                    <TextView text="Location:" heading={1} align={'center'} />
+                    <TextView text="South Cloisters" heading={1} align={'center'} />
+                  </CardView>
                 </Column>
               </Row>
             </Column>
