@@ -21,22 +21,22 @@ export default class Footer extends React.Component {
     var logosize = '20px';
 
     return (
-      <Row styling='primary' style={ { padding :  '0'} }>
-          <Column width='1-2' horizontalAlignment='center'>
-              <Column maxWidth='160px' width='1-1' horizontalAlignment='center'>
-                <CardView width='1-3' type='github' link='https://github.com/uclapi'>
-                  <ImageView src={github} width={logosize} height={logosize} description={'github logo'} isCentered={true} />
-                </CardView>
+      <Row styling='primary' style={{ padding: '20px 0 20px 0' }}>
+        <Column width='1-2' horizontalAlignment='center'>
+          <Column maxWidth='160px' width='1-1' horizontalAlignment='center'>
+            <CardView width='1-3' type='github' link='https://github.com/uclapi'>
+              <ImageView src={github} width={logosize} height={logosize} description={'github logo'} isCentered={true} />
+            </CardView>
 
-                <CardView width='1-3' type='facebook' link='https://www.facebook.com/uclapi/'>
-                  <ImageView src={facebook} width={logosize} height={logosize} description={'facebook logo'} isCentered={true} />
-                </CardView>
+            <CardView width='1-3' type='facebook' link='https://www.facebook.com/uclapi/'>
+              <ImageView src={facebook} width={logosize} height={logosize} description={'facebook logo'} isCentered={true} />
+            </CardView>
 
-                <CardView width='1-3' type='twitter' link='https://twitter.com/uclapi'>
-                  <ImageView src={twitter} width={logosize} height={logosize} description={'twitter logo'} isCentered={true} />
-                </CardView>
-              </Column>
+            <CardView width='1-3' type='twitter' link='https://twitter.com/uclapi'>
+              <ImageView src={twitter} width={logosize} height={logosize} description={'twitter logo'} isCentered={true} />
+            </CardView>
           </Column>
+        </Column>
       </Row>
     );
   }
