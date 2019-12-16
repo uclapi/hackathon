@@ -347,14 +347,13 @@ export default class HomePage extends React.Component {
           </div>
         </Row>
 
-        <Row styling='splash-parallax' noPadding style={ { paddingTop: `50px` } }>
-          <FocusIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'} style={ { marginLeft: 0, marginRight: 0 } }>
-            <Column width='1-1' horizontalAlignment="center">
+        <Row styling='splash-parallax'>
+          <Column width='1-1' horizontalAlignment="center">
               <TextView text="Partners" heading="1" style={ { paddingBottom : `0`} }/>
               {
                 sponsors.map((sponsor, i) =>
                   
-                    <CardView width={"1-3"} minWidth="100px" maxWidth="100px" key={i} height="380px" style={{ padding: `20px 0`}} type="transparent" snapAlign noShadow>
+                    <CardView width={"1-3"} minWidth="100px" maxWidth="100px" key={i} height="380px" style={{ padding: `20px 0`}} snapAlign noShadow>
                       <Row height={`100px`} noPadding >
                         <ImageView width={"100px"} height={"100px"} src={sponsor.image} />
                       </Row>
@@ -363,7 +362,6 @@ export default class HomePage extends React.Component {
                 )
               }
             </Column>
-          </FocusIn>
         </Row>
 
         <Footer />
