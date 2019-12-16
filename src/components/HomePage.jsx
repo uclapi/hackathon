@@ -26,15 +26,21 @@ import {
 import { builtApps, ideas } from 'Layout/data/Examples.jsx'
 
 // Constants
-let sponsors = [
+let partners = [
   {
     image: aisoc,
+    name: `UCL Artificial Intelligence Society`,
+    link: `http://studentsunionucl.org/clubs-societies/artificial-intelligence-society`,
   },
   {
     image: techsoc,
+    name: `UCL Technology Society`,
+    link: `https://ucltechsoc.com/`,
   },
   {
     image: simplepoll,
+    name: `Simple Poll`,
+    link: `https://simplepoll.rocks/`,
   },
 ]
 let categories = [
@@ -351,11 +357,13 @@ export default class HomePage extends React.Component {
           <Column width='1-1' horizontalAlignment="center">
               <TextView text="Partners" heading="1" style={ { paddingBottom : `0`} }/>
               {
-                sponsors.map((sponsor, i) =>
+                partners.map((partner, i) =>
                   
-                    <CardView width={"1-3"} minWidth="100px" maxWidth="100px" key={i} height="380px" style={{ padding: `20px 0`}} snapAlign noShadow>
-                      <Row height={`100px`} noPadding >
-                        <ImageView width={"100px"} height={"100px"} src={sponsor.image} />
+                    <CardView width={"1-3"} minWidth="300px" key={i} height="fit-content" 
+                      style={{ padding: `20px 0`}} snapAlign link={partner.link}>
+                      <Row noPadding>
+                        <ImageView width={"100px"} height={"100px"} src={partner.image} />
+                        <TextView text={partner.name} heading={3} align={'center'} />
                       </Row>
                     </CardView>
                   
