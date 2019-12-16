@@ -124,28 +124,28 @@ export default class HomePage extends React.Component {
     const { animations, showMore, ideaIndex } = this.state
 
     const date = "18th - 19th January 2020"
-    const location = "North Cloisters and Gustave Tuck LT"
+    const location = "South Cloisters and Gustave Tuck LT"
     
     const registerLink = "/login/process"
     const canRegister = true
 
     const categoryImageSize = "50px"
     
-    const locations = [{lng: -0.1339282, lat: 51.5252156},
-      {lng: -0.1338826, lat: 51.5251622},
-      {lng: -0.1340731, lat: 51.5250854},
-      {lng: -0.1340221, lat: 51.525042},
-      {lng: -0.1339121, lat: 51.5250854},
-      {lng: -0.1336359, lat: 51.5248384},
-      {lng: -0.1336788, lat: 51.5248217},
-      {lng: -0.1336412, lat: 51.5247917},
-      {lng: -0.13355, lat: 51.5248284},
-      {lng: -0.1335956, lat: 51.5248568},
-      {lng: -0.13355, lat: 51.5248735},
-      {lng: -0.1338183, lat: 51.5251154},
-      {lng: -0.1337485, lat: 51.5251421},
-      {lng: -0.1338558, lat: 51.5252406},
-      {lng: -0.1339282, lat: 51.5252156}, ]
+    const locations = [{ lng: -0.1333324, lat: 51.5246765},
+      { lng: -0.1334518, lat: 51.5246298},
+      { lng: -0.1334209, lat: 51.5246022},
+      { lng: -0.1333981, lat: 51.5246114},
+      { lng: -0.1332761, lat: 51.5244971},
+      { lng: -0.1333847, lat: 51.5244562},
+      { lng: -0.1333552, lat: 51.524432},
+      { lng: -0.1332506, lat: 51.5244771},
+      { lng: -0.1331259, lat: 51.5243669},
+      { lng: -0.1332305, lat: 51.5243202},
+      { lng: -0.1331769, lat: 51.5242726},
+      { lng: -0.1329207, lat: 51.5243769},
+      { lng: -0.1329797, lat: 51.5244287},
+      { lng: -0.1330347, lat: 51.5244087},
+      { lng: -0.1333324, lat: 51.5246765}, ]
 
     return (
       <React.Fragment>
@@ -340,7 +340,7 @@ export default class HomePage extends React.Component {
               <Row height="500px" noPadding styling="secondary">
                 <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
                   <TextView text="Location:" heading={1} align={'center'} />
-                  <TextView text="North Cloisters" heading={1} align={'center'} />
+                  <TextView text="South Cloisters" heading={1} align={'center'} />
                 </Column>
               </Row>
             </Column>
