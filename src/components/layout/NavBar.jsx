@@ -95,7 +95,8 @@ class NavBar extends React.Component {
 				<a href={"/"}>
 					<img src={logo} />
 				</a>
-				<div className="logoTextWhite"><div>UCL API Hackathon</div></div>
+				<div className="logoTextWhite default"><div className="tablet default">UCL API Hackathon</div></div>
+				<div className="logoTextWhite"><div className="mobile"> Hackathon</div></div>
 
 				<div className="link-titles">
 					{!this.state.isSmall ? (
