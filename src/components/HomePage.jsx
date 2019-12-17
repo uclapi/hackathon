@@ -1,6 +1,7 @@
 import React from 'react';
 import posed from 'react-pose';
 import { Waypoint } from 'react-waypoint';
+import styled from 'styled-components'
 
 // Styles
 import 'Styles/uclapi-hackathon.scss';
@@ -13,7 +14,7 @@ import society from 'Images/icons/user-group.svg';
 import question from 'Images/icons/lightbulb.svg';
 
 import aisoc from 'Images/sponsors/aisoc.png'
-import techsoc from 'Images/sponsors/techsoc.png' 
+import techsoc from 'Images/sponsors/techsoc.png'
 import simplepoll from 'Images/sponsors/simplepoll.png'
 
 // Components
@@ -25,8 +26,14 @@ import {
 // Data
 import { builtApps, ideas } from 'Layout/data/Examples.jsx'
 
+const EmojiLi = styled.li((props) => ({
+  '&::before': {
+    content: `"${props.emoji}"`,
+  }
+}))
+
 // Constants
-let partners = [
+const partners = [
   {
     image: aisoc,
     name: `UCL Artificial Intelligence Society`,
@@ -43,35 +50,53 @@ let partners = [
     link: `https://simplepoll.rocks/`,
   },
 ]
-let categories = [
+const categories = [
   {
-    'title': `Best individual use`,
+    'title': `Best Student App`,
     'image': individual,
     'description':
       (<ul>
-        <li>Make an application any student can use</li>
-        <li>Give it some innovative features</li>
-        <li>Use the API and tell us how</li>
+        <EmojiLi emoji="💡">
+          Make something for students
+        </EmojiLi>
+        <EmojiLi emoji="🤔">
+          Scratch your own itch
+        </EmojiLi>
+        <EmojiLi emoji="👏">
+          What would your friends use everyday?
+        </EmojiLi>
       </ul>)
   },
   {
-    'title': `Best society use`,
+    'title': `Best Society Use`,
     'image': society,
     'description':
       (<ul>
-        <li>Make something that helps out societies</li>
-        <li>Make it easy to use</li>
-        <li>Use the API and tell us how</li>
+        <EmojiLi emoji="🏅">
+          Make something for societies
+        </EmojiLi>
+        <EmojiLi emoji="🤯">
+          What would be a killer app for your society?
+        </EmojiLi>
+        <EmojiLi emoji="😍">
+          Bonus points if your society starts using it
+        </EmojiLi>
       </ul>)
   },
   {
-    'title': `Sponsor challenge`,
+    'title': `Sponsor Challenge`,
     'image': question,
     'description':
       (<ul>
-        <li>Make an application </li>
-        <li>Use our sponsor API</li>
-        <li>More details to come soon</li>
+        <EmojiLi emoji="✨">
+          Use our sponsors' API in a creative way
+        </EmojiLi>
+        <EmojiLi emoji="🎨">
+          Make anything you like
+        </EmojiLi>
+        <EmojiLi emoji="⌚">
+          More details to come soon
+        </EmojiLi>
       </ul>)
   }
 ]
@@ -125,27 +150,27 @@ export default class HomePage extends React.Component {
 
     const date = "18th - 19th January 2020"
     const location = "South Cloisters and Gustave Tuck LT"
-    
+
     const registerLink = "/login/process"
     const canRegister = true
 
     const categoryImageSize = "50px"
-    
-    const locations = [{ lng: -0.1333324, lat: 51.5246765},
-      { lng: -0.1334518, lat: 51.5246298},
-      { lng: -0.1334209, lat: 51.5246022},
-      { lng: -0.1333981, lat: 51.5246114},
-      { lng: -0.1332761, lat: 51.5244971},
-      { lng: -0.1333847, lat: 51.5244562},
-      { lng: -0.1333552, lat: 51.524432},
-      { lng: -0.1332506, lat: 51.5244771},
-      { lng: -0.1331259, lat: 51.5243669},
-      { lng: -0.1332305, lat: 51.5243202},
-      { lng: -0.1331769, lat: 51.5242726},
-      { lng: -0.1329207, lat: 51.5243769},
-      { lng: -0.1329797, lat: 51.5244287},
-      { lng: -0.1330347, lat: 51.5244087},
-      { lng: -0.1333324, lat: 51.5246765}, ]
+
+    const locations = [{ lng: -0.1333324, lat: 51.5246765 },
+    { lng: -0.1334518, lat: 51.5246298 },
+    { lng: -0.1334209, lat: 51.5246022 },
+    { lng: -0.1333981, lat: 51.5246114 },
+    { lng: -0.1332761, lat: 51.5244971 },
+    { lng: -0.1333847, lat: 51.5244562 },
+    { lng: -0.1333552, lat: 51.524432 },
+    { lng: -0.1332506, lat: 51.5244771 },
+    { lng: -0.1331259, lat: 51.5243669 },
+    { lng: -0.1332305, lat: 51.5243202 },
+    { lng: -0.1331769, lat: 51.5242726 },
+    { lng: -0.1329207, lat: 51.5243769 },
+    { lng: -0.1329797, lat: 51.5244287 },
+    { lng: -0.1330347, lat: 51.5244087 },
+    { lng: -0.1333324, lat: 51.5246765 },]
 
     return (
       <React.Fragment>
@@ -157,18 +182,18 @@ export default class HomePage extends React.Component {
         />
 
         <Row height='800px' styling='splash-parallax' noPadding>
-          <Explosion particles={30} speed={800} maxsize={30}
-            isOn={true} isOn={animations["landingpage"] ? true : false}/>
+          <Explosion particles={30} speed={600} maxsize={30}
+            isOn={true} isOn={animations["landingpage"] ? true : false} />
           <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
             <TextView text='UCL API Hackathon' heading={1} align={'center'} />
             <TextView text={date} heading={2} align={'center'} />
             <TextView text={location} heading={3} align={'center'} />
             <FocusIn pose={animations["landingpage"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
-              {canRegister ? ( 
+              {canRegister ? (
                 <ButtonView text={'Register Now'} link={registerLink} type="alternate" />
               ) : (
-                <ButtonView text={'Registration not open'} link={registerLink} type="default" onClick={ () => {} } />
-              )}
+                  <ButtonView text={'Registration not open'} link={registerLink} type="default" onClick={() => { }} />
+                )}
             </FocusIn>
           </Column>
         </Row>
@@ -200,22 +225,22 @@ export default class HomePage extends React.Component {
         />
 
         <Row styling='splash-parallax'>
-          <FocusIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'} style={ { marginLeft: 0, marginRight: 0 } }>
+          <FocusIn className='animated-card' pose={animations["categories"] ? 'open' : 'closed'} style={{ marginLeft: 0, marginRight: 0 }}>
             <Column width='1-1' horizontalAlignment="center">
               <TextView text="Challenges" heading="1" />
               {
                 categories.map((category, i) =>
-                  
-                    <CardView width={"1-" + categories.length} minWidth="300px" key={i} height="380px" style={{ padding: `20px 0`}} snapAlign>
-                      <Row height={`380px`} noPadding >
-                        <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
-                          <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
-                          <TextView text={category.title} heading={1} align='center' />
-                          <TextView text={category.description} heading={5} align={'left'} />
-                        </Column>
-                      </Row>
-                    </CardView>
-                  
+
+                  <CardView width={"1-" + categories.length} minWidth="300px" key={i} height="380px" style={{ padding: `20px 0` }} snapAlign>
+                    <Row height={`380px`} noPadding >
+                      <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
+                        <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
+                        <TextView text={category.title} heading={1} align='center' />
+                        <TextView text={category.description} heading={5} align={'left'} />
+                      </Column>
+                    </Row>
+                  </CardView>
+
                 )
               }
             </Column>
@@ -226,69 +251,69 @@ export default class HomePage extends React.Component {
           onEnter={(props) => { this.toggleAnimation("examples", true) }}
         />
 
-        <Row styling="primary" style={ {paddingTop : `50px` } } noPadding>
+        <Row styling="primary" style={{ paddingTop: `50px` }} noPadding>
           <Column width='2-3' maxWidth='700px' horizontalAlignment='center'>
-            <TextView heading={`1`} text={`The API In Action`}/>
+            <TextView heading={`1`} text={`The API In Action`} />
             <TextView heading={`p`} text={`Here are some examples of things 
               people have already built that make use of the UCL API. 
               Check out the source code, play around with them, and get 
-              inspired!`}/>
+              inspired!`} />
           </Column>
         </Row>
 
-        <Row styling="primary" style={ {paddingBottom : `30px` } } noPadding>
+        <Row styling="primary" style={{ paddingBottom: `30px` }} noPadding>
           <Column width='8-10' horizontalAlignment='center'>
-              <table className="built-apps-table">
-                <tbody>
-                  {
-                    (showMore ? builtApps : builtApps.slice(0, 1)).map(({ title, description, status, links }) => (
-                      <tr key={title}>
-                        <td style={ { width : `25%` } }>
-                          <h5>{title}</h5>
-                        </td>
-                        <td style={ { width : `50%`, textAlign : `left`} }>
-                          <p>{description}</p>
-                        </td>
-                        <td style={ { width : `25%` } }>
-                          {
-                            // status && <div className="chip status">{status}</div>
-                          }
-                          {
-                            links.map(({ text, url }) => (
-                              <p key={url}><a href={url}>{text}</a></p>
-                            ))
-                          }
-                        </td>
-                      </tr>
-                    ))
-                  }
-                  { !showMore && (
-                    <tr>
-                      <td colSpan={3}>
-                        <ButtonView text={'Show more'} type="alternate" 
-                          onClick={() => {
-                            this.setState({ showMore: true })
-                          }} />
+            <table className="built-apps-table">
+              <tbody>
+                {
+                  (showMore ? builtApps : builtApps.slice(0, 1)).map(({ title, description, status, links }) => (
+                    <tr key={title}>
+                      <td style={{ width: `25%` }}>
+                        <h5>{title}</h5>
+                      </td>
+                      <td style={{ width: `50%`, textAlign: `left` }}>
+                        <p>{description}</p>
+                      </td>
+                      <td style={{ width: `25%` }}>
+                        {
+                          // status && <div className="chip status">{status}</div>
+                        }
+                        {
+                          links.map(({ text, url }) => (
+                            <p key={url}><a href={url}>{text}</a></p>
+                          ))
+                        }
                       </td>
                     </tr>
-                  )}
-                </tbody>
-              </table>
+                  ))
+                }
+                {!showMore && (
+                  <tr>
+                    <td colSpan={3}>
+                      <ButtonView text={'Show more'} type="alternate"
+                        onClick={() => {
+                          this.setState({ showMore: true })
+                        }} />
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
 
-              <TextView heading={`1`} text={`You could make...`}/>
+            <TextView heading={`1`} text={`You could make...`} />
           </Column>
-          <Column width={`8-10`} horizontalAlignment='center' style={ {marginBottom : `20px`} }> 
-            <CardView width={"1-1"} type={`alternate`} style={ { padding: `20px 0`, margin : `0`, marginBottom : `20px`, borderRadius : `0` } } noPadding>
+          <Column width={`8-10`} horizontalAlignment='center' style={{ marginBottom: `20px` }}>
+            <CardView width={"1-1"} type={`alternate`} style={{ padding: `20px 0`, margin: `0`, marginBottom: `20px`, borderRadius: `0` }} noPadding>
               <Column width='2-3' horizontalAlignment='center'>
-                <TextView text={ideas[ideaIndex]} heading={`p`} style={ { marginBottom : `0` } }/>
+                <TextView text={ideas[ideaIndex]} heading={`p`} style={{ marginBottom: `0` }} />
               </Column>
             </CardView>
           </Column>
           <Column width='8-10' horizontalAlignment='center'>
-              <ButtonView text={'Inspire Me!'} type="alternate" 
-                onClick={() => {
-                  this.setState({ ideaIndex: randIndex(ideas) })
-                }} />
+            <ButtonView text={'Inspire Me!'} type="alternate"
+              onClick={() => {
+                this.setState({ ideaIndex: randIndex(ideas) })
+              }} />
           </Column>
 
         </Row>
@@ -334,12 +359,12 @@ export default class HomePage extends React.Component {
         <Row height="500px" noPadding styling="primary">
           <div className={`default`}>
             <Column width='2-3' style={{ "display": "inline-block", "float": "left" }}>
-              <MapFragment locations={locations}/>
+              <MapFragment locations={locations} />
             </Column>
             <Column width='1-3' style={{ "display": "inline-block", "float": "left" }}>
               <Row height="500px" noPadding styling="transparent">
                 <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
-                  <CardView width={"1-1"} height="fit-content" style={ { padding: `20px 0` }}>
+                  <CardView width={"1-1"} height="fit-content" style={{ padding: `20px 0` }}>
                     <TextView text="Location:" heading={1} align={'center'} />
                     <TextView text="South Cloisters" heading={1} align={'center'} />
                   </CardView>
@@ -350,28 +375,28 @@ export default class HomePage extends React.Component {
 
           <div className={`mobile tablet`}>
             <Column width='1-1' style={{ "display": "inline-block", "float": "left" }}>
-              <MapFragment locations={locations}/>
+              <MapFragment locations={locations} />
             </Column>
           </div>
         </Row>
 
         <Row styling='splash-parallax'>
           <Column width='1-1' horizontalAlignment="center">
-              <TextView text="Partners" heading="1" style={ { paddingBottom : `0`} }/>
-              {
-                partners.map((partner, i) =>
-                  
-                    <CardView width={"1-3"} minWidth="300px" key={i} height="fit-content" 
-                      style={{ padding: `20px 0`}} snapAlign link={partner.link}>
-                      <Row noPadding>
-                        <ImageView width={"100px"} height={"100px"} src={partner.image} />
-                        <TextView text={partner.name} heading={3} align={'center'} />
-                      </Row>
-                    </CardView>
-                  
-                )
-              }
-            </Column>
+            <TextView text="Partners" heading="1" style={{ paddingBottom: `0` }} />
+            {
+              partners.map((partner, i) =>
+
+                <CardView width={"1-3"} minWidth="300px" key={i} height="fit-content"
+                  style={{ padding: `20px 0` }} snapAlign link={partner.link}>
+                  <Row noPadding>
+                    <ImageView width={"100px"} height={"100px"} src={partner.image} />
+                    <TextView text={partner.name} heading={3} align={'center'} />
+                  </Row>
+                </CardView>
+
+              )
+            }
+          </Column>
         </Row>
 
         <Footer />
