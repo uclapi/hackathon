@@ -410,7 +410,7 @@ export default class HomePage extends React.Component {
               {
                 partners.map((partner, i) =>
                   
-                    <CardView width={"1-3"} minWidth="300px" key={i} height="fit-content" 
+                    <CardView width={"1-2"} minWidth="300px" key={i} height="fit-content" 
                       style={{ padding: `20px 0`}} snapAlign link={partner.link}>
                       <Row noPadding>
                         <ImageView width={"100px"} height={"100px"} src={partner.image} />
