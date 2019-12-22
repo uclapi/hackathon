@@ -15,6 +15,7 @@ import question from 'Images/icons/lightbulb.svg';
 import aisoc from 'Images/sponsors/aisoc.png'
 import techsoc from 'Images/sponsors/techsoc.png' 
 import simplepoll from 'Images/sponsors/simplepoll.png'
+import deliveroo from 'Images/sponsors/deliveroo.png'
 
 // Components
 import {
@@ -42,6 +43,11 @@ let partners = [
     image: simplepoll,
     name: `Simple Poll`,
     link: `https://simplepoll.rocks/`,
+  },
+  {
+    image: deliveroo,
+    name: `Deliveroo`,
+    link: `https://deliveroo.co.uk/`,
   },
 ]
 let categories = [
@@ -91,7 +97,7 @@ export default class HomePage extends React.Component {
     this.DEBUGGING = true;
 
     this.state = {
-      showMore: false,
+      showMore: true,
       ideaIndex: randIndex(ideas),
       animations: {
         "landingpage": false,
@@ -262,7 +268,7 @@ export default class HomePage extends React.Component {
                       </tr>
                     ))
                   }
-                  { !showMore && (
+                  /**{ !showMore && (
                     <tr>
                       <td colSpan={3}>
                         <ButtonView text={'Show more'} type="alternate" 
@@ -271,7 +277,7 @@ export default class HomePage extends React.Component {
                           }} />
                       </td>
                     </tr>
-                  )}
+                  )}**/
                 </tbody>
               </table>
 
@@ -336,13 +342,11 @@ export default class HomePage extends React.Component {
             <Column width='2-3' style={{ "display": "inline-block", "float": "left" }}>
               <MapFragment locations={locations}/>
             </Column>
-            <Column width='1-3' style={{ "display": "inline-block", "float": "left" }}>
+            <Column width='1-3' horizontalAlignment="center" style={{ paddingTop : "20px"}}>
               <Row height="500px" noPadding styling="transparent">
-                <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
-                  <CardView width={"1-1"} height="fit-content" style={ { padding: `20px 0` }}>
-                    <TextView text="Location:" heading={1} align={'center'} />
-                    <TextView text="South Cloisters" heading={1} align={'center'} />
-                  </CardView>
+                <Column width='1-1' horizontalAlignment='center'>
+                  <TextView text="Location" color="#49B287" heading={1} align={'center'} style={{ textShadow: `0 0 15px #ccc` }} />
+                  <TextView text="South Cloisters" color="#49B287" heading={1} align={'center'} style={{ textShadow: `0 0 15px #ccc` }} />
                 </Column>
               </Row>
             </Column>
@@ -362,16 +366,16 @@ export default class HomePage extends React.Component {
             
             <table className="hackathon-table" style={{width : `100%`}}>
               <tbody>
-                {dayoneschedule.map( ({time, activity, location}) => (
+                {dayoneschedule.map( ({time, activity, location}, index) => (
                   <tr>
                     <td style={{width : `25%`}}>
-                      <p>{time}</p>
+                      {index!=0 ? (<p>{time}</p>) : (<h2 style={{marginBottom: 0}}>{time}</h2>)}
                     </td>
                     <td style={{width : `50%`}}>
-                      <p>{activity}</p>
+                      {index!=0 ? (<p>{activity}</p>) : (<h2 style={{marginBottom: 0}}>{activity}</h2>)}
                     </td> 
                     <td style={{width : `25%`}}>
-                      <p>{location}</p>
+                      {index!=0 ? (<p>{location}</p>) : (<h2 style={{marginBottom: 0}}>{location}</h2>)}
                     </td>
                   </tr>
                 ))}
@@ -382,16 +386,16 @@ export default class HomePage extends React.Component {
 
             <table className="hackathon-table" style={{width : `100%`}}>
               <tbody>
-                {daytwoschedule.map( ({time, activity, location}) => (
+                {daytwoschedule.map( ({time, activity, location}, index) => (
                   <tr>
                     <td style={{width : `25%`}}>
-                      <p>{time}</p>
+                      {index!=0 ? (<p>{time}</p>) : (<h2 style={{marginBottom: 0}}>{time}</h2>)}
                     </td>
                     <td style={{width : `50%`}}>
-                      <p>{activity}</p>
+                      {index!=0 ? (<p>{activity}</p>) : (<h2 style={{marginBottom: 0}}>{activity}</h2>)}
                     </td> 
                     <td style={{width : `25%`}}>
-                      <p>{location}</p>
+                      {index!=0 ? (<p>{location}</p>) : (<h2 style={{marginBottom: 0}}>{location}</h2>)}
                     </td>
                   </tr>
                 ))}

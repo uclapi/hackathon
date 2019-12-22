@@ -1,7 +1,7 @@
 export const builtApps = [
   {
     title: 'Roomie McRoomFace',
-    description: 'A room booking system for the UCL Engineering Hub. If you\'re an undergraduate student part of the engineering faculty, you can log in and start booking rooms. Fun fact: this was actually built before the API existed!',
+    description: 'A room booking system for the UCL Engineering Hub.',
     status: 'LIVE',
     links: [
       {
