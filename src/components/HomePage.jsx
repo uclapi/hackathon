@@ -24,6 +24,7 @@ import {
 
 // Data
 import { builtApps, ideas } from 'Layout/data/Examples.jsx'
+import { dayoneschedule, daytwoschedule } from 'Layout/data/Schedule.jsx'
 
 // Constants
 let partners = [
@@ -147,6 +148,8 @@ export default class HomePage extends React.Component {
       { lng: -0.1330347, lat: 51.5244087},
       { lng: -0.1333324, lat: 51.5246765}, ]
 
+    console.log(dayoneschedule)
+
     return (
       <React.Fragment>
 
@@ -156,7 +159,7 @@ export default class HomePage extends React.Component {
           onEnter={(props) => { this.toggleAnimation("landingpage", true) }}
         />
 
-        <Row height='800px' styling='splash-parallax' noPadding>
+        <Row height='800px' styling='splash-parallax' style={{ maxHeight : `100%` }} noPadding>
           <Explosion particles={30} speed={800} maxsize={30}
             isOn={true} isOn={animations["landingpage"] ? true : false}/>
           <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
@@ -206,8 +209,8 @@ export default class HomePage extends React.Component {
               {
                 categories.map((category, i) =>
                   
-                    <CardView width={"1-" + categories.length} minWidth="300px" key={i} height="380px" style={{ padding: `20px 0`}} snapAlign>
-                      <Row height={`380px`} noPadding >
+                    <CardView width={"1-" + categories.length} minWidth="300px" key={i} height="420px" style={{ padding: `20px 0`}} snapAlign>
+                      <Row height={`420px`} noPadding >
                         <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
                           <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
                           <TextView text={category.title} heading={1} align='center' />
@@ -238,21 +241,18 @@ export default class HomePage extends React.Component {
 
         <Row styling="primary" style={ {paddingBottom : `30px` } } noPadding>
           <Column width='8-10' horizontalAlignment='center'>
-              <table className="built-apps-table">
+              <table className="hackathon-table">
                 <tbody>
                   {
                     (showMore ? builtApps : builtApps.slice(0, 1)).map(({ title, description, status, links }) => (
                       <tr key={title}>
                         <td style={ { width : `25%` } }>
-                          <h5>{title}</h5>
+                          <p>{title}</p>
                         </td>
                         <td style={ { width : `50%`, textAlign : `left`} }>
                           <p>{description}</p>
                         </td>
                         <td style={ { width : `25%` } }>
-                          {
-                            // status && <div className="chip status">{status}</div>
-                          }
                           {
                             links.map(({ text, url }) => (
                               <p key={url}><a href={url}>{text}</a></p>
@@ -304,7 +304,7 @@ export default class HomePage extends React.Component {
 
           <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
             <FocusIn pose={animations["2018image"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
-              <TextView text="The 2018 Hackathon Class!" heading={1} align={'center'} />
+              <TextView text="The 2019 Hackathon Class!" heading={1} align={'center'} />
             </FocusIn>
           </Column>
         </Row>
@@ -353,6 +353,51 @@ export default class HomePage extends React.Component {
               <MapFragment locations={locations}/>
             </Column>
           </div>
+        </Row>
+
+        <Row styling="primary">
+           <Column width='8-10' horizontalAlignment='center'>
+            <TextView text="Schedule" heading={1} align={'center'} />
+            <TextView text="Day one" heading={2} align={'center'} />
+            
+            <table className="hackathon-table" style={{width : `100%`}}>
+              <tbody>
+                {dayoneschedule.map( ({time, activity, location}) => (
+                  <tr>
+                    <td style={{width : `25%`}}>
+                      <p>{time}</p>
+                    </td>
+                    <td style={{width : `50%`}}>
+                      <p>{activity}</p>
+                    </td> 
+                    <td style={{width : `25%`}}>
+                      <p>{location}</p>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <TextView text="Day two" heading={2} align={'center'} />
+
+            <table className="hackathon-table" style={{width : `100%`}}>
+              <tbody>
+                {daytwoschedule.map( ({time, activity, location}) => (
+                  <tr>
+                    <td style={{width : `25%`}}>
+                      <p>{time}</p>
+                    </td>
+                    <td style={{width : `50%`}}>
+                      <p>{activity}</p>
+                    </td> 
+                    <td style={{width : `25%`}}>
+                      <p>{location}</p>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </Column>
         </Row>
 
         <Row styling='splash-parallax'>
