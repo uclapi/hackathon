@@ -140,6 +140,7 @@ h4 {
 
 h5 {
   font-weight: normal;
+  font-size: 1.1em
 }
 
 h1 {
@@ -170,16 +171,20 @@ a:hover { color: $color-grey-light; }
 
 }
 
-.text-view li {
-  margin: 20px 0;
-  list-style-type: none;
-  display: block;
-}
+.text-view {
+  li + li {
+    margin: 10px 0;
+  }
+  
+  li {
+    list-style-type: none;
+    display: inline-flex;
+  }
 
-.text-view li:before {
-  content: '\1F47D';
-  margin-left: -20px;
-  margin-right: 10px;
+  li:before {
+    margin-left: -20px;
+    margin-right: 10px;
+  }
 }
 
 li {
