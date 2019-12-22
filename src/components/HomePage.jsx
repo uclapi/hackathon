@@ -16,6 +16,7 @@ import question from 'Images/icons/lightbulb.svg';
 import aisoc from 'Images/sponsors/aisoc.png'
 import techsoc from 'Images/sponsors/techsoc.png'
 import simplepoll from 'Images/sponsors/simplepoll.png'
+import deliveroo from 'Images/sponsors/deliveroo.png'
 
 // Components
 import {
@@ -25,6 +26,7 @@ import {
 
 // Data
 import { builtApps, ideas } from 'Layout/data/Examples.jsx'
+import { dayoneschedule, daytwoschedule } from 'Layout/data/Schedule.jsx'
 
 const EmojiLi = styled.li((props) => ({
   '&::before': {
@@ -48,6 +50,11 @@ const partners = [
     image: simplepoll,
     name: `Simple Poll`,
     link: `https://simplepoll.rocks/`,
+  },
+  {
+    image: deliveroo,
+    name: `Deliveroo`,
+    link: `https://deliveroo.co.uk/`,
   },
 ]
 const categories = [
@@ -115,7 +122,7 @@ export default class HomePage extends React.Component {
     this.DEBUGGING = true;
 
     this.state = {
-      showMore: false,
+      showMore: true,
       ideaIndex: randIndex(ideas),
       animations: {
         "landingpage": false,
@@ -171,6 +178,8 @@ export default class HomePage extends React.Component {
     { lng: -0.1329797, lat: 51.5244287 },
     { lng: -0.1330347, lat: 51.5244087 },
     { lng: -0.1333324, lat: 51.5246765 },]
+
+    console.log(dayoneschedule)
 
     return (
       <React.Fragment>
@@ -230,17 +239,15 @@ export default class HomePage extends React.Component {
               <TextView text="Challenges" heading="1" />
               {
                 categories.map((category, i) =>
-
-                  <CardView width={"1-" + categories.length} minWidth="300px" key={i} height="380px" style={{ padding: `20px 0` }} snapAlign>
-                    <Row height={`380px`} noPadding >
-                      <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
-                        <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
-                        <TextView text={category.title} heading={1} align='center' />
-                        <TextView text={category.description} heading={5} align={'left'} />
-                      </Column>
-                    </Row>
-                  </CardView>
-
+                    <CardView width={"1-" + categories.length} minWidth="300px" key={i} height="420px" style={{ padding: `20px 0`}} snapAlign>
+                      <Row height={`420px`} noPadding >
+                        <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
+                          <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
+                          <TextView text={category.title} heading={1} align='center' />
+                          <TextView text={category.description} heading={5} align={'left'} />
+                        </Column>
+                      </Row>
+                    </CardView>
                 )
               }
             </Column>
@@ -263,44 +270,41 @@ export default class HomePage extends React.Component {
 
         <Row styling="primary" style={{ paddingBottom: `30px` }} noPadding>
           <Column width='8-10' horizontalAlignment='center'>
-            <table className="built-apps-table">
-              <tbody>
-                {
-                  (showMore ? builtApps : builtApps.slice(0, 1)).map(({ title, description, status, links }) => (
-                    <tr key={title}>
-                      <td style={{ width: `25%` }}>
-                        <h5>{title}</h5>
-                      </td>
-                      <td style={{ width: `50%`, textAlign: `left` }}>
-                        <p>{description}</p>
-                      </td>
-                      <td style={{ width: `25%` }}>
-                        {
-                          // status && <div className="chip status">{status}</div>
-                        }
-                        {
-                          links.map(({ text, url }) => (
-                            <p key={url}><a href={url}>{text}</a></p>
-                          ))
-                        }
+              <table className="hackathon-table">
+                <tbody>
+                  {
+                    (showMore ? builtApps : builtApps.slice(0, 1)).map(({ title, description, status, links }) => (
+                      <tr key={title}>
+                        <td style={ { width : `25%` } }>
+                          <p>{title}</p>
+                        </td>
+                        <td style={ { width : `50%`, textAlign : `left`} }>
+                          <p>{description}</p>
+                        </td>
+                        <td style={ { width : `25%` } }>
+                          {
+                            links.map(({ text, url }) => (
+                              <p key={url}><a href={url}>{text}</a></p>
+                            ))
+                          }
+                        </td>
+                      </tr>
+                    ))
+                  }
+                  /**{ !showMore && (
+                    <tr>
+                      <td colSpan={3}>
+                        <ButtonView text={'Show more'} type="alternate" 
+                          onClick={() => {
+                            this.setState({ showMore: true })
+                          }} />
                       </td>
                     </tr>
-                  ))
-                }
-                {!showMore && (
-                  <tr>
-                    <td colSpan={3}>
-                      <ButtonView text={'Show more'} type="alternate"
-                        onClick={() => {
-                          this.setState({ showMore: true })
-                        }} />
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
+                  )}**/
+                </tbody>
+              </table>
 
-            <TextView heading={`1`} text={`You could make...`} />
+              <TextView heading={`1`} text={`You could make...`}/>
           </Column>
           <Column width={`8-10`} horizontalAlignment='center' style={{ marginBottom: `20px` }}>
             <CardView width={"1-1"} type={`alternate`} style={{ padding: `20px 0`, margin: `0`, marginBottom: `20px`, borderRadius: `0` }} noPadding>
@@ -329,7 +333,7 @@ export default class HomePage extends React.Component {
 
           <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
             <FocusIn pose={animations["2018image"] ? 'open' : 'closed'} style={{ 'transitionTimingFunction': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>
-              <TextView text="The 2018 Hackathon Class!" heading={1} align={'center'} />
+              <TextView text="The 2019 Hackathon Class!" heading={1} align={'center'} />
             </FocusIn>
           </Column>
         </Row>
@@ -361,13 +365,11 @@ export default class HomePage extends React.Component {
             <Column width='2-3' style={{ "display": "inline-block", "float": "left" }}>
               <MapFragment locations={locations} />
             </Column>
-            <Column width='1-3' style={{ "display": "inline-block", "float": "left" }}>
+            <Column width='1-3' horizontalAlignment="center" style={{ paddingTop : "20px"}}>
               <Row height="500px" noPadding styling="transparent">
-                <Column width='1-1' horizontalAlignment='center' verticalAlignment='center'>
-                  <CardView width={"1-1"} height="fit-content" style={{ padding: `20px 0` }}>
-                    <TextView text="Location:" heading={1} align={'center'} />
-                    <TextView text="South Cloisters" heading={1} align={'center'} />
-                  </CardView>
+                <Column width='1-1' horizontalAlignment='center'>
+                  <TextView text="Location" color="#49B287" heading={1} align={'center'} style={{ textShadow: `0 0 15px #ccc` }} />
+                  <TextView text="South Cloisters" color="#49B287" heading={1} align={'center'} style={{ textShadow: `0 0 15px #ccc` }} />
                 </Column>
               </Row>
             </Column>
@@ -380,23 +382,68 @@ export default class HomePage extends React.Component {
           </div>
         </Row>
 
+        <Row styling="primary">
+           <Column width='8-10' horizontalAlignment='center'>
+            <TextView text="Schedule" heading={1} align={'center'} />
+            <TextView text="Day one" heading={2} align={'center'} />
+            
+            <table className="hackathon-table" style={{width : `100%`}}>
+              <tbody>
+                {dayoneschedule.map( ({time, activity, location}, index) => (
+                  <tr>
+                    <td style={{width : `25%`}}>
+                      {index!=0 ? (<p>{time}</p>) : (<h2 style={{marginBottom: 0}}>{time}</h2>)}
+                    </td>
+                    <td style={{width : `50%`}}>
+                      {index!=0 ? (<p>{activity}</p>) : (<h2 style={{marginBottom: 0}}>{activity}</h2>)}
+                    </td> 
+                    <td style={{width : `25%`}}>
+                      {index!=0 ? (<p>{location}</p>) : (<h2 style={{marginBottom: 0}}>{location}</h2>)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <TextView text="Day two" heading={2} align={'center'} />
+
+            <table className="hackathon-table" style={{width : `100%`}}>
+              <tbody>
+                {daytwoschedule.map( ({time, activity, location}, index) => (
+                  <tr>
+                    <td style={{width : `25%`}}>
+                      {index!=0 ? (<p>{time}</p>) : (<h2 style={{marginBottom: 0}}>{time}</h2>)}
+                    </td>
+                    <td style={{width : `50%`}}>
+                      {index!=0 ? (<p>{activity}</p>) : (<h2 style={{marginBottom: 0}}>{activity}</h2>)}
+                    </td> 
+                    <td style={{width : `25%`}}>
+                      {index!=0 ? (<p>{location}</p>) : (<h2 style={{marginBottom: 0}}>{location}</h2>)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </Column>
+        </Row>
+
         <Row styling='splash-parallax'>
           <Column width='1-1' horizontalAlignment="center">
-            <TextView text="Partners" heading="1" style={{ paddingBottom: `0` }} />
-            {
-              partners.map((partner, i) =>
-
-                <CardView width={"1-3"} minWidth="300px" key={i} height="fit-content"
-                  style={{ padding: `20px 0` }} snapAlign link={partner.link}>
-                  <Row noPadding>
-                    <ImageView width={"100px"} height={"100px"} src={partner.image} />
-                    <TextView text={partner.name} heading={3} align={'center'} />
-                  </Row>
-                </CardView>
-
-              )
-            }
-          </Column>
+              <TextView text="Partners" heading="1" style={ { paddingBottom : `0`} }/>
+              {
+                partners.map((partner, i) =>
+                  
+                    <CardView width={"1-2"} minWidth="300px" key={i} height="fit-content" 
+                      style={{ padding: `20px 0`}} snapAlign link={partner.link}>
+                      <Row noPadding>
+                        <ImageView width={"100px"} height={"100px"} src={partner.image} />
+                        <TextView text={partner.name} heading={3} align={'center'} />
+                      </Row>
+                    </CardView>
+                  
+                )
+              }
+            </Column>
         </Row>
 
         <Footer />
