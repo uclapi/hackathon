@@ -21,7 +21,7 @@ export const dayoneschedule = [
 	},
 	{
 	  time: "1PM-2PM", 
-	  activity: "Lunch", 
+	  activity: "Lunch (provided)", 
 	  location: "South Cloisters", 
 	},
 	{
@@ -59,12 +59,12 @@ export const daytwoschedule = [
     },
     {
       time: "8AM-10AM",
-      activity: "Breakfast",
+      activity: "Breakfast (provided)",
       location: "South Cloisters",
     },
     {
       time: "1PM",
-      activity: "Lunch",
+      activity: "Lunch (provided)",
       location: "South Cloisters",
     },
     {

@@ -239,8 +239,8 @@ export default class HomePage extends React.Component {
               <TextView text="Challenges" heading="1" />
               {
                 categories.map((category, i) =>
-                    <CardView width={"1-" + categories.length} minWidth="300px" key={i} height="420px" style={{ padding: `20px 0`}} snapAlign>
-                      <Row height={`420px`} noPadding >
+                    <CardView width={"1-" + categories.length} minWidth="300px" key={i} height="450px" style={{ padding: `20px 0`}} snapAlign>
+                      <Row height={`450px`} noPadding >
                         <Column width='2-3' horizontalAlignment='center' verticalAlignment='center'>
                           <ImageView width={categoryImageSize} height={categoryImageSize} src={category.image} />
                           <TextView text={category.title} heading={1} align='center' />
