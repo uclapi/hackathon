@@ -291,16 +291,6 @@ export default class HomePage extends React.Component {
                       </tr>
                     ))
                   }
-                  /**{ !showMore && (
-                    <tr>
-                      <td colSpan={3}>
-                        <ButtonView text={'Show more'} type="alternate" 
-                          onClick={() => {
-                            this.setState({ showMore: true })
-                          }} />
-                      </td>
-                    </tr>
-                  )}**/
                 </tbody>
               </table>
 
