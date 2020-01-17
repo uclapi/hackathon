@@ -226,6 +226,10 @@ export default class HomePage extends React.Component {
                 APIs, programming, and new technologies, then come along and dive right in!`} heading={5} align={'left'} />
             <TextView text={`At the end of the event, you can show off what you've built 
                 and learned by presenting to everyone who attended!`} heading={5} align={'left'} />
+            <TextView text={`Here are some resources to get you started:`} heading={5} align={'left'} />
+            <ButtonView text={`PYTHON`} link={`https://github.com/uclapi/uclapyi`} type={`alternate`}/>
+            <ButtonView text={`JAVASCRIPT`} link={`https://github.com/uclapi/uclapi-openapi/tree/master/examples/node`}/>
+            <ButtonView text={`DOCS`} link={`uclapi.com/docs`} type={`alternate`} />
           </Column>
         </Row>
 
