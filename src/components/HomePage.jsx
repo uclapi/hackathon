@@ -229,7 +229,7 @@ export default class HomePage extends React.Component {
             <TextView text={`Here are some resources to get you started:`} heading={5} align={'left'} />
             <ButtonView text={`PYTHON`} link={`https://github.com/uclapi/uclapyi`} type={`alternate`}/>
             <ButtonView text={`JAVASCRIPT`} link={`https://github.com/uclapi/uclapi-openapi/tree/master/examples/node`}/>
-            <ButtonView text={`DOCS`} link={`https://www.uclapi.com/docs`} type={`alternate`} />
+            <ButtonView text={`DOCS`} link={`https://uclapi.com/docs`} type={`alternate`} />
           </Column>
         </Row>
 
