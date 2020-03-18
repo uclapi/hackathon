@@ -63,7 +63,7 @@
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "url-loader": "^2.2.0",
+    "url-loader": "^4.0.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-transform": "^1.0.0",
     "vinyl-source-stream": "^2.0.0",
