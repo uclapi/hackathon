@@ -8,7 +8,7 @@ eventbrite==3.3.3
 gunicorn==19.9.0
 idna==2.8
 opbeat==3.5.2
-psycopg2-binary==2.7.7
+psycopg2-binary==2.8.5
 pytz==2018.9
 requests==2.21.0
 urllib3==1.24.1
