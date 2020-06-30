@@ -6,7 +6,7 @@ django-dotenv==1.4.2
 django-webpack-loader==0.6.0
 eventbrite==3.3.3
 gunicorn==19.9.0
-idna==2.8
+idna==2.10
 opbeat==3.5.2
 psycopg2-binary==2.7.7
 pytz==2018.9
