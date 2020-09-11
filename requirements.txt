@@ -4,7 +4,7 @@ dj-database-url==0.5.0
 Django==1.11.23
 django-dotenv==1.4.2
 django-webpack-loader==0.6.0
-eventbrite==3.3.3
+eventbrite==3.3.5
 gunicorn==19.9.0
 idna==2.8
 opbeat==3.5.2
